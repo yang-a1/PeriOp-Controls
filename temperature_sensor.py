@@ -1,10 +1,9 @@
 import Adafruit_DHT
 import time
+import pdb
 
-# Sensor should be set to Adafruit_DHT.DHT11, Adafruit_DHT.DHT22, or Adafruit_DHT.AM2302.
 sensor = Adafruit_DHT.DHT22
 
-# GPIO pin connected to the sensor data line
 pin = '17'
 
 try:
@@ -20,3 +19,4 @@ try:
 
 except KeyboardInterrupt:
     print("\nProgram stopped by user")
+

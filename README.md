@@ -1,4 +1,4 @@
-# Temperature Monitoring Software and Controls
+# Temperature Monitoring Software and Controls (WIP)
 
 ## Project Overview
 This software project involves using a DHT22 sensor to monitor the temperature of heated copper-coated aluminum plate in low-cost heating mattress for operating rooms in the Dominican Republic. The aim is to ensure accurate temperature readings and to control the heating mattress using a Raspberry Pi 4.
