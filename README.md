@@ -24,7 +24,7 @@ To allow the user to shut off heating from the terminal, the programs listen for
 A monitor will display real-time temperature readings and provide controls for the user to adjust the temperature settings and turn off the heating.
 
 ### General Features
-- **Real-Time Temperature Display**: Show current temperature and humidity readings.
+- **Real-Time Temperature Display**: Show current temperature and  readings.
 - **Temperature Adjustment**: Allow users to set the desired temperature threshold via a simple interface.
 - **Heating Control**: Provide buttons for users to turn the heating mattress on/off easily.
 

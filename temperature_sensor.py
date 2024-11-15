@@ -15,22 +15,21 @@ dhtDevice = adafruit_dht.DHT22(board.D4, use_pulseio=False)
 
 while True:
     try:
-        # Read temperature and humidity from the DHT sensor
+        # Read temperature from the DHT sensor
         temperature_c = dhtDevice.temperature
         temperature_f = temperature_c * (9 / 5) + 32
-        humidity = dhtDevice.humidity
 
         # Print values to the console
         print(
-            "Temp: {:.1f} F / {:.1f} C    Humidity: {}% ".format(
-                temperature_f, temperature_c, humidity
+            "Temp: {:.1f} F / {:.1f} C".format(
+                temperature_f, temperature_c
             )
         )
 
         # Log values to the file
         logging.info(
-            "Temperature: {:.1f} F / {:.1f} C, Humidity: {}%".format(
-                temperature_f, temperature_c, humidity
+            "Temperature: {:.1f} F / {:.1f} C".format(
+                temperature_f, temperature_c
             )
         )
 

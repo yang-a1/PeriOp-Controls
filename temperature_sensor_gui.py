@@ -42,10 +42,10 @@ def control_relay(temperature, max_temperature):
 # MODIFIES: None
 # EFFECTS: Reads temperature from the DHT22 sensor, logs it, and controls the relay if necessary.
 def read_temperature(sensor, pin):
-    """Reads temperature and humidity from the sensor and returns the temperature."""
-    humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
-    if humidity is not None and temperature is not None:
-        print(f'Temperature: {temperature:0.1f}°C  Humidity: {humidity:0.1f}%')
+    """Reads temperature and from the sensor and returns the temperature."""
+    temperature = Adafruit_DHT.read_retry(sensor, pin)
+    if temperature is not None:
+        print(f'Temperature: {temperature:0.1f}°C')
         return temperature
     else:
         print('Failed to get reading. Try again!')

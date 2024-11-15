@@ -50,10 +50,10 @@ def main():
 
     try:
         while True:
-            humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
+            temperature = Adafruit_DHT.read_retry(sensor, pin)
             
-            if humidity is not None and temperature is not None:
-                print('Temp={0:0.1f}*C  Humidity={1:0.1f}%'.format(temperature, humidity))
+            if temperature is not None:
+                print('Temp={0:0.1f}*C'.format(temperature, humidity))
 
                 if temperature > max_temperature:
                     print(f"Temperature exceeds {max_temperature}°C. Turning off relay.")

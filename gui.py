@@ -5,11 +5,11 @@ import Adafruit_DHT  # Ensure Adafruit_DHT is imported for reading sensor data
 
 # REQUIRES: None
 # MODIFIES: temperature_label (updates the displayed temperature on the UI)
-# EFFECTS: Reads the temperature and humidity from the DHT22 sensor and updates the UI with the temperature value.
+# EFFECTS: Reads the temperature from the DHT22 sensor and updates the UI with the temperature value.
 #          If the reading fails, an error message is displayed.
 def read_sensor():
     """Reads temperature and updates the UI with the current temperature value."""
-    humidity, temperature = read_temperature(Adafruit_DHT.DHT22, 17)  # GPIO pin 17 for the DHT22 sensor
+    temperature = read_temperature(Adafruit_DHT.DHT22, 17)  # GPIO pin 17 for the DHT22 sensor
     if temperature is not None:
         temperature_label.config(text=f"Temperature: {temperature:0.1f} °C")
     else:
@@ -26,7 +26,7 @@ def control_relay_ui():
     """Controls the relay based on user input for maximum temperature."""
     try:
         max_temp = float(temp_threshold_entry.get())  # Get the max temperature from user input
-        humidity, temperature = read_temperature(Adafruit_DHT.DHT22, 17)  # Read temperature from the sensor
+        temperature = read_temperature(Adafruit_DHT.DHT22, 17)  # Read temperature from the sensor
         if temperature is not None:
             control_relay(temperature, max_temp)  # Control the relay based on temperature
             if temperature > max_temp:
@@ -48,7 +48,7 @@ def setup_ui():
     root = tk.Tk()
     root.title("Temperature Sensor Control")
 
-    # Labels for temperature and humidity
+    # Labels for temperature
     temperature_label = tk.Label(root, text="Temperature: -- °C", font=('Arial', 14))
     temperature_label.pack(pady=10)
 
