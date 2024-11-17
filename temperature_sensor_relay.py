@@ -9,8 +9,6 @@ import RPi.GPIO as GPIO
 #          Assumes the config file is in JSON format and contains a "max_temperature" key.
 def load_config():
     """Loads configuration settings from a config file."""
-    import json
-
     try:
         with open('config.json', 'r') as config_file:
             config = json.load(config_file)
@@ -25,8 +23,6 @@ def load_config():
 #          Disables GPIO warnings and uses BCM pin-numbering scheme.
 def setup_gpio():
     """Sets up the GPIO pin for controlling the relay."""
-    import RPi.GPIO as GPIO
-
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
     GPIO.setup(18, GPIO.OUT)  # Pin 18 is used for relay control
@@ -37,9 +33,6 @@ def setup_gpio():
 #          If temperature exceeds the threshold, the relay is turned off to stop the energy flow.
 def main():
     """Main function that controls the temperature monitoring and relay."""
-    import time
-    import Adafruit_DHT
-
     sensor = Adafruit_DHT.DHT22
     pin = 17
 
@@ -50,21 +43,28 @@ def main():
 
     try:
         while True:
-            temperature = Adafruit_DHT.read_retry(sensor, pin)
+            # Read temperature and humidity from the DHT sensor
+            humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
             
-            if temperature is not None:
-                print('Temp={0:0.1f}*C'.format(temperature, humidity))
+            if temperature is not None and humidity is not None:
+                # Print the temperature to the console
+                print(f'Temp={temperature:0.1f}*C  Humidity={humidity:0.1f}%')
 
+                # Compare the temperature to the threshold and control the relay
                 if temperature > max_temperature:
                     print(f"Temperature exceeds {max_temperature}°C. Turning off relay.")
                     GPIO.output(18, GPIO.LOW)  # Turn off relay
                 else:
                     GPIO.output(18, GPIO.HIGH)  # Ensure relay is on if below threshold
             else:
-                print('Failed to get reading. Try again!')
+                print('Failed to get reading from the sensor. Try again!')
 
+            # Wait before taking another reading
             time.sleep(2)
 
     except KeyboardInterrupt:
         print("\nProgram stopped by user")
-        GPIO.cleanup() 
+        GPIO.cleanup()  # Clean up GPIO to ensure it resets correctly
+
+if __name__ == '__main__':
+    main()
