@@ -41,9 +41,10 @@ while True:
         continue
 
     except Exception as error:
+        # Log any other exceptions and raise them
         logging.error(f"Exception: {error}")
         dhtDevice.exit()
-        raise error raise  
+        raise error  # This is the correct way to raise the error
 
     # Wait before the next reading
     time.sleep(2.0)
