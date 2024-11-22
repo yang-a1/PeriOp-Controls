@@ -37,7 +37,7 @@ while True:
         # Handle runtime errors and log them
         logging.warning(f"RuntimeError: {error.args[0]}")
         print(error.args[0])
-        time.sleep(180.0)
+        time.sleep(2.0)
         continue
 
     except Exception as error:
