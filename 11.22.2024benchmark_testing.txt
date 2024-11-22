@@ -1,0 +1,1296 @@
+2024-11-15 19:21:33,406 - INFO - Temperature: 72.5 F / 22.5 C
+2024-11-15 19:21:35,760 - INFO - Temperature: 71.1 F / 21.7 C
+2024-11-15 19:21:38,113 - INFO - Temperature: 71.1 F / 21.7 C
+2024-11-15 19:21:40,467 - INFO - Temperature: 71.1 F / 21.7 C
+2024-11-15 19:29:21,215 - INFO - Temperature: 71.1 F / 21.7 C
+2024-11-15 19:29:23,568 - INFO - Temperature: 70.9 F / 21.6 C
+2024-11-15 19:29:25,922 - INFO - Temperature: 70.9 F / 21.6 C
+2024-11-15 19:29:28,276 - INFO - Temperature: 70.9 F / 21.6 C
+2024-11-15 19:29:30,630 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:29:32,984 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:29:35,338 - INFO - Temperature: 70.9 F / 21.6 C
+2024-11-15 19:29:37,692 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:29:40,046 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:29:42,400 - INFO - Temperature: 71.1 F / 21.7 C
+2024-11-15 19:29:44,753 - INFO - Temperature: 70.9 F / 21.6 C
+2024-11-15 19:29:47,108 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:29:49,461 - INFO - Temperature: 70.9 F / 21.6 C
+2024-11-15 19:29:51,815 - INFO - Temperature: 70.9 F / 21.6 C
+2024-11-15 19:29:54,169 - INFO - Temperature: 71.1 F / 21.7 C
+2024-11-15 19:29:56,523 - INFO - Temperature: 71.1 F / 21.7 C
+2024-11-15 19:29:58,877 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:30:01,231 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:30:03,585 - INFO - Temperature: 70.9 F / 21.6 C
+2024-11-15 19:30:05,939 - INFO - Temperature: 71.1 F / 21.7 C
+2024-11-15 19:30:08,293 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:30:10,647 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:30:13,000 - INFO - Temperature: 71.1 F / 21.7 C
+2024-11-15 19:30:15,354 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:30:17,708 - INFO - Temperature: 71.1 F / 21.7 C
+2024-11-15 19:30:20,062 - INFO - Temperature: 71.1 F / 21.7 C
+2024-11-15 19:30:22,416 - WARNING - RuntimeError: A full buffer was not returned. Try again.
+2024-11-15 19:30:24,770 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:30:27,124 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:30:29,478 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:30:31,832 - INFO - Temperature: 71.1 F / 21.7 C
+2024-11-15 19:30:34,186 - INFO - Temperature: 71.1 F / 21.7 C
+2024-11-15 19:30:36,540 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:30:38,894 - INFO - Temperature: 71.1 F / 21.7 C
+2024-11-15 19:30:41,248 - INFO - Temperature: 71.1 F / 21.7 C
+2024-11-15 19:30:43,602 - INFO - Temperature: 71.1 F / 21.7 C
+2024-11-15 19:30:45,955 - INFO - Temperature: 71.1 F / 21.7 C
+2024-11-15 19:30:48,309 - INFO - Temperature: 71.1 F / 21.7 C
+2024-11-15 19:30:50,663 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:30:53,017 - INFO - Temperature: 71.1 F / 21.7 C
+2024-11-15 19:30:55,371 - INFO - Temperature: 71.2 F / 21.8 C
+2024-11-15 19:30:57,725 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:31:00,079 - INFO - Temperature: 71.2 F / 21.8 C
+2024-11-15 19:31:02,433 - INFO - Temperature: 71.4 F / 21.9 C
+2024-11-15 19:31:04,787 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:31:07,141 - INFO - Temperature: 71.4 F / 21.9 C
+2024-11-15 19:31:09,495 - INFO - Temperature: 71.4 F / 21.9 C
+2024-11-15 19:31:11,848 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:31:14,202 - INFO - Temperature: 71.4 F / 21.9 C
+2024-11-15 19:31:16,556 - INFO - Temperature: 71.4 F / 21.9 C
+2024-11-15 19:31:18,910 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:31:21,264 - INFO - Temperature: 71.4 F / 21.9 C
+2024-11-15 19:31:23,618 - INFO - Temperature: 71.4 F / 21.9 C
+2024-11-15 19:31:25,972 - WARNING - RuntimeError: A full buffer was not returned. Try again.
+2024-11-15 19:31:28,326 - INFO - Temperature: 71.6 F / 22.0 C
+2024-11-15 19:31:30,679 - INFO - Temperature: 71.6 F / 22.0 C
+2024-11-15 19:31:33,034 - INFO - Temperature: 71.6 F / 22.0 C
+2024-11-15 19:31:35,387 - INFO - Temperature: 71.6 F / 22.0 C
+2024-11-15 19:31:37,741 - INFO - Temperature: 71.6 F / 22.0 C
+2024-11-15 19:31:40,095 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:31:42,449 - INFO - Temperature: 71.6 F / 22.0 C
+2024-11-15 19:31:44,803 - INFO - Temperature: 71.6 F / 22.0 C
+2024-11-15 19:31:47,157 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:31:49,510 - INFO - Temperature: 71.6 F / 22.0 C
+2024-11-15 19:31:51,864 - INFO - Temperature: 71.6 F / 22.0 C
+2024-11-15 19:31:54,218 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:31:56,572 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:31:58,926 - INFO - Temperature: 71.6 F / 22.0 C
+2024-11-15 19:32:01,280 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:32:03,634 - INFO - Temperature: 71.6 F / 22.0 C
+2024-11-15 19:32:05,988 - INFO - Temperature: 71.6 F / 22.0 C
+2024-11-15 19:32:08,342 - INFO - Temperature: 71.6 F / 22.0 C
+2024-11-15 19:32:10,695 - INFO - Temperature: 71.6 F / 22.0 C
+2024-11-15 19:32:13,049 - INFO - Temperature: 71.8 F / 22.1 C
+2024-11-15 19:32:15,403 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:32:17,757 - INFO - Temperature: 71.8 F / 22.1 C
+2024-11-15 19:32:20,111 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:32:22,465 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:32:24,819 - INFO - Temperature: 71.8 F / 22.1 C
+2024-11-15 19:32:27,172 - INFO - Temperature: 71.8 F / 22.1 C
+2024-11-15 19:32:29,526 - INFO - Temperature: 71.8 F / 22.1 C
+2024-11-15 19:32:31,880 - INFO - Temperature: 71.8 F / 22.1 C
+2024-11-15 19:32:34,234 - INFO - Temperature: 71.8 F / 22.1 C
+2024-11-15 19:32:36,588 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:32:38,942 - INFO - Temperature: 71.8 F / 22.1 C
+2024-11-15 19:32:41,296 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:32:43,650 - INFO - Temperature: 72.0 F / 22.2 C
+2024-11-15 19:32:46,004 - INFO - Temperature: 71.8 F / 22.1 C
+2024-11-15 19:32:48,358 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:32:50,711 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:32:53,065 - INFO - Temperature: 72.0 F / 22.2 C
+2024-11-15 19:32:55,419 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:32:57,773 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:33:00,127 - INFO - Temperature: 72.0 F / 22.2 C
+2024-11-15 19:33:02,481 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:33:04,835 - INFO - Temperature: 72.1 F / 22.3 C
+2024-11-15 19:33:07,188 - INFO - Temperature: 72.1 F / 22.3 C
+2024-11-15 19:33:09,542 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:33:11,896 - INFO - Temperature: 72.1 F / 22.3 C
+2024-11-15 19:33:14,250 - INFO - Temperature: 72.1 F / 22.3 C
+2024-11-15 19:33:16,604 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:33:18,958 - INFO - Temperature: 72.3 F / 22.4 C
+2024-11-15 19:33:21,311 - INFO - Temperature: 72.1 F / 22.3 C
+2024-11-15 19:33:23,665 - INFO - Temperature: 72.1 F / 22.3 C
+2024-11-15 19:33:26,019 - INFO - Temperature: 72.1 F / 22.3 C
+2024-11-15 19:33:28,373 - INFO - Temperature: 72.3 F / 22.4 C
+2024-11-15 19:33:30,727 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:33:33,081 - INFO - Temperature: 72.3 F / 22.4 C
+2024-11-15 19:33:35,435 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:33:37,789 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:33:40,143 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:33:42,497 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:33:44,851 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:33:47,204 - INFO - Temperature: 72.3 F / 22.4 C
+2024-11-15 19:33:49,558 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:33:51,912 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:33:54,266 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:33:56,620 - INFO - Temperature: 72.5 F / 22.5 C
+2024-11-15 19:33:58,974 - WARNING - RuntimeError: Received unplausible data. Try again.
+2024-11-15 19:34:01,328 - INFO - Temperature: 72.5 F / 22.5 C
+2024-11-15 19:34:03,682 - INFO - Temperature: 72.5 F / 22.5 C
+2024-11-15 19:34:06,036 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:34:08,389 - INFO - Temperature: 72.7 F / 22.6 C
+2024-11-15 19:34:10,743 - INFO - Temperature: 72.7 F / 22.6 C
+2024-11-15 19:34:13,097 - INFO - Temperature: 72.7 F / 22.6 C
+2024-11-15 19:34:15,451 - INFO - Temperature: 72.7 F / 22.6 C
+2024-11-15 19:34:17,805 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:34:20,159 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:34:22,513 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:34:24,867 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:34:27,221 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:34:29,575 - INFO - Temperature: 72.9 F / 22.7 C
+2024-11-15 19:34:31,928 - INFO - Temperature: 72.9 F / 22.7 C
+2024-11-15 19:34:34,282 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:34:36,636 - INFO - Temperature: 72.9 F / 22.7 C
+2024-11-15 19:34:38,990 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:34:41,344 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:34:43,698 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:34:46,052 - INFO - Temperature: 73.0 F / 22.8 C
+2024-11-15 19:34:48,406 - WARNING - RuntimeError: Received unplausible data. Try again.
+2024-11-15 19:34:50,760 - INFO - Temperature: 73.0 F / 22.8 C
+2024-11-15 19:34:53,113 - INFO - Temperature: 73.0 F / 22.8 C
+2024-11-15 19:34:55,467 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:34:57,821 - INFO - Temperature: 73.2 F / 22.9 C
+2024-11-15 19:35:00,175 - INFO - Temperature: 73.2 F / 22.9 C
+2024-11-15 19:35:02,529 - INFO - Temperature: 73.2 F / 22.9 C
+2024-11-15 19:35:04,883 - INFO - Temperature: 73.2 F / 22.9 C
+2024-11-15 19:35:07,237 - INFO - Temperature: 73.2 F / 22.9 C
+2024-11-15 19:35:09,591 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:35:11,945 - INFO - Temperature: 73.4 F / 23.0 C
+2024-11-15 19:35:14,298 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:35:16,653 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:35:19,006 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:35:21,360 - INFO - Temperature: 73.4 F / 23.0 C
+2024-11-15 19:35:23,714 - WARNING - RuntimeError: A full buffer was not returned. Try again.
+2024-11-15 19:35:26,068 - INFO - Temperature: 73.6 F / 23.1 C
+2024-11-15 19:35:28,422 - INFO - Temperature: 73.6 F / 23.1 C
+2024-11-15 19:35:30,786 - INFO - Temperature: 73.6 F / 23.1 C
+2024-11-15 19:35:33,140 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:35:35,494 - INFO - Temperature: 73.6 F / 23.1 C
+2024-11-15 19:35:37,848 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:35:40,202 - INFO - Temperature: 73.6 F / 23.1 C
+2024-11-15 19:35:42,556 - INFO - Temperature: 73.8 F / 23.2 C
+2024-11-15 19:35:44,910 - INFO - Temperature: 73.8 F / 23.2 C
+2024-11-15 19:35:47,264 - INFO - Temperature: 73.8 F / 23.2 C
+2024-11-15 19:35:49,618 - INFO - Temperature: 73.8 F / 23.2 C
+2024-11-15 19:35:51,972 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:35:54,326 - INFO - Temperature: 73.9 F / 23.3 C
+2024-11-15 19:35:56,680 - INFO - Temperature: 73.9 F / 23.3 C
+2024-11-15 19:35:59,034 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:36:01,388 - INFO - Temperature: 73.9 F / 23.3 C
+2024-11-15 19:36:03,742 - INFO - Temperature: 73.9 F / 23.3 C
+2024-11-15 19:36:06,096 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:36:08,450 - INFO - Temperature: 74.1 F / 23.4 C
+2024-11-15 19:36:10,804 - INFO - Temperature: 74.1 F / 23.4 C
+2024-11-15 19:36:13,158 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:36:15,512 - INFO - Temperature: 74.1 F / 23.4 C
+2024-11-15 19:36:17,866 - INFO - Temperature: 74.1 F / 23.4 C
+2024-11-15 19:36:20,220 - INFO - Temperature: 74.1 F / 23.4 C
+2024-11-15 19:36:22,573 - INFO - Temperature: 74.1 F / 23.4 C
+2024-11-15 19:36:24,927 - INFO - Temperature: 74.3 F / 23.5 C
+2024-11-15 19:36:27,282 - INFO - Temperature: 74.3 F / 23.5 C
+2024-11-15 19:36:29,635 - INFO - Temperature: 74.3 F / 23.5 C
+2024-11-15 19:36:31,989 - INFO - Temperature: 74.3 F / 23.5 C
+2024-11-15 19:36:34,343 - INFO - Temperature: 74.3 F / 23.5 C
+2024-11-15 19:36:36,697 - INFO - Temperature: 74.3 F / 23.5 C
+2024-11-15 19:36:39,051 - INFO - Temperature: 74.5 F / 23.6 C
+2024-11-15 19:36:41,405 - INFO - Temperature: 74.5 F / 23.6 C
+2024-11-15 19:36:43,759 - INFO - Temperature: 74.5 F / 23.6 C
+2024-11-15 19:36:46,113 - INFO - Temperature: 74.5 F / 23.6 C
+2024-11-15 19:36:48,467 - INFO - Temperature: 74.5 F / 23.6 C
+2024-11-15 19:36:50,821 - INFO - Temperature: 74.5 F / 23.6 C
+2024-11-15 19:36:53,174 - INFO - Temperature: 74.5 F / 23.6 C
+2024-11-15 19:36:55,529 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:36:57,882 - INFO - Temperature: 74.7 F / 23.7 C
+2024-11-15 19:37:00,236 - INFO - Temperature: 74.7 F / 23.7 C
+2024-11-15 19:37:02,590 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:37:04,944 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:37:07,298 - INFO - Temperature: 74.7 F / 23.7 C
+2024-11-15 19:37:09,652 - INFO - Temperature: 74.7 F / 23.7 C
+2024-11-15 19:37:12,006 - INFO - Temperature: 74.8 F / 23.8 C
+2024-11-15 19:37:14,360 - INFO - Temperature: 74.8 F / 23.8 C
+2024-11-15 19:37:16,714 - INFO - Temperature: 74.8 F / 23.8 C
+2024-11-15 19:37:19,068 - INFO - Temperature: 74.8 F / 23.8 C
+2024-11-15 19:37:21,422 - INFO - Temperature: 74.8 F / 23.8 C
+2024-11-15 19:37:23,776 - INFO - Temperature: 74.8 F / 23.8 C
+2024-11-15 19:37:26,130 - INFO - Temperature: 75.0 F / 23.9 C
+2024-11-15 19:37:28,484 - INFO - Temperature: 75.0 F / 23.9 C
+2024-11-15 19:37:30,838 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:37:33,191 - INFO - Temperature: 75.0 F / 23.9 C
+2024-11-15 19:37:35,545 - INFO - Temperature: 75.0 F / 23.9 C
+2024-11-15 19:37:37,899 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:37:40,253 - INFO - Temperature: 75.2 F / 24.0 C
+2024-11-15 19:37:42,607 - INFO - Temperature: 75.2 F / 24.0 C
+2024-11-15 19:37:44,961 - INFO - Temperature: 75.2 F / 24.0 C
+2024-11-15 19:37:47,315 - INFO - Temperature: 75.2 F / 24.0 C
+2024-11-15 19:37:49,669 - INFO - Temperature: 75.4 F / 24.1 C
+2024-11-15 19:37:52,023 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:37:54,377 - INFO - Temperature: 75.4 F / 24.1 C
+2024-11-15 19:37:56,730 - INFO - Temperature: 75.4 F / 24.1 C
+2024-11-15 19:37:59,085 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:38:01,439 - INFO - Temperature: 75.4 F / 24.1 C
+2024-11-15 19:38:03,792 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:38:06,146 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:38:08,500 - INFO - Temperature: 75.6 F / 24.2 C
+2024-11-15 19:38:10,854 - INFO - Temperature: 75.6 F / 24.2 C
+2024-11-15 19:38:13,208 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:38:15,562 - INFO - Temperature: 75.6 F / 24.2 C
+2024-11-15 19:38:17,916 - INFO - Temperature: 75.6 F / 24.2 C
+2024-11-15 19:38:20,270 - INFO - Temperature: 75.7 F / 24.3 C
+2024-11-15 19:38:22,623 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:38:24,977 - INFO - Temperature: 75.7 F / 24.3 C
+2024-11-15 19:38:27,331 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:38:29,685 - INFO - Temperature: 75.7 F / 24.3 C
+2024-11-15 19:38:32,039 - INFO - Temperature: 75.7 F / 24.3 C
+2024-11-15 19:38:34,393 - INFO - Temperature: 75.7 F / 24.3 C
+2024-11-15 19:38:36,747 - INFO - Temperature: 75.9 F / 24.4 C
+2024-11-15 19:38:39,101 - INFO - Temperature: 75.9 F / 24.4 C
+2024-11-15 19:38:41,455 - INFO - Temperature: 75.9 F / 24.4 C
+2024-11-15 19:38:43,809 - INFO - Temperature: 75.9 F / 24.4 C
+2024-11-15 19:38:46,163 - INFO - Temperature: 75.9 F / 24.4 C
+2024-11-15 19:38:48,515 - INFO - Temperature: 75.9 F / 24.4 C
+2024-11-15 19:38:50,868 - WARNING - RuntimeError: DHT sensor not found, check wiring
+2024-11-15 19:38:53,222 - INFO - Temperature: 76.1 F / 24.5 C
+2024-11-15 19:38:55,576 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:38:57,930 - WARNING - RuntimeError: DHT sensor not found, check wiring
+2024-11-15 19:39:00,283 - WARNING - RuntimeError: DHT sensor not found, check wiring
+2024-11-15 19:39:02,638 - INFO - Temperature: 76.3 F / 24.6 C
+2024-11-15 19:39:04,991 - INFO - Temperature: 76.5 F / 24.7 C
+2024-11-15 19:39:07,345 - INFO - Temperature: 76.5 F / 24.7 C
+2024-11-15 19:39:09,699 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:39:12,053 - INFO - Temperature: 76.5 F / 24.7 C
+2024-11-15 19:39:14,407 - INFO - Temperature: 76.5 F / 24.7 C
+2024-11-15 19:39:16,761 - INFO - Temperature: 76.6 F / 24.8 C
+2024-11-15 19:39:19,115 - INFO - Temperature: 76.6 F / 24.8 C
+2024-11-15 19:39:21,468 - INFO - Temperature: 76.6 F / 24.8 C
+2024-11-15 19:39:23,822 - INFO - Temperature: 76.6 F / 24.8 C
+2024-11-15 19:39:26,176 - INFO - Temperature: 76.8 F / 24.9 C
+2024-11-15 19:39:28,530 - INFO - Temperature: 76.8 F / 24.9 C
+2024-11-15 19:39:30,884 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:39:33,238 - INFO - Temperature: 76.8 F / 24.9 C
+2024-11-15 19:39:35,592 - INFO - Temperature: 76.8 F / 24.9 C
+2024-11-15 19:39:37,946 - INFO - Temperature: 76.8 F / 24.9 C
+2024-11-15 19:39:40,300 - INFO - Temperature: 76.8 F / 24.9 C
+2024-11-15 19:39:42,654 - INFO - Temperature: 77.0 F / 25.0 C
+2024-11-15 19:39:45,008 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:39:47,362 - INFO - Temperature: 77.0 F / 25.0 C
+2024-11-15 19:39:49,715 - INFO - Temperature: 77.0 F / 25.0 C
+2024-11-15 19:39:52,069 - INFO - Temperature: 77.0 F / 25.0 C
+2024-11-15 19:39:54,423 - INFO - Temperature: 77.0 F / 25.0 C
+2024-11-15 19:39:56,777 - INFO - Temperature: 77.2 F / 25.1 C
+2024-11-15 19:39:59,131 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:40:01,485 - INFO - Temperature: 77.2 F / 25.1 C
+2024-11-15 19:40:03,839 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:40:06,193 - INFO - Temperature: 77.2 F / 25.1 C
+2024-11-15 19:40:08,547 - INFO - Temperature: 77.2 F / 25.1 C
+2024-11-15 19:40:10,900 - INFO - Temperature: 77.2 F / 25.1 C
+2024-11-15 19:40:13,254 - INFO - Temperature: 77.2 F / 25.1 C
+2024-11-15 19:40:15,608 - INFO - Temperature: 77.2 F / 25.1 C
+2024-11-15 19:40:17,962 - INFO - Temperature: 77.4 F / 25.2 C
+2024-11-15 19:40:20,316 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:40:22,670 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:40:25,024 - INFO - Temperature: 77.4 F / 25.2 C
+2024-11-15 19:40:27,378 - INFO - Temperature: 77.4 F / 25.2 C
+2024-11-15 19:40:29,732 - INFO - Temperature: 77.4 F / 25.2 C
+2024-11-15 19:40:32,085 - INFO - Temperature: 77.4 F / 25.2 C
+2024-11-15 19:40:34,440 - INFO - Temperature: 77.4 F / 25.2 C
+2024-11-15 19:40:36,793 - INFO - Temperature: 77.5 F / 25.3 C
+2024-11-15 19:40:39,147 - INFO - Temperature: 77.5 F / 25.3 C
+2024-11-15 19:40:41,501 - INFO - Temperature: 77.5 F / 25.3 C
+2024-11-15 19:40:43,855 - INFO - Temperature: 77.5 F / 25.3 C
+2024-11-15 19:40:46,209 - INFO - Temperature: 77.5 F / 25.3 C
+2024-11-15 19:40:48,563 - INFO - Temperature: 77.5 F / 25.3 C
+2024-11-15 19:40:50,917 - INFO - Temperature: 77.7 F / 25.4 C
+2024-11-15 19:40:53,271 - INFO - Temperature: 77.7 F / 25.4 C
+2024-11-15 19:40:55,625 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:40:57,978 - INFO - Temperature: 77.7 F / 25.4 C
+2024-11-15 19:41:00,332 - INFO - Temperature: 77.7 F / 25.4 C
+2024-11-15 19:41:02,686 - INFO - Temperature: 77.7 F / 25.4 C
+2024-11-15 19:41:05,040 - INFO - Temperature: 77.7 F / 25.4 C
+2024-11-15 19:41:07,394 - INFO - Temperature: 77.7 F / 25.4 C
+2024-11-15 19:41:09,748 - INFO - Temperature: 77.7 F / 25.4 C
+2024-11-15 19:41:12,102 - INFO - Temperature: 77.9 F / 25.5 C
+2024-11-15 19:41:14,456 - INFO - Temperature: 77.9 F / 25.5 C
+2024-11-15 19:41:16,810 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:41:19,163 - INFO - Temperature: 77.9 F / 25.5 C
+2024-11-15 19:41:21,517 - INFO - Temperature: 77.9 F / 25.5 C
+2024-11-15 19:41:23,871 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:41:26,225 - INFO - Temperature: 77.9 F / 25.5 C
+2024-11-15 19:41:28,579 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:41:30,933 - INFO - Temperature: 77.9 F / 25.5 C
+2024-11-15 19:41:33,287 - INFO - Temperature: 78.1 F / 25.6 C
+2024-11-15 19:41:35,641 - INFO - Temperature: 78.1 F / 25.6 C
+2024-11-15 19:41:37,995 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:41:40,349 - INFO - Temperature: 78.1 F / 25.6 C
+2024-11-15 19:41:42,703 - INFO - Temperature: 78.1 F / 25.6 C
+2024-11-15 19:41:45,057 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:41:47,410 - INFO - Temperature: 78.3 F / 25.7 C
+2024-11-15 19:41:49,764 - INFO - Temperature: 78.3 F / 25.7 C
+2024-11-15 19:41:52,118 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:41:54,472 - INFO - Temperature: 78.3 F / 25.7 C
+2024-11-15 19:41:56,826 - INFO - Temperature: 78.3 F / 25.7 C
+2024-11-15 19:41:59,180 - INFO - Temperature: 78.3 F / 25.7 C
+2024-11-15 19:42:01,534 - INFO - Temperature: 78.3 F / 25.7 C
+2024-11-15 19:42:03,888 - INFO - Temperature: 78.4 F / 25.8 C
+2024-11-15 19:42:06,242 - INFO - Temperature: 78.4 F / 25.8 C
+2024-11-15 19:42:08,595 - INFO - Temperature: 78.4 F / 25.8 C
+2024-11-15 19:42:10,949 - INFO - Temperature: 78.4 F / 25.8 C
+2024-11-15 19:42:13,303 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:42:15,657 - INFO - Temperature: 78.4 F / 25.8 C
+2024-11-15 19:42:18,011 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:42:20,365 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:42:22,719 - INFO - Temperature: 78.6 F / 25.9 C
+2024-11-15 19:42:25,073 - INFO - Temperature: 78.6 F / 25.9 C
+2024-11-15 19:42:27,427 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:42:29,781 - INFO - Temperature: 78.6 F / 25.9 C
+2024-11-15 19:42:32,135 - INFO - Temperature: 78.6 F / 25.9 C
+2024-11-15 19:42:34,489 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:42:36,843 - INFO - Temperature: 78.8 F / 26.0 C
+2024-11-15 19:42:39,197 - INFO - Temperature: 78.8 F / 26.0 C
+2024-11-15 19:42:41,551 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:42:43,905 - INFO - Temperature: 78.8 F / 26.0 C
+2024-11-15 19:42:46,258 - INFO - Temperature: 78.8 F / 26.0 C
+2024-11-15 19:42:48,612 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:42:50,966 - INFO - Temperature: 78.8 F / 26.0 C
+2024-11-15 19:42:53,320 - INFO - Temperature: 78.8 F / 26.0 C
+2024-11-15 19:42:55,674 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:42:58,028 - INFO - Temperature: 79.0 F / 26.1 C
+2024-11-15 19:43:00,382 - INFO - Temperature: 79.0 F / 26.1 C
+2024-11-15 19:43:02,736 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:43:05,090 - INFO - Temperature: 79.0 F / 26.1 C
+2024-11-15 19:43:07,444 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:43:09,798 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:43:12,152 - INFO - Temperature: 79.0 F / 26.1 C
+2024-11-15 19:43:14,505 - INFO - Temperature: 79.2 F / 26.2 C
+2024-11-15 19:43:16,859 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:43:19,213 - INFO - Temperature: 79.2 F / 26.2 C
+2024-11-15 19:43:21,567 - INFO - Temperature: 79.2 F / 26.2 C
+2024-11-15 19:43:23,921 - INFO - Temperature: 79.2 F / 26.2 C
+2024-11-15 19:43:26,275 - INFO - Temperature: 79.2 F / 26.2 C
+2024-11-15 19:43:28,629 - INFO - Temperature: 79.2 F / 26.2 C
+2024-11-15 19:43:30,983 - INFO - Temperature: 79.2 F / 26.2 C
+2024-11-15 19:43:33,337 - INFO - Temperature: 79.3 F / 26.3 C
+2024-11-15 19:43:35,691 - INFO - Temperature: 79.3 F / 26.3 C
+2024-11-15 19:43:38,045 - INFO - Temperature: 79.3 F / 26.3 C
+2024-11-15 19:43:40,399 - INFO - Temperature: 79.3 F / 26.3 C
+2024-11-15 19:43:42,753 - INFO - Temperature: 79.3 F / 26.3 C
+2024-11-15 19:43:45,107 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:43:47,461 - INFO - Temperature: 79.3 F / 26.3 C
+2024-11-15 19:43:49,815 - INFO - Temperature: 79.3 F / 26.3 C
+2024-11-15 19:43:52,169 - INFO - Temperature: 79.3 F / 26.3 C
+2024-11-15 19:43:54,522 - INFO - Temperature: 79.5 F / 26.4 C
+2024-11-15 19:43:56,876 - INFO - Temperature: 79.5 F / 26.4 C
+2024-11-15 19:43:59,230 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:44:01,584 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:44:03,938 - INFO - Temperature: 79.5 F / 26.4 C
+2024-11-15 19:44:06,292 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:44:08,646 - INFO - Temperature: 79.5 F / 26.4 C
+2024-11-15 19:44:11,000 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:44:13,354 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:44:15,708 - INFO - Temperature: 79.7 F / 26.5 C
+2024-11-15 19:44:18,062 - INFO - Temperature: 79.7 F / 26.5 C
+2024-11-15 19:44:20,416 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:44:22,769 - INFO - Temperature: 79.7 F / 26.5 C
+2024-11-15 19:44:25,123 - INFO - Temperature: 79.7 F / 26.5 C
+2024-11-15 19:44:27,477 - INFO - Temperature: 79.7 F / 26.5 C
+2024-11-15 19:44:29,831 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:44:32,185 - INFO - Temperature: 79.7 F / 26.5 C
+2024-11-15 19:44:34,539 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:44:36,893 - INFO - Temperature: 79.7 F / 26.5 C
+2024-11-15 19:44:39,247 - INFO - Temperature: 79.9 F / 26.6 C
+2024-11-15 19:44:41,601 - INFO - Temperature: 79.9 F / 26.6 C
+2024-11-15 19:44:43,955 - INFO - Temperature: 79.9 F / 26.6 C
+2024-11-15 19:44:46,309 - INFO - Temperature: 79.9 F / 26.6 C
+2024-11-15 19:44:48,663 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:44:51,017 - INFO - Temperature: 79.9 F / 26.6 C
+2024-11-15 19:44:53,371 - INFO - Temperature: 79.9 F / 26.6 C
+2024-11-15 19:44:55,725 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:44:58,078 - INFO - Temperature: 79.9 F / 26.6 C
+2024-11-15 19:45:00,432 - INFO - Temperature: 79.9 F / 26.6 C
+2024-11-15 19:45:02,786 - INFO - Temperature: 79.9 F / 26.6 C
+2024-11-15 19:45:05,140 - INFO - Temperature: 79.9 F / 26.6 C
+2024-11-15 19:45:07,494 - INFO - Temperature: 79.9 F / 26.6 C
+2024-11-15 19:45:09,848 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:45:12,202 - INFO - Temperature: 80.1 F / 26.7 C
+2024-11-15 19:45:14,555 - INFO - Temperature: 80.1 F / 26.7 C
+2024-11-15 19:45:16,909 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:45:19,263 - INFO - Temperature: 80.1 F / 26.7 C
+2024-11-15 19:45:21,616 - INFO - Temperature: 80.1 F / 26.7 C
+2024-11-15 19:45:23,970 - INFO - Temperature: 80.1 F / 26.7 C
+2024-11-15 19:45:26,324 - INFO - Temperature: 80.1 F / 26.7 C
+2024-11-15 19:45:28,678 - INFO - Temperature: 80.1 F / 26.7 C
+2024-11-15 19:45:31,032 - INFO - Temperature: 80.1 F / 26.7 C
+2024-11-15 19:45:33,386 - INFO - Temperature: 80.1 F / 26.7 C
+2024-11-15 19:45:35,740 - INFO - Temperature: 80.1 F / 26.7 C
+2024-11-15 19:45:38,094 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:45:40,448 - INFO - Temperature: 80.1 F / 26.7 C
+2024-11-15 19:45:42,802 - INFO - Temperature: 80.1 F / 26.7 C
+2024-11-15 19:45:45,156 - INFO - Temperature: 80.2 F / 26.8 C
+2024-11-15 19:45:47,510 - INFO - Temperature: 80.2 F / 26.8 C
+2024-11-15 19:45:49,864 - INFO - Temperature: 80.2 F / 26.8 C
+2024-11-15 19:45:52,218 - INFO - Temperature: 80.2 F / 26.8 C
+2024-11-15 19:45:54,572 - INFO - Temperature: 80.2 F / 26.8 C
+2024-11-15 19:45:56,926 - INFO - Temperature: 80.2 F / 26.8 C
+2024-11-15 19:45:59,280 - INFO - Temperature: 80.2 F / 26.8 C
+2024-11-15 19:46:01,634 - INFO - Temperature: 80.2 F / 26.8 C
+2024-11-15 19:46:03,988 - INFO - Temperature: 80.2 F / 26.8 C
+2024-11-15 19:46:06,342 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:46:08,696 - INFO - Temperature: 80.2 F / 26.8 C
+2024-11-15 19:46:11,049 - INFO - Temperature: 80.2 F / 26.8 C
+2024-11-15 19:46:13,403 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:46:15,757 - INFO - Temperature: 80.4 F / 26.9 C
+2024-11-15 19:46:18,111 - INFO - Temperature: 80.4 F / 26.9 C
+2024-11-15 19:46:20,465 - INFO - Temperature: 80.4 F / 26.9 C
+2024-11-15 19:46:22,819 - INFO - Temperature: 80.4 F / 26.9 C
+2024-11-15 19:46:25,173 - INFO - Temperature: 80.4 F / 26.9 C
+2024-11-15 19:46:27,527 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:46:29,881 - INFO - Temperature: 80.4 F / 26.9 C
+2024-11-15 19:46:32,235 - INFO - Temperature: 80.4 F / 26.9 C
+2024-11-15 19:46:34,589 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:46:36,943 - INFO - Temperature: 80.4 F / 26.9 C
+2024-11-15 19:46:39,296 - WARNING - RuntimeError: A full buffer was not returned. Try again.
+2024-11-15 19:46:41,651 - INFO - Temperature: 80.6 F / 27.0 C
+2024-11-15 19:46:44,004 - INFO - Temperature: 80.6 F / 27.0 C
+2024-11-15 19:46:46,358 - INFO - Temperature: 80.6 F / 27.0 C
+2024-11-15 19:46:48,712 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:46:51,066 - INFO - Temperature: 80.6 F / 27.0 C
+2024-11-15 19:46:53,420 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:46:55,774 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:46:58,128 - INFO - Temperature: 80.6 F / 27.0 C
+2024-11-15 19:47:00,482 - INFO - Temperature: 80.6 F / 27.0 C
+2024-11-15 19:47:02,836 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:47:05,190 - INFO - Temperature: 80.6 F / 27.0 C
+2024-11-15 19:47:07,544 - INFO - Temperature: 80.6 F / 27.0 C
+2024-11-15 19:47:09,898 - INFO - Temperature: 80.6 F / 27.0 C
+2024-11-15 19:47:12,251 - INFO - Temperature: 80.8 F / 27.1 C
+2024-11-15 19:47:14,604 - INFO - Temperature: 80.8 F / 27.1 C
+2024-11-15 19:47:16,958 - INFO - Temperature: 80.8 F / 27.1 C
+2024-11-15 19:47:19,312 - INFO - Temperature: 80.8 F / 27.1 C
+2024-11-15 19:47:21,666 - INFO - Temperature: 80.8 F / 27.1 C
+2024-11-15 19:47:24,020 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:47:26,374 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:47:28,728 - INFO - Temperature: 80.8 F / 27.1 C
+2024-11-15 19:47:31,082 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:47:33,436 - INFO - Temperature: 80.8 F / 27.1 C
+2024-11-15 19:47:35,790 - INFO - Temperature: 80.8 F / 27.1 C
+2024-11-15 19:47:38,144 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:47:40,498 - INFO - Temperature: 81.0 F / 27.2 C
+2024-11-15 19:47:42,852 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:47:45,206 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:47:47,560 - INFO - Temperature: 81.0 F / 27.2 C
+2024-11-15 19:47:49,913 - INFO - Temperature: 81.0 F / 27.2 C
+2024-11-15 19:47:52,267 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:47:54,621 - INFO - Temperature: 81.0 F / 27.2 C
+2024-11-15 19:47:56,975 - INFO - Temperature: 81.0 F / 27.2 C
+2024-11-15 19:47:59,329 - INFO - Temperature: 81.0 F / 27.2 C
+2024-11-15 19:48:01,683 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:48:04,037 - INFO - Temperature: 81.0 F / 27.2 C
+2024-11-15 19:48:06,391 - INFO - Temperature: 81.0 F / 27.2 C
+2024-11-15 19:48:08,745 - INFO - Temperature: 81.0 F / 27.2 C
+2024-11-15 19:48:11,099 - INFO - Temperature: 81.1 F / 27.3 C
+2024-11-15 19:48:13,453 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:48:15,807 - INFO - Temperature: 81.1 F / 27.3 C
+2024-11-15 19:48:18,161 - INFO - Temperature: 81.1 F / 27.3 C
+2024-11-15 19:48:20,515 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:48:22,869 - INFO - Temperature: 81.1 F / 27.3 C
+2024-11-15 19:48:25,222 - INFO - Temperature: 81.1 F / 27.3 C
+2024-11-15 19:48:27,577 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:48:29,930 - INFO - Temperature: 81.1 F / 27.3 C
+2024-11-15 19:48:32,284 - INFO - Temperature: 81.3 F / 27.4 C
+2024-11-15 19:48:34,639 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:48:36,992 - INFO - Temperature: 81.3 F / 27.4 C
+2024-11-15 19:48:39,346 - INFO - Temperature: 81.3 F / 27.4 C
+2024-11-15 19:48:41,700 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:48:44,054 - INFO - Temperature: 81.3 F / 27.4 C
+2024-11-15 19:48:46,408 - INFO - Temperature: 81.3 F / 27.4 C
+2024-11-15 19:48:48,762 - INFO - Temperature: 81.3 F / 27.4 C
+2024-11-15 19:48:51,116 - INFO - Temperature: 81.3 F / 27.4 C
+2024-11-15 19:48:53,470 - INFO - Temperature: 81.3 F / 27.4 C
+2024-11-15 19:48:55,824 - INFO - Temperature: 81.3 F / 27.4 C
+2024-11-15 19:48:58,178 - INFO - Temperature: 81.3 F / 27.4 C
+2024-11-15 19:49:00,532 - INFO - Temperature: 81.3 F / 27.4 C
+2024-11-15 19:49:02,886 - INFO - Temperature: 81.3 F / 27.4 C
+2024-11-15 19:49:05,240 - INFO - Temperature: 81.3 F / 27.4 C
+2024-11-15 19:49:07,594 - INFO - Temperature: 81.5 F / 27.5 C
+2024-11-15 19:49:09,950 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:49:12,304 - INFO - Temperature: 81.5 F / 27.5 C
+2024-11-15 19:49:14,658 - INFO - Temperature: 81.5 F / 27.5 C
+2024-11-15 19:49:17,012 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:49:19,366 - INFO - Temperature: 81.5 F / 27.5 C
+2024-11-15 19:49:21,720 - INFO - Temperature: 81.5 F / 27.5 C
+2024-11-15 19:49:24,074 - INFO - Temperature: 81.5 F / 27.5 C
+2024-11-15 19:49:26,427 - INFO - Temperature: 81.5 F / 27.5 C
+2024-11-15 19:49:28,781 - INFO - Temperature: 81.5 F / 27.5 C
+2024-11-15 19:49:31,136 - INFO - Temperature: 81.5 F / 27.5 C
+2024-11-15 19:49:33,489 - INFO - Temperature: 81.5 F / 27.5 C
+2024-11-15 19:49:35,843 - INFO - Temperature: 81.5 F / 27.5 C
+2024-11-15 19:49:38,197 - INFO - Temperature: 81.5 F / 27.5 C
+2024-11-15 19:49:40,551 - INFO - Temperature: 81.5 F / 27.5 C
+2024-11-15 19:49:42,905 - INFO - Temperature: 81.5 F / 27.5 C
+2024-11-15 19:49:45,259 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:49:47,613 - INFO - Temperature: 81.5 F / 27.5 C
+2024-11-15 19:49:49,967 - INFO - Temperature: 81.7 F / 27.6 C
+2024-11-15 19:49:52,321 - INFO - Temperature: 81.7 F / 27.6 C
+2024-11-15 19:49:54,675 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:49:57,029 - INFO - Temperature: 81.7 F / 27.6 C
+2024-11-15 19:49:59,383 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:50:01,737 - INFO - Temperature: 81.7 F / 27.6 C
+2024-11-15 19:50:04,090 - INFO - Temperature: 81.7 F / 27.6 C
+2024-11-15 19:50:06,444 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:50:08,798 - INFO - Temperature: 81.7 F / 27.6 C
+2024-11-15 19:50:11,152 - INFO - Temperature: 81.7 F / 27.6 C
+2024-11-15 19:50:13,506 - INFO - Temperature: 81.7 F / 27.6 C
+2024-11-15 19:50:15,860 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:50:18,214 - INFO - Temperature: 81.7 F / 27.6 C
+2024-11-15 19:50:20,568 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:50:22,922 - INFO - Temperature: 81.9 F / 27.7 C
+2024-11-15 19:50:25,275 - INFO - Temperature: 81.7 F / 27.6 C
+2024-11-15 19:50:27,630 - INFO - Temperature: 81.9 F / 27.7 C
+2024-11-15 19:50:29,983 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:50:32,337 - INFO - Temperature: 81.9 F / 27.7 C
+2024-11-15 19:50:34,691 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:50:37,045 - INFO - Temperature: 81.9 F / 27.7 C
+2024-11-15 19:50:39,399 - INFO - Temperature: 81.9 F / 27.7 C
+2024-11-15 19:50:41,753 - INFO - Temperature: 81.9 F / 27.7 C
+2024-11-15 19:50:44,107 - INFO - Temperature: 81.9 F / 27.7 C
+2024-11-15 19:50:46,461 - INFO - Temperature: 81.9 F / 27.7 C
+2024-11-15 19:50:48,815 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:50:51,169 - INFO - Temperature: 81.9 F / 27.7 C
+2024-11-15 19:50:53,523 - INFO - Temperature: 81.9 F / 27.7 C
+2024-11-15 19:50:55,877 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:50:58,230 - INFO - Temperature: 82.0 F / 27.8 C
+2024-11-15 19:51:00,584 - INFO - Temperature: 82.0 F / 27.8 C
+2024-11-15 19:51:02,938 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:51:05,292 - INFO - Temperature: 81.9 F / 27.7 C
+2024-11-15 19:51:07,646 - INFO - Temperature: 82.0 F / 27.8 C
+2024-11-15 19:51:10,000 - INFO - Temperature: 82.0 F / 27.8 C
+2024-11-15 19:51:12,354 - INFO - Temperature: 82.0 F / 27.8 C
+2024-11-15 19:51:14,708 - INFO - Temperature: 82.0 F / 27.8 C
+2024-11-15 19:51:17,062 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:51:19,416 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:51:21,769 - INFO - Temperature: 82.0 F / 27.8 C
+2024-11-15 19:51:24,124 - INFO - Temperature: 82.0 F / 27.8 C
+2024-11-15 19:51:26,477 - INFO - Temperature: 82.0 F / 27.8 C
+2024-11-15 19:51:28,831 - INFO - Temperature: 82.0 F / 27.8 C
+2024-11-15 19:51:31,186 - INFO - Temperature: 82.0 F / 27.8 C
+2024-11-15 19:51:33,539 - INFO - Temperature: 82.0 F / 27.8 C
+2024-11-15 19:51:35,893 - INFO - Temperature: 82.2 F / 27.9 C
+2024-11-15 19:51:38,247 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:51:40,601 - INFO - Temperature: 82.0 F / 27.8 C
+2024-11-15 19:51:42,955 - INFO - Temperature: 82.2 F / 27.9 C
+2024-11-15 19:51:45,309 - INFO - Temperature: 82.2 F / 27.9 C
+2024-11-15 19:51:47,663 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:51:50,017 - INFO - Temperature: 82.2 F / 27.9 C
+2024-11-15 19:51:52,371 - INFO - Temperature: 82.2 F / 27.9 C
+2024-11-15 19:51:54,725 - INFO - Temperature: 82.2 F / 27.9 C
+2024-11-15 19:51:57,078 - INFO - Temperature: 82.2 F / 27.9 C
+2024-11-15 19:51:59,432 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:52:01,786 - INFO - Temperature: 82.2 F / 27.9 C
+2024-11-15 19:52:04,140 - INFO - Temperature: 82.2 F / 27.9 C
+2024-11-15 19:52:06,494 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:52:08,848 - INFO - Temperature: 82.2 F / 27.9 C
+2024-11-15 19:52:11,202 - INFO - Temperature: 82.2 F / 27.9 C
+2024-11-15 19:52:13,556 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:52:15,910 - INFO - Temperature: 82.2 F / 27.9 C
+2024-11-15 19:52:18,264 - INFO - Temperature: 82.2 F / 27.9 C
+2024-11-15 19:52:20,618 - INFO - Temperature: 82.4 F / 28.0 C
+2024-11-15 19:52:22,972 - INFO - Temperature: 82.4 F / 28.0 C
+2024-11-15 19:52:25,326 - INFO - Temperature: 82.4 F / 28.0 C
+2024-11-15 19:52:27,680 - INFO - Temperature: 82.4 F / 28.0 C
+2024-11-15 19:52:30,034 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:52:32,388 - INFO - Temperature: 82.4 F / 28.0 C
+2024-11-15 19:52:34,742 - WARNING - RuntimeError: A full buffer was not returned. Try again.
+2024-11-15 19:52:37,096 - INFO - Temperature: 82.4 F / 28.0 C
+2024-11-15 19:52:39,449 - INFO - Temperature: 82.4 F / 28.0 C
+2024-11-15 19:52:41,804 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 19:52:44,157 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 19:52:46,511 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:52:48,865 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 19:52:51,219 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:52:53,573 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:52:55,927 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 19:52:58,281 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 19:53:00,634 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 19:53:02,989 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:53:05,342 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 19:53:07,696 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 19:53:10,050 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:53:12,404 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 19:53:14,758 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 19:53:17,112 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 19:53:19,466 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 19:53:21,820 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 19:53:24,174 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 19:53:26,527 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 19:53:28,881 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 19:53:31,236 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:53:33,589 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:53:35,943 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:53:38,297 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 19:53:40,651 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:53:43,005 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 19:53:45,359 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:53:47,713 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:53:50,067 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 19:53:52,421 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:53:54,775 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 19:53:57,128 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:53:59,482 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:54:01,836 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:54:04,190 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:54:06,544 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:54:08,898 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:54:11,252 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:54:13,606 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:54:15,960 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:54:18,314 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:54:20,668 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:54:23,022 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:54:25,376 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:54:27,730 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:54:30,084 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:54:32,437 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:54:34,791 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:54:37,145 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:54:39,499 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:54:41,853 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:54:44,207 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:54:46,561 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:54:48,915 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:54:51,269 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:54:53,623 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:54:55,977 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:54:58,330 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:55:00,684 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:55:03,038 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:55:05,392 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:55:07,746 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:55:10,100 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:55:12,454 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:55:14,808 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:55:17,162 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:55:19,516 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:55:21,870 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:55:24,224 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:55:26,578 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:55:28,932 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:55:31,286 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:55:33,640 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:55:35,993 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:55:38,347 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:55:40,701 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:55:43,055 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:55:45,409 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:55:47,763 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:55:50,117 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:55:52,471 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:55:54,825 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:55:57,179 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:55:59,532 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:56:01,886 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:56:04,240 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:56:06,594 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:56:08,948 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:56:11,302 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:56:13,656 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:56:16,010 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:56:18,363 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:56:20,717 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:56:23,071 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:56:25,425 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:56:27,779 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:56:30,133 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:56:32,487 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:56:34,841 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:56:37,195 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:56:39,547 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:56:41,901 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:56:44,254 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:56:46,608 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:56:48,962 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:56:51,316 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:56:53,670 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:56:56,024 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:56:58,377 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:57:00,731 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:57:03,085 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:57:05,439 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:57:07,793 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:57:10,147 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:57:12,501 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:57:14,855 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:57:17,209 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:57:19,562 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:57:21,916 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:57:24,270 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:57:26,624 - WARNING - RuntimeError: A full buffer was not returned. Try again.
+2024-11-15 19:57:28,978 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:57:31,332 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:57:33,686 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:57:36,040 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:57:38,394 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:57:40,748 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:57:43,101 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:57:45,455 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:57:47,809 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:57:50,163 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:57:52,517 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:57:54,871 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:57:57,224 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:57:59,578 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:58:01,932 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:58:04,286 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:58:06,640 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:58:08,994 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:58:11,348 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 19:58:13,702 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:58:16,056 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:58:18,409 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:58:20,763 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:58:23,117 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:58:25,471 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:58:27,825 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:58:30,179 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:58:32,533 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:58:34,887 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:58:37,241 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:58:39,595 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:58:41,949 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:58:44,302 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:58:46,656 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:58:49,010 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:58:51,364 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:58:53,718 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:58:56,072 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:58:58,425 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:59:00,779 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:59:03,133 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:59:05,487 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:59:07,841 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:59:10,195 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:59:12,549 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:59:14,903 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:59:17,256 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:59:19,610 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:59:21,964 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:59:24,318 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:59:26,672 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:59:29,026 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:59:31,380 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:59:33,734 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:59:36,088 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:59:38,442 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:59:40,795 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:59:43,148 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:59:45,502 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:59:47,856 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:59:50,210 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:59:52,564 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 19:59:54,918 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:59:57,272 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 19:59:59,626 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:00:01,980 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:00:04,333 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:00:06,687 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:00:09,041 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:00:11,395 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:00:13,749 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:00:16,103 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:00:18,457 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:00:20,811 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:00:23,165 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:00:25,518 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:00:27,873 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:00:30,227 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:00:32,581 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:00:34,935 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:00:37,289 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:00:39,642 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:00:41,996 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:00:44,350 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:00:46,704 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:00:49,058 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:00:51,412 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:00:53,766 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:00:56,120 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:00:58,474 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:01:00,827 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:01:03,181 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:01:05,535 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:01:07,889 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:01:10,243 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:01:12,597 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:01:14,951 - INFO - Temperature: 83.1 F / 28.4 C
+2024-11-15 20:01:17,305 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:01:19,659 - INFO - Temperature: 83.1 F / 28.4 C
+2024-11-15 20:01:22,012 - INFO - Temperature: 83.1 F / 28.4 C
+2024-11-15 20:01:24,366 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:01:26,720 - INFO - Temperature: 83.1 F / 28.4 C
+2024-11-15 20:01:29,074 - INFO - Temperature: 83.1 F / 28.4 C
+2024-11-15 20:01:31,428 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:01:33,782 - INFO - Temperature: 83.1 F / 28.4 C
+2024-11-15 20:01:36,136 - INFO - Temperature: 83.1 F / 28.4 C
+2024-11-15 20:01:38,490 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:01:40,844 - INFO - Temperature: 83.1 F / 28.4 C
+2024-11-15 20:01:43,198 - INFO - Temperature: 83.1 F / 28.4 C
+2024-11-15 20:01:45,551 - INFO - Temperature: 83.1 F / 28.4 C
+2024-11-15 20:01:47,905 - INFO - Temperature: 83.1 F / 28.4 C
+2024-11-15 20:01:50,259 - INFO - Temperature: 83.1 F / 28.4 C
+2024-11-15 20:01:52,613 - INFO - Temperature: 83.3 F / 28.5 C
+2024-11-15 20:01:54,967 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:01:57,321 - INFO - Temperature: 83.1 F / 28.4 C
+2024-11-15 20:01:59,675 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:02:02,028 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:02:04,382 - INFO - Temperature: 83.3 F / 28.5 C
+2024-11-15 20:02:06,736 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:02:09,090 - INFO - Temperature: 83.3 F / 28.5 C
+2024-11-15 20:02:11,444 - INFO - Temperature: 83.1 F / 28.4 C
+2024-11-15 20:02:13,798 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:02:16,152 - INFO - Temperature: 83.1 F / 28.4 C
+2024-11-15 20:02:18,506 - INFO - Temperature: 83.1 F / 28.4 C
+2024-11-15 20:02:20,859 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:02:23,213 - INFO - Temperature: 83.1 F / 28.4 C
+2024-11-15 20:02:25,567 - INFO - Temperature: 83.1 F / 28.4 C
+2024-11-15 20:02:27,921 - INFO - Temperature: 83.1 F / 28.4 C
+2024-11-15 20:02:30,275 - INFO - Temperature: 83.1 F / 28.4 C
+2024-11-15 20:02:32,629 - INFO - Temperature: 83.1 F / 28.4 C
+2024-11-15 20:02:34,983 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:02:37,337 - INFO - Temperature: 83.1 F / 28.4 C
+2024-11-15 20:02:39,691 - INFO - Temperature: 83.1 F / 28.4 C
+2024-11-15 20:02:42,043 - INFO - Temperature: 83.1 F / 28.4 C
+2024-11-15 20:02:44,397 - INFO - Temperature: 83.1 F / 28.4 C
+2024-11-15 20:02:46,750 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:02:49,104 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:02:51,458 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:02:53,812 - INFO - Temperature: 83.1 F / 28.4 C
+2024-11-15 20:02:56,166 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:02:58,520 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:03:00,874 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:03:03,228 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:03:05,581 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:03:07,935 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:03:10,289 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:03:12,643 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:03:14,997 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:03:17,351 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:03:19,705 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:03:22,058 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:03:24,413 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:03:26,766 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:03:29,120 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:03:31,474 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:03:33,828 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:03:36,182 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:03:38,536 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:03:40,890 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:03:43,244 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:03:45,598 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:03:47,952 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:03:50,305 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:03:52,659 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:03:55,013 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:03:57,367 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:03:59,721 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:04:02,075 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:04:04,429 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:04:06,783 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:04:09,136 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:04:11,490 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:04:13,844 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:04:16,198 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:04:18,552 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:04:20,906 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:04:23,260 - INFO - Temperature: 82.9 F / 28.3 C
+2024-11-15 20:04:25,614 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:04:27,968 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:04:30,322 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:04:32,675 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:04:35,030 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:04:37,383 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:04:39,737 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:04:42,091 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:04:44,445 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:04:46,799 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:04:49,153 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:04:51,507 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:04:53,860 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:04:56,214 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:04:58,568 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:05:00,922 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:05:03,276 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:05:05,630 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:05:07,984 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:05:10,338 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:05:12,691 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:05:15,045 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:05:17,399 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:05:19,753 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:05:22,107 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:05:24,461 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:05:26,815 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:05:29,169 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 20:05:31,523 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:05:33,877 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 20:05:36,230 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:05:38,584 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:05:40,938 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:05:43,291 - INFO - Temperature: 82.8 F / 28.2 C
+2024-11-15 20:05:45,645 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:05:47,999 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 20:05:50,352 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 20:05:52,706 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 20:05:55,060 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 20:05:57,414 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 20:05:59,768 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:06:02,122 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 20:06:04,476 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 20:06:06,830 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 20:06:09,183 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 20:06:11,537 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 20:06:13,891 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:06:16,245 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 20:06:18,599 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 20:06:20,953 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 20:06:23,307 - INFO - Temperature: 82.4 F / 28.0 C
+2024-11-15 20:06:25,661 - INFO - Temperature: 82.6 F / 28.1 C
+2024-11-15 20:06:28,015 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:06:30,369 - INFO - Temperature: 82.4 F / 28.0 C
+2024-11-15 20:06:32,723 - INFO - Temperature: 82.4 F / 28.0 C
+2024-11-15 20:06:35,081 - INFO - Temperature: 82.4 F / 28.0 C
+2024-11-15 20:06:37,435 - INFO - Temperature: 82.4 F / 28.0 C
+2024-11-15 20:06:39,789 - INFO - Temperature: 82.4 F / 28.0 C
+2024-11-15 20:06:42,143 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:06:44,497 - INFO - Temperature: 82.4 F / 28.0 C
+2024-11-15 20:06:46,851 - INFO - Temperature: 82.4 F / 28.0 C
+2024-11-15 20:06:49,206 - INFO - Temperature: 82.4 F / 28.0 C
+2024-11-15 20:06:51,560 - INFO - Temperature: 82.4 F / 28.0 C
+2024-11-15 20:06:53,914 - INFO - Temperature: 82.2 F / 27.9 C
+2024-11-15 20:06:56,268 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:06:58,622 - INFO - Temperature: 82.2 F / 27.9 C
+2024-11-15 20:07:00,976 - INFO - Temperature: 82.2 F / 27.9 C
+2024-11-15 20:07:03,330 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:07:05,684 - INFO - Temperature: 82.4 F / 28.0 C
+2024-11-15 20:07:08,038 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:07:10,393 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:07:12,747 - INFO - Temperature: 82.2 F / 27.9 C
+2024-11-15 20:07:15,101 - INFO - Temperature: 82.2 F / 27.9 C
+2024-11-15 20:07:17,455 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:07:19,809 - INFO - Temperature: 82.2 F / 27.9 C
+2024-11-15 20:07:22,163 - INFO - Temperature: 82.4 F / 28.0 C
+2024-11-15 20:07:24,518 - INFO - Temperature: 82.2 F / 27.9 C
+2024-11-15 20:07:26,872 - INFO - Temperature: 82.2 F / 27.9 C
+2024-11-15 20:07:29,226 - INFO - Temperature: 82.2 F / 27.9 C
+2024-11-15 20:07:31,580 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:07:33,934 - INFO - Temperature: 82.2 F / 27.9 C
+2024-11-15 20:07:36,288 - INFO - Temperature: 82.2 F / 27.9 C
+2024-11-15 20:07:38,643 - INFO - Temperature: 82.2 F / 27.9 C
+2024-11-15 20:07:40,997 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:07:43,351 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:07:45,705 - INFO - Temperature: 82.2 F / 27.9 C
+2024-11-15 20:07:48,059 - INFO - Temperature: 82.2 F / 27.9 C
+2024-11-15 20:07:50,413 - WARNING - RuntimeError: DHT sensor not found, check wiring
+2024-11-15 20:07:52,767 - WARNING - RuntimeError: DHT sensor not found, check wiring
+2024-11-15 20:07:55,121 - WARNING - RuntimeError: DHT sensor not found, check wiring
+2024-11-15 20:07:57,475 - WARNING - RuntimeError: DHT sensor not found, check wiring
+2024-11-15 20:07:59,829 - WARNING - RuntimeError: DHT sensor not found, check wiring
+2024-11-15 20:08:02,183 - WARNING - RuntimeError: DHT sensor not found, check wiring
+2024-11-15 20:08:04,537 - WARNING - RuntimeError: DHT sensor not found, check wiring
+2024-11-15 20:08:06,891 - WARNING - RuntimeError: DHT sensor not found, check wiring
+2024-11-15 20:08:09,245 - WARNING - RuntimeError: DHT sensor not found, check wiring
+2024-11-15 20:08:11,599 - INFO - Temperature: 81.9 F / 27.7 C
+2024-11-15 20:08:13,954 - INFO - Temperature: 81.9 F / 27.7 C
+2024-11-15 20:08:16,308 - INFO - Temperature: 81.7 F / 27.6 C
+2024-11-15 20:08:18,662 - INFO - Temperature: 81.7 F / 27.6 C
+2024-11-15 20:08:21,016 - INFO - Temperature: 81.7 F / 27.6 C
+2024-11-15 20:08:23,370 - INFO - Temperature: 81.7 F / 27.6 C
+2024-11-15 20:08:25,724 - INFO - Temperature: 81.7 F / 27.6 C
+2024-11-15 20:08:28,079 - INFO - Temperature: 81.7 F / 27.6 C
+2024-11-15 20:08:30,432 - INFO - Temperature: 81.7 F / 27.6 C
+2024-11-15 20:08:32,787 - INFO - Temperature: 81.7 F / 27.6 C
+2024-11-15 20:08:35,141 - INFO - Temperature: 81.7 F / 27.6 C
+2024-11-15 20:08:37,495 - INFO - Temperature: 81.7 F / 27.6 C
+2024-11-15 20:08:39,849 - INFO - Temperature: 81.7 F / 27.6 C
+2024-11-15 20:08:42,203 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:08:44,557 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:08:46,910 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:08:49,264 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:08:51,618 - INFO - Temperature: 81.5 F / 27.5 C
+2024-11-15 20:08:53,972 - INFO - Temperature: 81.5 F / 27.5 C
+2024-11-15 20:08:56,326 - WARNING - RuntimeError: A full buffer was not returned. Try again.
+2024-11-15 20:08:58,680 - INFO - Temperature: 81.5 F / 27.5 C
+2024-11-15 20:09:01,034 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:09:03,388 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:09:05,742 - INFO - Temperature: 81.5 F / 27.5 C
+2024-11-15 20:09:08,096 - INFO - Temperature: 81.5 F / 27.5 C
+2024-11-15 20:09:10,450 - INFO - Temperature: 81.3 F / 27.4 C
+2024-11-15 20:09:12,803 - INFO - Temperature: 81.3 F / 27.4 C
+2024-11-15 20:09:15,157 - INFO - Temperature: 81.3 F / 27.4 C
+2024-11-15 20:09:17,511 - WARNING - RuntimeError: A full buffer was not returned. Try again.
+2024-11-15 20:09:19,865 - INFO - Temperature: 81.3 F / 27.4 C
+2024-11-15 20:09:22,219 - INFO - Temperature: 81.3 F / 27.4 C
+2024-11-15 20:09:24,573 - WARNING - RuntimeError: A full buffer was not returned. Try again.
+2024-11-15 20:09:26,927 - INFO - Temperature: 81.3 F / 27.4 C
+2024-11-15 20:09:29,281 - INFO - Temperature: 81.3 F / 27.4 C
+2024-11-15 20:09:31,635 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:09:33,989 - INFO - Temperature: 81.3 F / 27.4 C
+2024-11-15 20:09:36,342 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:09:38,696 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:09:41,050 - INFO - Temperature: 81.1 F / 27.3 C
+2024-11-15 20:09:43,404 - WARNING - RuntimeError: A full buffer was not returned. Try again.
+2024-11-15 20:09:45,758 - WARNING - RuntimeError: A full buffer was not returned. Try again.
+2024-11-15 20:09:48,112 - INFO - Temperature: 81.1 F / 27.3 C
+2024-11-15 20:09:50,465 - INFO - Temperature: 81.1 F / 27.3 C
+2024-11-15 20:09:52,819 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:09:55,173 - INFO - Temperature: 81.1 F / 27.3 C
+2024-11-15 20:09:57,527 - INFO - Temperature: 81.1 F / 27.3 C
+2024-11-15 20:09:59,881 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:10:02,235 - INFO - Temperature: 81.1 F / 27.3 C
+2024-11-15 20:10:04,589 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:10:06,943 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:10:09,296 - INFO - Temperature: 81.0 F / 27.2 C
+2024-11-15 20:10:11,650 - INFO - Temperature: 81.0 F / 27.2 C
+2024-11-15 20:10:14,004 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:10:16,358 - INFO - Temperature: 81.0 F / 27.2 C
+2024-11-15 20:10:18,712 - INFO - Temperature: 81.0 F / 27.2 C
+2024-11-15 20:10:21,066 - INFO - Temperature: 81.0 F / 27.2 C
+2024-11-15 20:10:23,419 - INFO - Temperature: 81.0 F / 27.2 C
+2024-11-15 20:10:25,773 - INFO - Temperature: 81.0 F / 27.2 C
+2024-11-15 20:10:28,127 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:10:30,481 - INFO - Temperature: 81.0 F / 27.2 C
+2024-11-15 20:10:32,834 - INFO - Temperature: 80.8 F / 27.1 C
+2024-11-15 20:10:35,188 - INFO - Temperature: 81.0 F / 27.2 C
+2024-11-15 20:10:37,542 - INFO - Temperature: 81.0 F / 27.2 C
+2024-11-15 20:10:39,896 - INFO - Temperature: 81.0 F / 27.2 C
+2024-11-15 20:10:42,250 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:10:44,604 - INFO - Temperature: 80.8 F / 27.1 C
+2024-11-15 20:10:46,958 - INFO - Temperature: 80.8 F / 27.1 C
+2024-11-15 20:10:49,312 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:10:51,666 - INFO - Temperature: 80.8 F / 27.1 C
+2024-11-15 20:10:54,019 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:10:56,373 - INFO - Temperature: 80.8 F / 27.1 C
+2024-11-15 20:10:58,727 - INFO - Temperature: 80.8 F / 27.1 C
+2024-11-15 20:11:01,081 - INFO - Temperature: 80.8 F / 27.1 C
+2024-11-15 20:11:03,435 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:11:05,789 - INFO - Temperature: 80.8 F / 27.1 C
+2024-11-15 20:11:08,142 - INFO - Temperature: 80.8 F / 27.1 C
+2024-11-15 20:11:10,496 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:11:12,850 - INFO - Temperature: 80.8 F / 27.1 C
+2024-11-15 20:11:15,204 - INFO - Temperature: 80.8 F / 27.1 C
+2024-11-15 20:11:17,558 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:11:19,912 - INFO - Temperature: 80.6 F / 27.0 C
+2024-11-15 20:11:22,266 - INFO - Temperature: 80.8 F / 27.1 C
+2024-11-15 20:11:24,620 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:11:26,973 - INFO - Temperature: 80.6 F / 27.0 C
+2024-11-15 20:11:29,327 - INFO - Temperature: 80.6 F / 27.0 C
+2024-11-15 20:11:31,681 - INFO - Temperature: 80.6 F / 27.0 C
+2024-11-15 20:11:34,035 - INFO - Temperature: 80.6 F / 27.0 C
+2024-11-15 20:11:36,389 - INFO - Temperature: 80.6 F / 27.0 C
+2024-11-15 20:11:38,743 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:11:41,097 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:11:43,451 - INFO - Temperature: 80.6 F / 27.0 C
+2024-11-15 20:11:45,805 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:11:48,158 - INFO - Temperature: 80.6 F / 27.0 C
+2024-11-15 20:11:50,512 - INFO - Temperature: 80.4 F / 26.9 C
+2024-11-15 20:11:52,866 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:11:55,220 - INFO - Temperature: 80.4 F / 26.9 C
+2024-11-15 20:11:57,574 - INFO - Temperature: 80.4 F / 26.9 C
+2024-11-15 20:11:59,928 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:12:02,282 - INFO - Temperature: 80.4 F / 26.9 C
+2024-11-15 20:12:04,635 - INFO - Temperature: 80.4 F / 26.9 C
+2024-11-15 20:12:06,989 - INFO - Temperature: 80.2 F / 26.8 C
+2024-11-15 20:12:09,343 - INFO - Temperature: 80.2 F / 26.8 C
+2024-11-15 20:12:11,697 - INFO - Temperature: 80.2 F / 26.8 C
+2024-11-15 20:12:14,051 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:12:16,405 - INFO - Temperature: 80.2 F / 26.8 C
+2024-11-15 20:12:18,758 - INFO - Temperature: 80.2 F / 26.8 C
+2024-11-15 20:12:21,112 - INFO - Temperature: 80.2 F / 26.8 C
+2024-11-15 20:12:23,466 - INFO - Temperature: 80.2 F / 26.8 C
+2024-11-15 20:12:25,820 - INFO - Temperature: 80.2 F / 26.8 C
+2024-11-15 20:12:28,174 - INFO - Temperature: 80.1 F / 26.7 C
+2024-11-15 20:12:30,528 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:12:32,882 - INFO - Temperature: 80.1 F / 26.7 C
+2024-11-15 20:12:35,236 - INFO - Temperature: 80.1 F / 26.7 C
+2024-11-15 20:12:37,590 - INFO - Temperature: 80.1 F / 26.7 C
+2024-11-15 20:12:39,944 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:12:42,297 - INFO - Temperature: 80.1 F / 26.7 C
+2024-11-15 20:12:44,651 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:12:47,005 - INFO - Temperature: 79.9 F / 26.6 C
+2024-11-15 20:12:49,359 - INFO - Temperature: 79.9 F / 26.6 C
+2024-11-15 20:12:51,713 - INFO - Temperature: 79.9 F / 26.6 C
+2024-11-15 20:12:54,067 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:12:56,421 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:12:58,774 - INFO - Temperature: 79.7 F / 26.5 C
+2024-11-15 20:13:01,128 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:13:03,482 - INFO - Temperature: 79.9 F / 26.6 C
+2024-11-15 20:13:05,836 - INFO - Temperature: 79.7 F / 26.5 C
+2024-11-15 20:13:08,190 - WARNING - RuntimeError: A full buffer was not returned. Try again.
+2024-11-15 20:13:10,544 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:13:12,898 - INFO - Temperature: 79.7 F / 26.5 C
+2024-11-15 20:13:15,252 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:13:17,605 - INFO - Temperature: 79.7 F / 26.5 C
+2024-11-15 20:13:19,959 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:13:22,313 - INFO - Temperature: 79.5 F / 26.4 C
+2024-11-15 20:13:24,667 - INFO - Temperature: 79.5 F / 26.4 C
+2024-11-15 20:13:27,021 - INFO - Temperature: 79.5 F / 26.4 C
+2024-11-15 20:13:29,375 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:13:31,729 - INFO - Temperature: 79.5 F / 26.4 C
+2024-11-15 20:13:34,083 - INFO - Temperature: 79.5 F / 26.4 C
+2024-11-15 20:13:36,437 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:13:38,790 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:13:41,144 - INFO - Temperature: 79.5 F / 26.4 C
+2024-11-15 20:13:43,498 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:13:45,852 - INFO - Temperature: 79.3 F / 26.3 C
+2024-11-15 20:13:48,206 - INFO - Temperature: 79.3 F / 26.3 C
+2024-11-15 20:13:50,560 - INFO - Temperature: 79.3 F / 26.3 C
+2024-11-15 20:13:52,914 - INFO - Temperature: 79.3 F / 26.3 C
+2024-11-15 20:13:55,268 - INFO - Temperature: 79.3 F / 26.3 C
+2024-11-15 20:13:57,622 - INFO - Temperature: 79.3 F / 26.3 C
+2024-11-15 20:13:59,976 - INFO - Temperature: 79.3 F / 26.3 C
+2024-11-15 20:14:02,330 - INFO - Temperature: 79.2 F / 26.2 C
+2024-11-15 20:14:04,684 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:14:07,038 - INFO - Temperature: 79.2 F / 26.2 C
+2024-11-15 20:14:09,391 - INFO - Temperature: 79.2 F / 26.2 C
+2024-11-15 20:14:11,745 - INFO - Temperature: 79.2 F / 26.2 C
+2024-11-15 20:14:14,099 - INFO - Temperature: 79.2 F / 26.2 C
+2024-11-15 20:14:16,453 - INFO - Temperature: 79.0 F / 26.1 C
+2024-11-15 20:14:18,807 - INFO - Temperature: 79.0 F / 26.1 C
+2024-11-15 20:14:21,161 - INFO - Temperature: 79.0 F / 26.1 C
+2024-11-15 20:14:23,514 - INFO - Temperature: 79.0 F / 26.1 C
+2024-11-15 20:14:25,868 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:14:28,222 - INFO - Temperature: 79.0 F / 26.1 C
+2024-11-15 20:14:30,576 - INFO - Temperature: 78.8 F / 26.0 C
+2024-11-15 20:14:32,930 - INFO - Temperature: 78.8 F / 26.0 C
+2024-11-15 20:14:35,284 - INFO - Temperature: 78.8 F / 26.0 C
+2024-11-15 20:14:37,638 - INFO - Temperature: 78.8 F / 26.0 C
+2024-11-15 20:14:39,992 - INFO - Temperature: 78.8 F / 26.0 C
+2024-11-15 20:14:42,346 - INFO - Temperature: 78.8 F / 26.0 C
+2024-11-15 20:14:44,699 - INFO - Temperature: 78.8 F / 26.0 C
+2024-11-15 20:14:47,054 - INFO - Temperature: 78.8 F / 26.0 C
+2024-11-15 20:14:49,407 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:14:51,761 - INFO - Temperature: 78.6 F / 25.9 C
+2024-11-15 20:14:54,115 - INFO - Temperature: 78.6 F / 25.9 C
+2024-11-15 20:14:56,469 - INFO - Temperature: 78.6 F / 25.9 C
+2024-11-15 20:14:58,823 - INFO - Temperature: 78.6 F / 25.9 C
+2024-11-15 20:15:01,177 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:15:03,531 - INFO - Temperature: 78.6 F / 25.9 C
+2024-11-15 20:15:05,884 - INFO - Temperature: 78.6 F / 25.9 C
+2024-11-15 20:15:08,238 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:15:10,592 - INFO - Temperature: 78.4 F / 25.8 C
+2024-11-15 20:15:12,946 - INFO - Temperature: 78.4 F / 25.8 C
+2024-11-15 20:15:15,300 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:15:17,654 - INFO - Temperature: 78.4 F / 25.8 C
+2024-11-15 20:15:20,008 - INFO - Temperature: 78.4 F / 25.8 C
+2024-11-15 20:15:22,362 - INFO - Temperature: 78.4 F / 25.8 C
+2024-11-15 20:15:24,715 - INFO - Temperature: 78.4 F / 25.8 C
+2024-11-15 20:15:27,069 - INFO - Temperature: 78.3 F / 25.7 C
+2024-11-15 20:15:29,423 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:15:31,777 - INFO - Temperature: 78.3 F / 25.7 C
+2024-11-15 20:15:34,131 - INFO - Temperature: 78.3 F / 25.7 C
+2024-11-15 20:15:36,485 - INFO - Temperature: 78.3 F / 25.7 C
+2024-11-15 20:15:38,839 - INFO - Temperature: 78.1 F / 25.6 C
+2024-11-15 20:15:41,193 - INFO - Temperature: 78.1 F / 25.6 C
+2024-11-15 20:15:43,547 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:15:45,901 - INFO - Temperature: 78.1 F / 25.6 C
+2024-11-15 20:15:48,255 - INFO - Temperature: 78.1 F / 25.6 C
+2024-11-15 20:15:50,609 - INFO - Temperature: 78.1 F / 25.6 C
+2024-11-15 20:15:52,962 - INFO - Temperature: 78.1 F / 25.6 C
+2024-11-15 20:15:55,316 - INFO - Temperature: 78.1 F / 25.6 C
+2024-11-15 20:15:57,670 - INFO - Temperature: 78.1 F / 25.6 C
+2024-11-15 20:16:00,024 - INFO - Temperature: 78.1 F / 25.6 C
+2024-11-15 20:16:02,378 - INFO - Temperature: 77.9 F / 25.5 C
+2024-11-15 20:16:04,732 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:16:07,086 - INFO - Temperature: 77.9 F / 25.5 C
+2024-11-15 20:16:09,440 - INFO - Temperature: 77.9 F / 25.5 C
+2024-11-15 20:16:11,794 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:16:14,147 - INFO - Temperature: 77.9 F / 25.5 C
+2024-11-15 20:16:16,501 - INFO - Temperature: 77.9 F / 25.5 C
+2024-11-15 20:16:18,855 - INFO - Temperature: 77.9 F / 25.5 C
+2024-11-15 20:16:21,209 - INFO - Temperature: 77.9 F / 25.5 C
+2024-11-15 20:16:23,563 - INFO - Temperature: 77.9 F / 25.5 C
+2024-11-15 20:16:25,915 - INFO - Temperature: 77.9 F / 25.5 C
+2024-11-15 20:16:28,269 - INFO - Temperature: 77.9 F / 25.5 C
+2024-11-15 20:16:30,623 - INFO - Temperature: 77.7 F / 25.4 C
+2024-11-15 20:16:32,977 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:16:35,331 - INFO - Temperature: 77.7 F / 25.4 C
+2024-11-15 20:16:37,684 - INFO - Temperature: 77.7 F / 25.4 C
+2024-11-15 20:16:40,038 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:16:42,392 - INFO - Temperature: 77.7 F / 25.4 C
+2024-11-15 20:16:44,746 - INFO - Temperature: 77.7 F / 25.4 C
+2024-11-15 20:16:47,100 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:16:49,454 - INFO - Temperature: 77.7 F / 25.4 C
+2024-11-15 20:16:51,808 - INFO - Temperature: 77.5 F / 25.3 C
+2024-11-15 20:16:54,162 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:16:56,515 - INFO - Temperature: 77.5 F / 25.3 C
+2024-11-15 20:16:58,869 - INFO - Temperature: 77.5 F / 25.3 C
+2024-11-15 20:17:01,223 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:17:03,577 - INFO - Temperature: 77.5 F / 25.3 C
+2024-11-15 20:17:05,931 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:17:08,285 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:17:10,639 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:17:12,993 - INFO - Temperature: 77.4 F / 25.2 C
+2024-11-15 20:17:15,347 - INFO - Temperature: 77.4 F / 25.2 C
+2024-11-15 20:17:17,701 - INFO - Temperature: 77.4 F / 25.2 C
+2024-11-15 20:17:20,054 - INFO - Temperature: 77.4 F / 25.2 C
+2024-11-15 20:17:22,408 - INFO - Temperature: 77.4 F / 25.2 C
+2024-11-15 20:17:24,762 - INFO - Temperature: 77.4 F / 25.2 C
+2024-11-15 20:17:27,116 - INFO - Temperature: 77.4 F / 25.2 C
+2024-11-15 20:17:29,470 - INFO - Temperature: 77.4 F / 25.2 C
+2024-11-15 20:17:31,824 - INFO - Temperature: 77.4 F / 25.2 C
+2024-11-15 20:17:34,178 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:17:36,532 - INFO - Temperature: 77.2 F / 25.1 C
+2024-11-15 20:17:38,886 - INFO - Temperature: 77.2 F / 25.1 C
+2024-11-15 20:17:41,239 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:17:43,593 - INFO - Temperature: 77.2 F / 25.1 C
+2024-11-15 20:17:45,947 - INFO - Temperature: 77.2 F / 25.1 C
+2024-11-15 20:17:48,301 - INFO - Temperature: 77.2 F / 25.1 C
+2024-11-15 20:17:50,655 - INFO - Temperature: 77.2 F / 25.1 C
+2024-11-15 20:17:53,009 - INFO - Temperature: 77.2 F / 25.1 C
+2024-11-15 20:17:55,363 - INFO - Temperature: 77.2 F / 25.1 C
+2024-11-15 20:17:57,717 - INFO - Temperature: 77.2 F / 25.1 C
+2024-11-15 20:18:00,070 - INFO - Temperature: 77.0 F / 25.0 C
+2024-11-15 20:18:02,424 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:18:04,778 - INFO - Temperature: 77.0 F / 25.0 C
+2024-11-15 20:18:07,132 - INFO - Temperature: 77.0 F / 25.0 C
+2024-11-15 20:18:09,486 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:18:11,840 - INFO - Temperature: 77.0 F / 25.0 C
+2024-11-15 20:18:14,194 - INFO - Temperature: 77.0 F / 25.0 C
+2024-11-15 20:18:16,548 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:18:18,901 - INFO - Temperature: 76.8 F / 24.9 C
+2024-11-15 20:18:21,255 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:18:23,609 - INFO - Temperature: 76.8 F / 24.9 C
+2024-11-15 20:18:25,963 - INFO - Temperature: 76.8 F / 24.9 C
+2024-11-15 20:18:28,317 - INFO - Temperature: 76.8 F / 24.9 C
+2024-11-15 20:18:30,671 - INFO - Temperature: 76.8 F / 24.9 C
+2024-11-15 20:18:33,025 - INFO - Temperature: 76.8 F / 24.9 C
+2024-11-15 20:18:35,379 - INFO - Temperature: 76.8 F / 24.9 C
+2024-11-15 20:18:37,733 - INFO - Temperature: 76.8 F / 24.9 C
+2024-11-15 20:18:40,087 - INFO - Temperature: 76.8 F / 24.9 C
+2024-11-15 20:18:42,440 - INFO - Temperature: 76.8 F / 24.9 C
+2024-11-15 20:18:44,794 - INFO - Temperature: 76.8 F / 24.9 C
+2024-11-15 20:18:47,148 - INFO - Temperature: 76.6 F / 24.8 C
+2024-11-15 20:18:49,502 - INFO - Temperature: 76.8 F / 24.9 C
+2024-11-15 20:18:51,856 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:18:54,210 - INFO - Temperature: 76.6 F / 24.8 C
+2024-11-15 20:18:56,563 - INFO - Temperature: 76.6 F / 24.8 C
+2024-11-15 20:18:58,917 - INFO - Temperature: 76.6 F / 24.8 C
+2024-11-15 20:19:01,271 - INFO - Temperature: 76.6 F / 24.8 C
+2024-11-15 20:19:03,625 - INFO - Temperature: 76.6 F / 24.8 C
+2024-11-15 20:19:05,979 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:19:08,333 - INFO - Temperature: 76.6 F / 24.8 C
+2024-11-15 20:19:10,687 - INFO - Temperature: 76.6 F / 24.8 C
+2024-11-15 20:19:13,041 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:19:15,395 - INFO - Temperature: 76.5 F / 24.7 C
+2024-11-15 20:19:17,748 - INFO - Temperature: 76.5 F / 24.7 C
+2024-11-15 20:19:20,102 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:19:22,456 - INFO - Temperature: 76.5 F / 24.7 C
+2024-11-15 20:19:24,810 - INFO - Temperature: 76.5 F / 24.7 C
+2024-11-15 20:19:27,164 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:19:29,518 - INFO - Temperature: 76.5 F / 24.7 C
+2024-11-15 20:19:31,872 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:19:34,226 - INFO - Temperature: 76.5 F / 24.7 C
+2024-11-15 20:19:36,580 - INFO - Temperature: 76.5 F / 24.7 C
+2024-11-15 20:19:38,934 - INFO - Temperature: 76.5 F / 24.7 C
+2024-11-15 20:19:41,288 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:19:43,642 - INFO - Temperature: 76.3 F / 24.6 C
+2024-11-15 20:19:45,995 - INFO - Temperature: 76.3 F / 24.6 C
+2024-11-15 20:19:48,349 - INFO - Temperature: 76.3 F / 24.6 C
+2024-11-15 20:19:50,703 - INFO - Temperature: 76.3 F / 24.6 C
+2024-11-15 20:19:53,057 - INFO - Temperature: 76.3 F / 24.6 C
+2024-11-15 20:19:55,411 - WARNING - RuntimeError: Checksum did not validate. Try again.
+2024-11-15 20:19:57,765 - INFO - Temperature: 76.3 F / 24.6 C
+2024-11-15 20:20:00,119 - WARNING - RuntimeError: Checksum did not validate. Try again.
