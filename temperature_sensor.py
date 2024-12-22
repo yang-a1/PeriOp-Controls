@@ -30,6 +30,7 @@ while True:
         logging.info(
             "Temperature: {:.1f} F / {:.1f} C".format(
                 temperature_f, temperature_c
+                
             )
         )
 
