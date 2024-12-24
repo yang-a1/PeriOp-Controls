@@ -99,9 +99,9 @@ class HomeScreen(tk.Frame):
         # Create button
         self.stop_button = tk.Button(
             self.master,
-            image=self.big_off_img,  # Start with the big OFF image
+            image=self.big_off_img,
             bg="#FFFFFF",
-            activebackground="#FFFFFF",  # Ensure consistent background
+            activebackground="#FFFFFF",
             borderwidth=0,
             highlightthickness=0,
             relief="flat"
@@ -132,7 +132,6 @@ class HomeScreen(tk.Frame):
 
     def on_press(self, event):
         """Handle button press event."""
-        # Show the smaller version of the opposite state
         if self.is_on:
             self.stop_button.config(image=self.small_off_img)
             self.update_button_position(self.small_off_img.width(), self.small_off_img.height())
@@ -142,10 +141,8 @@ class HomeScreen(tk.Frame):
 
     def on_release(self, event):
         """Handle button release event."""
-        # Toggle the state
         self.is_on = not self.is_on
 
-        # Show the larger version of the new state
         if self.is_on:
             self.stop_button.config(image=self.big_on_img)
             self.update_button_position(self.big_on_img.width(), self.big_on_img.height())
