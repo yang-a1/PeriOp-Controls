@@ -90,7 +90,7 @@ class HomeScreen(tk.Frame):
         self.small_off_img = PhotoImage(file="assets/settings/small-off.png")
 
         # Initial state
-        self.is_on = False  # Start with OFF state
+        self.is_on = True  # Start with OFF state
 
         # Button center coordinates
         self.button_center_x = 228.5  # X coordinate of the center
@@ -99,7 +99,7 @@ class HomeScreen(tk.Frame):
         # Create button
         self.stop_button = tk.Button(
             self.master,
-            image=self.big_off_img,
+            image=self.big_on_img,
             bg="#FFFFFF",
             activebackground="#FFFFFF",
             borderwidth=0,
