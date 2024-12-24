@@ -84,21 +84,33 @@ class HomeScreen(tk.Frame):
         self.mattress_temperature = tk.Label(self.master, image=self.mattress_temperature_img, bg="#FFFFFF")
         self.mattress_temperature.place(x=23, y=204)
 
-        self.on_img = PhotoImage(file="assets/settings/on.png")
-        self.off_img = PhotoImage(file="assets/settings/off.png")
-        
-        self.is_on = False 
+        self.big_on_img = PhotoImage(file="assets/settings/big-on.png")
+        self.big_off_img = PhotoImage(file="assets/settings/big-off.png")
+        self.small_on_img = PhotoImage(file="assets/settings/small-on.png")
+        self.small_off_img = PhotoImage(file="assets/settings/small-off.png")
+
+        # Initial state
+        self.is_on = False  # Start with OFF state
+
+        # Button center coordinates
+        self.button_center_x = 228.5  # X coordinate of the center
+        self.button_center_y = 277  # Y coordinate of the center
+
+        # Create button
         self.stop_button = tk.Button(
-            self.master, 
-            image=self.off_img, 
-            bg="#FFFFFF", 
-            activebackground="#FFFFFF",  # Ensure consistency on press
-            borderwidth=0, 
-            highlightthickness=0, 
-            relief="flat", 
-            command=self.toggle_state
+            self.master,
+            image=self.big_off_img,  # Start with the big OFF image
+            bg="#FFFFFF",
+            activebackground="#FFFFFF",  # Ensure consistent background
+            borderwidth=0,
+            highlightthickness=0,
+            relief="flat"
         )
-        self.stop_button.place(x=154, y=229)
+        self.update_button_position(self.big_off_img.width(), self.big_off_img.height())
+        
+        # Bind events for press and release
+        self.stop_button.bind("<ButtonPress-1>", self.on_press)
+        self.stop_button.bind("<ButtonRelease-1>", self.on_release)
 
         self.mattress_temp_ex_img = PhotoImage(file="assets/settings/mattress-temp-ex.png")
         self.mattress_temp_ex = tk.Label(self.master, image=self.mattress_temp_ex_img, bg="#FFFFFF")
@@ -112,25 +124,34 @@ class HomeScreen(tk.Frame):
         self.status = tk.Label(self.master, image=self.status_img, bg="#F3F6FB")
         self.status.place(x=30, y=350)
 
-    def toggle_state(self):
-        """Toggle between ON and OFF state."""
-        # Simulate animation by slightly changing the button's size
-        self.stop_button.place(x=156, y=231)  # Slightly shrink
-        self.stop_button.after(100, lambda: self.stop_button.place(x=154, y=229))  # Reset to normal
+    def update_button_position(self, width, height):
+        """Update the button position to keep its center fixed."""
+        top_left_x = self.button_center_x - width // 2
+        top_left_y = self.button_center_y - height // 2
+        self.stop_button.place(x=top_left_x, y=top_left_y)
 
-        # Toggle the state
+    def on_press(self, event):
+        """Handle button press event."""
+        # Show the smaller version of the opposite state
         if self.is_on:
-            self.stop_button.config(image=self.off_img)
+            self.stop_button.config(image=self.small_off_img)
+            self.update_button_position(self.small_off_img.width(), self.small_off_img.height())
         else:
-            self.stop_button.config(image=self.on_img)
+            self.stop_button.config(image=self.small_on_img)
+            self.update_button_position(self.small_on_img.width(), self.small_on_img.height())
 
-        # Change the state
+    def on_release(self, event):
+        """Handle button release event."""
+        # Toggle the state
         self.is_on = not self.is_on
 
-    def expand_button(self):
-        """Expand the button back to normal size."""
-        self.stop_button.config(relief="raised")
-
+        # Show the larger version of the new state
+        if self.is_on:
+            self.stop_button.config(image=self.big_on_img)
+            self.update_button_position(self.big_on_img.width(), self.big_on_img.height())
+        else:
+            self.stop_button.config(image=self.big_off_img)
+            self.update_button_position(self.big_off_img.width(), self.big_off_img.height())
         
 if __name__ == "__main__":
     root = tk.Tk()
