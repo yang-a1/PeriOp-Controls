@@ -116,7 +116,7 @@ class MonitorModeScreen(tk.Frame):
             )
         )
 
-        self.help_button_img = PhotoImage(file="assets/monitor-mode/help-button.png")
+        self.help_button_img = PhotoImage(file="assets/big-help-button.png")
         self.help_button = tk.Label(self, image=self.help_button_img, bg="#F3F6FB")
         self.help_button.place(x=750, y=22)
 
@@ -172,7 +172,7 @@ class HomeScreen(tk.Frame):
 
         self.monitor_mode_button.bind(
             "<ButtonPress-1>",
-            lambda event: self.master.on_press(
+            lambda event: self.master.on_press(  # Use self.master.on_press
                 self.monitor_mode_button,
                 self.small_monitor_mode_img,
                 monitor_button_center_x,
@@ -182,7 +182,7 @@ class HomeScreen(tk.Frame):
 
         self.monitor_mode_button.bind(
             "<ButtonRelease-1>",
-            lambda event: self.master.on_release(
+            lambda event: self.master.on_release(  # Use self.master.on_release
                 self.monitor_mode_button,
                 self.is_monitor_mode_on,
                 self.big_monitor_mode_img,
@@ -267,22 +267,22 @@ class HomeScreen(tk.Frame):
 
         self.stop_button.bind(
             "<ButtonPress-1>",
-            lambda event: self.on_press(
-                self.stop_button, 
-                self.small_off_img, 
-                self.stop_button_center_x, 
+            lambda event: self.master.on_press(  # Use self.master.on_press
+                self.stop_button,
+                self.small_off_img,
+                self.stop_button_center_x,
                 self.stop_button_center_y
             )
         )
 
         self.stop_button.bind(
             "<ButtonRelease-1>",
-            lambda event: self.on_release(
-                self.stop_button, 
-                self.is_on_state, 
-                self.big_on_img, 
-                self.big_off_img, 
-                self.stop_button_center_x, 
+            lambda event: self.master.on_release(  # Use self.master.on_release
+                self.stop_button,
+                self.is_on_state,
+                self.big_on_img,
+                self.big_off_img,
+                self.stop_button_center_x,
                 self.stop_button_center_y
             )
         )
@@ -299,7 +299,7 @@ class HomeScreen(tk.Frame):
         self.status = tk.Label(self, image=self.status_img, bg="#F3F6FB")
         self.status.place(x=30, y=350)
 
-        self.help_button_img = PhotoImage(file="assets/display/help-button.png")
+        self.help_button_img = PhotoImage(file="assets/big-help-button.png")
         self.help_button = tk.Label(self, image=self.help_button_img, bg="#F3F6FB")
         self.help_button.place(x=757, y=23)
 
