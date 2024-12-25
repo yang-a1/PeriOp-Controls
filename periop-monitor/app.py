@@ -21,6 +21,29 @@ class PeriOpApp(tk.Tk):
             widget.pack_forget()
         screen.pack(fill="both", expand=True)
 
+    def on_press(self, button, small_image, button_center_x, button_center_y):
+        """Handle button press event."""
+        button.config(image=small_image)
+        self.update_button_position(button, small_image.width(), small_image.height(), button_center_x, button_center_y)
+
+    def on_release(self, button, is_on_state, big_on_image, big_off_image, button_center_x, button_center_y):
+        """Handle button release event."""
+        new_state = not is_on_state[0]  # Toggle the state
+        is_on_state[0] = new_state
+
+        if new_state:
+            button.config(image=big_on_image)
+            self.update_button_position(button, big_on_image.width(), big_on_image.height(), button_center_x, button_center_y)
+        else:
+            button.config(image=big_off_image)
+            self.update_button_position(button, big_off_image.width(), big_off_image.height(), button_center_x, button_center_y)
+
+    def update_button_position(self, button, width, height, button_center_x, button_center_y):
+        """Update the button position to keep its center fixed."""
+        top_left_x = button_center_x - width // 2
+        top_left_y = button_center_y - height // 2
+        button.place(x=top_left_x, y=top_left_y)
+
 class MonitorModeScreen(tk.Frame):
     def __init__(self, master):
         super().__init__(master, bg="#E5EBF6")
@@ -46,18 +69,52 @@ class MonitorModeScreen(tk.Frame):
         self.temperatures = tk.Label(self, image=self.temperatures_img, bg="#F3F6FB")
         self.temperatures.place(x=25.47, y=59.69)
 
-        self.monitor_mode_bg_img = PhotoImage(file="assets/monitor-mode/home-screen.png")
+        self.is_home_screen_on = [True]  # State for the home button
+
+        # Home Button
+        self.big_home_screen_img = PhotoImage(file="assets/monitor-mode/big-home-screen.png")
+        self.small_home_screen_img = PhotoImage(file="assets/monitor-mode/small-home-screen.png")
+
         self.home_button = tk.Button(
             self,
-            image=self.monitor_mode_bg_img,
-            bg="#FFFFFF",
+            image=self.big_home_screen_img,
+            bg="#F3F6FB",
             activebackground="#F3F6FB",
             borderwidth=0,
             highlightthickness=0,
             relief="flat",
             command=lambda: self.master.show_screen(self.master.home_screen)
         )
-        self.home_button.place(x=26, y=408)
+
+        home_button_center_x = 26 + self.big_home_screen_img.width() // 2
+        home_button_center_y = 408 + self.big_home_screen_img.height() // 2
+
+        self.home_button.place(
+            x=home_button_center_x - self.big_home_screen_img.width() // 2,
+            y=home_button_center_y - self.big_home_screen_img.height() // 2
+        )
+
+        self.home_button.bind(
+            "<ButtonPress-1>",
+            lambda event: self.master.on_press(
+                self.home_button,
+                self.small_home_screen_img,
+                home_button_center_x,
+                home_button_center_y
+            )
+        )
+
+        self.home_button.bind(
+            "<ButtonRelease-1>",
+            lambda event: self.master.on_release(
+                self.home_button,
+                self.is_home_screen_on,       # Current state of home screen
+                self.big_home_screen_img,     # Big screen image
+                self.small_home_screen_img,   # Small screen image
+                home_button_center_x,         # X-coordinate for centering
+                home_button_center_y          # Y-coordinate for centering
+            )
+        )
 
         self.help_button_img = PhotoImage(file="assets/monitor-mode/help-button.png")
         self.help_button = tk.Label(self, image=self.help_button_img, bg="#F3F6FB")
@@ -89,10 +146,14 @@ class HomeScreen(tk.Frame):
         self.temperatures = tk.Label(self, image=self.temperatures_img, bg="#F3F6FB")
         self.temperatures.place(x=340, y=56)
 
-        self.monitor_mode_img = PhotoImage(file="assets/display/monitor-mode.png")
+        self.is_monitor_mode_on = [True]  # State for the monitor mode button
+
+        self.big_monitor_mode_img = PhotoImage(file="assets/display/big-monitor-mode.png")
+        self.small_monitor_mode_img = PhotoImage(file="assets/display/small-monitor-mode.png")
+
         self.monitor_mode_button = tk.Button(
             self,
-            image=self.monitor_mode_img,
+            image=self.big_monitor_mode_img,
             bg="#FFFFFF",
             activebackground="#FFFFFF",
             borderwidth=0,
@@ -100,7 +161,36 @@ class HomeScreen(tk.Frame):
             relief="flat",
             command=lambda: self.master.show_screen(self.master.monitor_mode_screen)
         )
-        self.monitor_mode_button.place(x=329, y=414)
+
+        monitor_button_center_x = 329 + self.big_monitor_mode_img.width() // 2
+        monitor_button_center_y = 414 + self.big_monitor_mode_img.height() // 2
+
+        self.monitor_mode_button.place(
+            x=monitor_button_center_x - self.big_monitor_mode_img.width() // 2,
+            y=monitor_button_center_y - self.big_monitor_mode_img.height() // 2
+        )
+
+        self.monitor_mode_button.bind(
+            "<ButtonPress-1>",
+            lambda event: self.master.on_press(
+                self.monitor_mode_button,
+                self.small_monitor_mode_img,
+                monitor_button_center_x,
+                monitor_button_center_y
+            )
+        )
+
+        self.monitor_mode_button.bind(
+            "<ButtonRelease-1>",
+            lambda event: self.master.on_release(
+                self.monitor_mode_button,
+                self.is_monitor_mode_on,
+                self.big_monitor_mode_img,
+                self.small_monitor_mode_img,
+                monitor_button_center_x,
+                monitor_button_center_y
+            )
+        )
 
         self.language_img = PhotoImage(file="assets/display/language.png")
         self.language = tk.Label(self, image=self.language_img, bg="#FFFFFF")
@@ -157,10 +247,10 @@ class HomeScreen(tk.Frame):
         self.small_off_img = PhotoImage(file="assets/settings/small-off.png")
 
         # Initial state
-        self.is_on = True  # Start with OFF state
+        self.stop_button_center_x = 228.5
+        self.stop_button_center_y = 277
 
-        self.button_center_x = 228.5
-        self.button_center_y = 277
+        self.is_on_state = [True]  # Use a list to allow mutability in callbacks
 
         self.stop_button = tk.Button(
             self,
@@ -171,10 +261,31 @@ class HomeScreen(tk.Frame):
             highlightthickness=0,
             relief="flat"
         )
-        self.update_button_position(self.big_off_img.width(), self.big_off_img.height())
-        
-        self.stop_button.bind("<ButtonPress-1>", self.on_press)
-        self.stop_button.bind("<ButtonRelease-1>", self.on_release)
+
+        self.stop_button.place(x=self.stop_button_center_x - self.big_on_img.width() // 2, 
+                            y=self.stop_button_center_y - self.big_on_img.height() // 2)
+
+        self.stop_button.bind(
+            "<ButtonPress-1>",
+            lambda event: self.on_press(
+                self.stop_button, 
+                self.small_off_img, 
+                self.stop_button_center_x, 
+                self.stop_button_center_y
+            )
+        )
+
+        self.stop_button.bind(
+            "<ButtonRelease-1>",
+            lambda event: self.on_release(
+                self.stop_button, 
+                self.is_on_state, 
+                self.big_on_img, 
+                self.big_off_img, 
+                self.stop_button_center_x, 
+                self.stop_button_center_y
+            )
+        )
 
         self.mattress_temp_ex_img = PhotoImage(file="assets/settings/mattress-temp-ex.png")
         self.mattress_temp_ex = tk.Label(self, image=self.mattress_temp_ex_img, bg="#FFFFFF")
@@ -191,32 +302,6 @@ class HomeScreen(tk.Frame):
         self.help_button_img = PhotoImage(file="assets/display/help-button.png")
         self.help_button = tk.Label(self, image=self.help_button_img, bg="#F3F6FB")
         self.help_button.place(x=757, y=23)
-
-    def update_button_position(self, width, height):
-        """Update the button position to keep its center fixed."""
-        top_left_x = self.button_center_x - width // 2
-        top_left_y = self.button_center_y - height // 2
-        self.stop_button.place(x=top_left_x, y=top_left_y)
-
-    def on_press(self, event):
-        """Handle button press event."""
-        if self.is_on:
-            self.stop_button.config(image=self.small_off_img)
-            self.update_button_position(self.small_off_img.width(), self.small_off_img.height())
-        else:
-            self.stop_button.config(image=self.small_on_img)
-            self.update_button_position(self.small_on_img.width(), self.small_on_img.height())
-
-    def on_release(self, event):
-        """Handle button release event."""
-        self.is_on = not self.is_on
-
-        if self.is_on:
-            self.stop_button.config(image=self.big_on_img)
-            self.update_button_position(self.big_on_img.width(), self.big_on_img.height())
-        else:
-            self.stop_button.config(image=self.big_off_img)
-            self.update_button_position(self.big_off_img.width(), self.big_off_img.height())
 
 if __name__ == "__main__":
     app = PeriOpApp()
