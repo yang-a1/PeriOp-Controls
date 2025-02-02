@@ -21,6 +21,7 @@ class PeriOpApp(tk.Tk):
             widget.pack_forget()
         screen.pack(fill="both", expand=True)
 
+    #Button state animation
     def on_press(self, button, small_image, button_center_x, button_center_y):
         """Handle button press event."""
         button.config(image=small_image)
