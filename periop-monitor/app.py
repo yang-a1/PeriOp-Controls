@@ -7,6 +7,7 @@ import adafruit_dht
 '''
 from tkinter import PhotoImage
 from PIL import Image, ImageTk
+from temp_sensor import get_temperature_backend
 
 class PeriOpApp(tk.Tk):
     def __init__(self):
@@ -50,6 +51,12 @@ class PeriOpApp(tk.Tk):
         top_left_x = button_center_x - width // 2
         top_left_y = button_center_y - height // 2
         button.place(x=top_left_x, y=top_left_y)
+
+    def update_temperature_display(self):
+        while True:
+            temp_text = get_temperature()
+            self.home_screen.temperature_label.config(text=temp_text)  # Update the label
+            time.sleep(2)
 
 class MonitorModeScreen(tk.Frame):
     def __init__(self, master):
@@ -408,6 +415,14 @@ class HomeScreen(tk.Frame):
             self.digit_labels[i].config(image=self.digit_images["0"])  # Blank out the last digits
             self.digit_labels[i].image = self.digit_images["0"]
 '''
+self.temperature_label = tk.Label(self, text="-- C", font=("Helvetica", 36), bg="#E5EBF6")
+self.temperature_label.place(x=350, y=60)  # Adjust position if needed
+
+    # Start the background thread to update the temperature
+self.temp_thread = threading.Thread(target=self.master.update_temperature_display)
+self.temp_thread.daemon = True
+self.temp_thread.start()
+    
 if __name__ == "__main__":
     app = PeriOpApp()
     app.mainloop()
