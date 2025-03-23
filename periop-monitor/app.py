@@ -1,13 +1,6 @@
 import tkinter as tk
-'''
-import time
-import threading
-import board
-import adafruit_dht
-'''
 from tkinter import PhotoImage
 from PIL import Image, ImageTk
-from temp_sensor import get_temperature_backend
 
 class PeriOpApp(tk.Tk):
     def __init__(self):
@@ -28,7 +21,6 @@ class PeriOpApp(tk.Tk):
             widget.pack_forget()
         screen.pack(fill="both", expand=True)
 
-    #Button state animation
     def on_press(self, button, small_image, button_center_x, button_center_y):
         """Handle button press event."""
         button.config(image=small_image)
@@ -51,12 +43,6 @@ class PeriOpApp(tk.Tk):
         top_left_x = button_center_x - width // 2
         top_left_y = button_center_y - height // 2
         button.place(x=top_left_x, y=top_left_y)
-
-    def update_temperature_display(self):
-        while True:
-            temp_text = get_temperature()
-            self.home_screen.temperature_label.config(text=temp_text)  # Update the label
-            time.sleep(2)
 
 class MonitorModeScreen(tk.Frame):
     def __init__(self, master):
@@ -316,113 +302,7 @@ class HomeScreen(tk.Frame):
         self.help_button_img = PhotoImage(file="assets/big-help-button.png")
         self.help_button = tk.Label(self, image=self.help_button_img, bg="#F3F6FB")
         self.help_button.place(x=757, y=23)
-'''
-        #Temperature Numbers
-        self.digit_images = {
-            "0": PhotoImage(file="assets/temp_numbers/Zero_temp.png"),
-            "1": PhotoImage(file="assets/temp_numbers/One_temp.png"),
-            "2": PhotoImage(file="assets/temp_numbers/Two_temp.png"),
-            "3": PhotoImage(file="assets/temp_numbers/Three_temp.png"),
-            "4": PhotoImage(file="assets/temp_numbers/Four_temp.png"),
-            "5": PhotoImage(file="assets/temp_numbers/Five_temp.png"),
-            "6": PhotoImage(file="assets/temp_numbers/Six_temp.png"),
-            "7": PhotoImage(file="assets/temp_numbers/Seven_temp.png"),
-            "8": PhotoImage(file="assets/temp_numbers/Eight_temp.png"),
-            "9": PhotoImage(file="assets/temp_numbers/Nine_temp.png"),
-            "Dash": PhotoImage(file="assets/temp_numbers/Dash_temp.png"),  # For negative temperature (if applicable)
-            "Dot": PhotoImage(file="assets/temp_numbers/Dot_temp.png"),
-            "C": PhotoImage(file="assets/temp_numbers/Celcius_temp.png"),
-        }
 
-        # Labels for the digits of temperature
-        self.digit_labels = {}
-
-        # Position for each digit
-        self.digit_positions = [(340, 56), (355, 56), (370, 56), (385, 56), (400, 56)]
-        
-        # Creating the labels for each digit (ones, tens, etc.)
-        for i, pos in enumerate(self.digit_positions):
-            self.digit_labels[i] = Label(self, image=self.digit_images["0"], bg="#E5EBF6")
-            self.digit_labels[i].place(x=pos[0], y=pos[1])
-
-        # DHT22 Sensor Initialization (in a separate thread for real-time reading)
-        self.dht_device = adafruit_dht.DHT22(board.D4, use_pulseio=False)
-        self.temp_thread = threading.Thread(target=self.update_temperature)
-        self.temp_thread.daemon = True
-        self.temp_thread.start()
-
-    def update_temperature(self):
-        """Update the temperature value from the sensor periodically."""
-        while True:
-            try:
-                temperature_c = self.dht_device.temperature
-                temperature_f = temperature_c * (9 / 5) + 32
-
-                if temperature_c is not None:  # Valid reading
-                    self.display_temperature(temperature_f)
-                else:
-                    # In case the sensor fails, show the "off" state (using "--C")
-                    self.display_off_state()
-
-            except RuntimeError as error:
-                print(f"Error reading temperature: {error}")
-                time.sleep(2)  # Retry after some time
-                continue
-
-            except Exception as error:
-                print(f"Unexpected error: {error}")
-                self.dht_device.exit()
-                break
-
-            time.sleep(2)  # Wait before the next reading
-
-    def display_temperature(self, temperature_f):
-        """Display the temperature by updating individual digit images."""
-        temp_str = f"{temperature_f:.1f}"  # Format as a string with one decimal place
-        temp_parts = temp_str.split(".")
-
-        # Update the digits for the whole number part
-        for i, digit in enumerate(temp_parts[0]):
-            self.digit_labels[i].config(image=self.digit_images[digit])
-            self.digit_labels[i].image = self.digit_images[digit]  # Keep reference
-
-        # Update the decimal point (if present)
-        if len(temp_parts) > 1:
-            self.digit_labels[3].config(image=self.digit_images["Dot"])
-            self.digit_labels[3].image = self.digit_images["Dot"]  # Keep reference
-
-            # Update the digits after the decimal point
-            self.digit_labels[4].config(image=self.digit_images[temp_parts[1][0]])
-            self.digit_labels[4].image = self.digit_images[temp_parts[1][0]]  # Keep reference
-
-        # Add the Celsius symbol (after the decimal part)
-        self.digit_labels[5] = Label(self, image=self.digit_images["C"], bg="#E5EBF6")
-        self.digit_labels[5].place(x=415, y=56)  # Adjust the position if needed
-
-    def display_off_state(self):
-        """Display placeholder images for off state, showing '--C'."""
-        # Show two dashes for the first two digits
-        for i in range(2):
-            self.digit_labels[i].config(image=self.digit_images["Dash"])
-            self.digit_labels[i].image = self.digit_images["Dash"]  # Keep reference
-
-        # Show the Celsius symbol in the third label
-        self.digit_labels[2].config(image=self.digit_images["C"])
-        self.digit_labels[2].image = self.digit_images["C"]  # Keep reference
-
-        # Remove the other labels (if they were showing digits for the temperature)
-        for i in range(3, 5):
-            self.digit_labels[i].config(image=self.digit_images["0"])  # Blank out the last digits
-            self.digit_labels[i].image = self.digit_images["0"]
-'''
-self.temperature_label = tk.Label(self, text="-- C", font=("Helvetica", 36), bg="#E5EBF6")
-self.temperature_label.place(x=350, y=60)  # Adjust position if needed
-
-    # Start the background thread to update the temperature
-self.temp_thread = threading.Thread(target=self.master.update_temperature_display)
-self.temp_thread.daemon = True
-self.temp_thread.start()
-    
 if __name__ == "__main__":
     app = PeriOpApp()
     app.mainloop()
