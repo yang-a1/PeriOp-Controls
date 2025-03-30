@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import PhotoImage
 from PIL import Image, ImageTk
+from temperature_sensor_backend import get_temperature
 
 class PeriOpApp(tk.Tk):
     def __init__(self):
@@ -43,6 +44,25 @@ class PeriOpApp(tk.Tk):
         top_left_x = button_center_x - width // 2
         top_left_y = button_center_y - height // 2
         button.place(x=top_left_x, y=top_left_y)
+    
+    def load_temp_num(self):
+        """Load and map digit and symbol images."""
+        base = "assets/temp_numbers/"
+        digits = {
+            '0': tk.PhotoImage(file=base + "Zero_temp.png"),
+            '1': tk.PhotoImage(file=base + "One_temp.png"),
+            '2': tk.PhotoImage(file=base + "Two_temp.png"),
+            '3': tk.PhotoImage(file=base + "Three_temp.png"),
+            '4': tk.PhotoImage(file=base + "Four_temp.png"),
+            '5': tk.PhotoImage(file=base + "Five_temp.png"),
+            '6': tk.PhotoImage(file=base + "Six_temp.png"),
+            '7': tk.PhotoImage(file=base + "Seven_temp.png"),
+            '8': tk.PhotoImage(file=base + "Eight_temp.png"),
+            '9': tk.PhotoImage(file=base + "Nine_temp.png"),
+            '.': tk.PhotoImage(file=base + "Dot_temp.png"),
+            'C': tk.PhotoImage(file=base + "Celcius_temp.png"),
+        }
+        return digits
 
 class MonitorModeScreen(tk.Frame):
     def __init__(self, master):
@@ -237,6 +257,7 @@ class HomeScreen(tk.Frame):
         self.adjust_2 = tk.Label(self, image=self.adjust_2_img, bg="#FFFFFF")
         self.adjust_2.place(x=201, y=143)
 
+        #TODO: Amy 
         self.mattress_temperature_img = PhotoImage(file="assets/settings/mattress-temperature.png")
         self.mattress_temperature = tk.Label(self, image=self.mattress_temperature_img, bg="#FFFFFF")
         self.mattress_temperature.place(x=23, y=204)
@@ -287,6 +308,7 @@ class HomeScreen(tk.Frame):
             )
         )
 
+        #Amy
         self.mattress_temp_ex_img = PhotoImage(file="assets/settings/mattress-temp-ex.png")
         self.mattress_temp_ex = tk.Label(self, image=self.mattress_temp_ex_img, bg="#FFFFFF")
         self.mattress_temp_ex.place(x=33, y=260.43)
