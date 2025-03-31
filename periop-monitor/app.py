@@ -10,8 +10,11 @@ class PeriOpApp(tk.Tk):
         self.configure(bg="#E5EBF6")
         self.resizable(False, False)
 
+        # Screens
         self.home_screen = HomeScreen(self)
         self.monitor_mode_screen = MonitorModeScreen(self)
+        self.help_manual_screen = HelpManualScreen(self) # New change
+
 
         self.show_screen(self.home_screen)
 
@@ -43,6 +46,30 @@ class PeriOpApp(tk.Tk):
         top_left_x = button_center_x - width // 2
         top_left_y = button_center_y - height // 2
         button.place(x=top_left_x, y=top_left_y)
+
+    # Beginning of New Code    
+class HelpManualScreen(tk.Frame): 
+    def __init__(self, master):
+        super().__init__(master, bg="#E5EBF6")
+        self.master = master
+
+        self.help_manual_img = PhotoImage(file="assets/help-manual.png")
+        self.help_manual_label = tk.Label(self, image=self.help_manual_img, bg="#E5EBF6")
+        self.help_manual_label.pack(padx=20, pady=20)
+
+        self.back_button_img = PhotoImage(file="assets/exit.png")  
+        self.back_button_label = tk.Label(self, image=self.help_manual_img, bg="#E5EBF6")
+        self.back_button_label.pack(padx=20, pady=20)
+
+        self.back_button = tk.Button(
+            self, image=self.back_button_img,bg="#E5EBF6",activebackground="#E5EBF6",borderwidth=0,highlightthickness=0,relief="flat",
+            command=lambda: self.master.show_screen(self.master.home_screen)
+        )
+
+        # To place the button at the top-right corner, we use x and y coordinates
+        self.back_button.place(x=700, y=35)
+
+        # End of new code
 
 class MonitorModeScreen(tk.Frame):
     def __init__(self, master):
@@ -119,6 +146,10 @@ class MonitorModeScreen(tk.Frame):
         self.help_button_img = PhotoImage(file="assets/big-help-button.png")
         self.help_button = tk.Label(self, image=self.help_button_img, bg="#F3F6FB")
         self.help_button.place(x=750, y=22)
+
+        # New code: command to switch to Help Manual Screen
+        self.help_button.bind("<ButtonPress-1>", lambda event: self.help_button.config(image=self.help_button_img_pressed))
+        self.help_button.bind("<ButtonRelease-1>", lambda event: self.master.show_screen(self.master.help_manual_screen))
 
 class HomeScreen(tk.Frame):
     def __init__(self, master):
@@ -303,6 +334,9 @@ class HomeScreen(tk.Frame):
         self.help_button = tk.Label(self, image=self.help_button_img, bg="#F3F6FB")
         self.help_button.place(x=757, y=23)
 
+        # New code: command to switch to Help Manual Screen
+        self.help_button.bind("<ButtonPress-1>", lambda event: self.help_button.config(image=self.help_button_img_pressed))
+        self.help_button.bind("<ButtonRelease-1>", lambda event: self.master.show_screen(self.master.help_manual_screen))
 if __name__ == "__main__":
     app = PeriOpApp()
     app.mainloop()
