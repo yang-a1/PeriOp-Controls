@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import PhotoImage
 from PIL import Image, ImageTk
+from temperature_sensor_backend import get_temperature
 
 class PeriOpApp(tk.Tk):
     def __init__(self):
@@ -43,6 +44,26 @@ class PeriOpApp(tk.Tk):
         top_left_x = button_center_x - width // 2
         top_left_y = button_center_y - height // 2
         button.place(x=top_left_x, y=top_left_y)
+    
+    def load_temp_num(self):
+        """Load and map digit and symbol images."""
+        base = "assets/temp_numbers/"
+        digits = {
+            '0': tk.PhotoImage(file=base + "Zero_temp.png"),
+            '1': tk.PhotoImage(file=base + "One_temp.png"),
+            '2': tk.PhotoImage(file=base + "Two_temp.png"),
+            '3': tk.PhotoImage(file=base + "Three_temp.png"),
+            '4': tk.PhotoImage(file=base + "Four_temp.png"),
+            '5': tk.PhotoImage(file=base + "Five_temp.png"),
+            '6': tk.PhotoImage(file=base + "Six_temp.png"),
+            '7': tk.PhotoImage(file=base + "Seven_temp.png"),
+            '8': tk.PhotoImage(file=base + "Eight_temp.png"),
+            '9': tk.PhotoImage(file=base + "Nine_temp.png"),
+            '.': tk.PhotoImage(file=base + "Dot_temp.png"),
+            'C': tk.PhotoImage(file=base + "Celcius_temp.png"),
+            '-': tk.PhotoImage(file=base + "Dash_temp.png"),
+        }
+        return digits
 
 class MonitorModeScreen(tk.Frame):
     def __init__(self, master):
@@ -237,6 +258,32 @@ class HomeScreen(tk.Frame):
         self.adjust_2 = tk.Label(self, image=self.adjust_2_img, bg="#FFFFFF")
         self.adjust_2.place(x=201, y=143)
 
+        #TODO: Amy 
+        temp_string = get_temperature()  # Example: "22.3 C"
+        temp_chars = temp_string.replace(" ", "")  # → "22.3C"
+        digits = master.load_temp_num()
+
+        start_x = 35
+        y = 271.36
+        spacing = 24  # general spacing between characters
+        x_cursor = start_x
+
+        for ch in temp_chars:
+            if ch in digits:
+                img = digits[ch]
+                label = tk.Label(self, image=img, bg="#FFFFFF")
+                label.image = img
+
+                if ch == '.':
+                    label.place(x=x_cursor - 5, y=y + 20)
+                    x_cursor += 5 
+                elif ch == 'C':
+                    label.place(x=x_cursor + 2, y=y - 10)
+                    x_cursor += 28
+                else:
+                    label.place(x=x_cursor, y=y)
+                    x_cursor += spacing
+
         self.mattress_temperature_img = PhotoImage(file="assets/settings/mattress-temperature.png")
         self.mattress_temperature = tk.Label(self, image=self.mattress_temperature_img, bg="#FFFFFF")
         self.mattress_temperature.place(x=23, y=204)
@@ -286,10 +333,6 @@ class HomeScreen(tk.Frame):
                 self.stop_button_center_y
             )
         )
-
-        self.mattress_temp_ex_img = PhotoImage(file="assets/settings/mattress-temp-ex.png")
-        self.mattress_temp_ex = tk.Label(self, image=self.mattress_temp_ex_img, bg="#FFFFFF")
-        self.mattress_temp_ex.place(x=33, y=260.43)
 
         self.status_panel_img = PhotoImage(file="assets/settings/status-panel.png")
         self.status_panel = tk.Label(self, image=self.status_panel_img, bg="#FFFFFF")
