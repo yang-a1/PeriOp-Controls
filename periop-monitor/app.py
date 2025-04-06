@@ -58,8 +58,8 @@ class HelpManualScreen(tk.Frame):
         self.help_manual_label.pack(padx=20, pady=20)
 
         self.back_button_img = PhotoImage(file="assets/exit.png")  
-        self.back_button_label = tk.Label(self, image=self.help_manual_img, bg="#E5EBF6")
-        self.back_button_label.pack(padx=20, pady=20)
+        #self.back_button_label = tk.Label(self, image=self.help_manual_img, bg="#E5EBF6")
+        #self.back_button_label.pack(padx=20, pady=20)
 
         self.back_button = tk.Button(
             self, image=self.back_button_img,bg="#E5EBF6",activebackground="#E5EBF6",borderwidth=0,highlightthickness=0,relief="flat",
