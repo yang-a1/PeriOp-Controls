@@ -258,31 +258,31 @@ class HomeScreen(tk.Frame):
         self.adjust_2 = tk.Label(self, image=self.adjust_2_img, bg="#FFFFFF")
         self.adjust_2.place(x=201, y=143)
 
-        #TODO: Amy 
-        temp_string = get_temperature()  # Example: "22.3 C"
-        temp_chars = temp_string.replace(" ", "")  # → "22.3C"
-        digits = master.load_temp_num()
-
         start_x = 35
         y = 271.36
-        spacing = 24  # general spacing between characters
-        x_cursor = start_x
+        spacing = 24
 
-        for ch in temp_chars:
-            if ch in digits:
-                img = digits[ch]
-                label = tk.Label(self, image=img, bg="#FFFFFF")
-                label.image = img
+        while self.is_on_state[0]:
+            temp_string = get_temperature()  # Example: "22.3 C"
+            temp_chars = temp_string.replace(" ", "")  # → "22.3C"
+            digits = master.load_temp_num()
+            x_cursor = start_x
 
-                if ch == '.':
-                    label.place(x=x_cursor - 5, y=y + 20)
-                    x_cursor += 5 
-                elif ch == 'C':
-                    label.place(x=x_cursor + 2, y=y - 10)
-                    x_cursor += 28
-                else:
-                    label.place(x=x_cursor, y=y)
-                    x_cursor += spacing
+            for ch in temp_chars:
+                if ch in digits:
+                    img = digits[ch]
+                    label = tk.Label(self, image=img, bg="#FFFFFF")
+                    label.image = img
+
+                    if ch == '.':
+                        label.place(x=x_cursor - 5, y=y + 20)
+                        x_cursor += 5 
+                    elif ch == 'C':
+                        label.place(x=x_cursor + 2, y=y - 10)
+                        x_cursor += 28
+                    else:
+                        label.place(x=x_cursor, y=y)
+                        x_cursor += spacing
 
         self.mattress_temperature_img = PhotoImage(file="assets/settings/mattress-temperature.png")
         self.mattress_temperature = tk.Label(self, image=self.mattress_temperature_img, bg="#FFFFFF")
