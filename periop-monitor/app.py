@@ -258,32 +258,6 @@ class HomeScreen(tk.Frame):
         self.adjust_2 = tk.Label(self, image=self.adjust_2_img, bg="#FFFFFF")
         self.adjust_2.place(x=201, y=143)
 
-        start_x = 35
-        y = 271.36
-        spacing = 24
-
-        while self.is_on_state[0]:
-            temp_string = get_temperature()  # Example: "22.3 C"
-            temp_chars = temp_string.replace(" ", "")  # → "22.3C"
-            digits = master.load_temp_num()
-            x_cursor = start_x
-
-            for ch in temp_chars:
-                if ch in digits:
-                    img = digits[ch]
-                    label = tk.Label(self, image=img, bg="#FFFFFF")
-                    label.image = img
-
-                    if ch == '.':
-                        label.place(x=x_cursor - 5, y=y + 20)
-                        x_cursor += 5 
-                    elif ch == 'C':
-                        label.place(x=x_cursor + 2, y=y - 10)
-                        x_cursor += 28
-                    else:
-                        label.place(x=x_cursor, y=y)
-                        x_cursor += spacing
-
         self.mattress_temperature_img = PhotoImage(file="assets/settings/mattress-temperature.png")
         self.mattress_temperature = tk.Label(self, image=self.mattress_temperature_img, bg="#FFFFFF")
         self.mattress_temperature.place(x=23, y=204)
@@ -345,6 +319,42 @@ class HomeScreen(tk.Frame):
         self.help_button_img = PhotoImage(file="assets/big-help-button.png")
         self.help_button = tk.Label(self, image=self.help_button_img, bg="#F3F6FB")
         self.help_button.place(x=757, y=23)
+
+        self.temp_digit_widgets = []
+        self.update_temperature_display()
+    
+    def update_temperature_display(self):
+        temp_string = get_temperature()  # Example: "22.3 C"
+        temp_chars = temp_string.replace(" ", "")  # → "22.3C"
+        digits = self.master.load_temp_num()
+
+        for widget in getattr(self, 'temp_digit_widgets', []):
+            widget.destroy()
+        self.temp_digit_widgets = []
+
+        x_cursor = 35
+        y = 271.36
+        spacing = 24
+
+        for ch in temp_chars:
+            if ch in digits:
+                img = digits[ch]
+                label = tk.Label(self, image=img, bg="#FFFFFF")
+                label.image = img
+                self.temp_digit_widgets.append(label)
+
+                if ch == '.':
+                    label.place(x=x_cursor - 5, y=y + 20)
+                    x_cursor += 5
+                elif ch == 'C':
+                    label.place(x=x_cursor + 2, y=y - 10)
+                    x_cursor += 28
+                else:
+                    label.place(x=x_cursor, y=y)
+                    x_cursor += spacing
+
+        if self.is_on_state[0]:
+            self.after(1000, self.update_temperature_display)
 
 if __name__ == "__main__":
     app = PeriOpApp()
