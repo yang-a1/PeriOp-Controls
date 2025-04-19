@@ -328,17 +328,15 @@ class HomeScreen(tk.Frame):
         temp_chars = temp_string.replace(" ", "")  # → "22.3C"
         digits = self.master.load_temp_num()
 
-        for widget in getattr(self, 'temp_digit_widgets', []):
-            widget.destroy()
-        self.temp_digit_widgets = []
+        if not hasattr(self, 'temp_char_list'):
+            self.temp_char_list = [''] * len(temp_chars)
+            self.temp_digit_widgets = []
+            x_cursor = 35
+            y = 271.36
+            spacing = 24
 
-        x_cursor = 35
-        y = 271.36
-        spacing = 24
-
-        for ch in temp_chars:
-            if ch in digits:
-                img = digits[ch]
+            for ch in temp_chars:
+                img = digits.get(ch)
                 label = tk.Label(self, image=img, bg="#FFFFFF")
                 label.image = img
                 self.temp_digit_widgets.append(label)
@@ -352,6 +350,19 @@ class HomeScreen(tk.Frame):
                 else:
                     label.place(x=x_cursor, y=y)
                     x_cursor += spacing
+
+                self.temp_char_list = list(temp_chars)
+
+        else:
+            # Only update changed digits
+            for i, ch in enumerate(temp_chars):
+                if i >= len(self.temp_char_list):
+                    continue  # New char appeared, skip for now
+                if self.temp_char_list[i] != ch:
+                    img = digits.get(ch)
+                    self.temp_digit_widgets[i].config(image=img)
+                    self.temp_digit_widgets[i].image = img
+                    self.temp_char_list[i] = ch
 
         if self.is_on_state[0]:
             self.after(1000, self.update_temperature_display)
