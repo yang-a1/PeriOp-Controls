@@ -11,6 +11,8 @@ class PeriOpApp(tk.Tk):
         self.configure(bg="#E5EBF6")
         self.resizable(False, False)
 
+        self.protocol("WM_DELETE_WINDOW", self.destroy)
+
         self.home_screen = HomeScreen(self)
         self.monitor_mode_screen = MonitorModeScreen(self)
 
