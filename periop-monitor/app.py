@@ -66,6 +66,10 @@ class PeriOpApp(tk.Tk):
             '-': tk.PhotoImage(file=base + "Dash_temp.png"),
         }
         return digits
+    
+    def on_close(self):
+        # Optional: add cleanup code or confirmation dialog here
+        self.destroy()  # Actually closes the app
 
 class MonitorModeScreen(tk.Frame):
     def __init__(self, master):
@@ -372,3 +376,4 @@ class HomeScreen(tk.Frame):
 if __name__ == "__main__":
     app = PeriOpApp()
     app.mainloop()
+    self.protocol("WM_DELETE_WINDOW", self.on_close)
