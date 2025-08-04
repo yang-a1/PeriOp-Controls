@@ -14,12 +14,10 @@ class PeriOpApp(tk.Tk):
         self.home_screen = HomeScreen(self)
         self.monitor_mode_screen = MonitorModeScreen(self)
         self.help_manual_screen = HelpManualScreen(self) # New change
-
-
         self.show_screen(self.home_screen)
 
     def show_screen(self, screen):
-        """Switch to the specified screen."""
+        """Switch to the specified screen.""" 
         for widget in self.winfo_children():
             widget.pack_forget()
         screen.pack(fill="both", expand=True)
@@ -46,6 +44,10 @@ class PeriOpApp(tk.Tk):
         top_left_x = button_center_x - width // 2
         top_left_y = button_center_y - height // 2
         button.place(x=top_left_x, y=top_left_y)
+    
+    def on_close(self):
+        # Optional: add cleanup code or confirmation dialog here
+        self.destroy()  # Actually closes the app
 
     # Beginning of New Code    
 class HelpManualScreen(tk.Frame): 
@@ -340,3 +342,4 @@ class HomeScreen(tk.Frame):
 if __name__ == "__main__":
     app = PeriOpApp()
     app.mainloop()
+    self.protocol("WM_DELETE_WINDOW", self.on_close)
