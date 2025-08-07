@@ -4,14 +4,46 @@ from temperature_sensor_backend import get_temperature
 from utils.temperature_utils import load_temp_num
 
 class HomeScreen(tk.Frame):
+    """
+    Represents the home screen UI in the PeriOp Monitor app.
+
+    Inherits from:
+        tk.Frame: A container widget used to group related widgets together.
+
+    Purpose:
+        - Displays temperature readings and controls.
+        - Includes navigation to Monitor Mode.
+        - Handles state for power toggling and updates digital temperature display.
+    """
+
+    # REQUIRES: master is an instance of PeriOpApp (tk.Tk subclass)
+    # MODIFIES: self
+    # EFFECTS: Initializes all UI components (labels, buttons, images) on the home screen
     def __init__(self, master):
         super().__init__(master, bg="#E5EBF6")
         self.master = master
 
-        # Temperature Display
-        self.display_panel_img = PhotoImage(file="assets/display/temperature-display-panel.png")
-        self.display_panel = tk.Label(self, image=self.display_panel_img, bg="#E5EBF6")
-        self.display_panel.place(x=320, y=15.62)
+        self.is_monitor_mode_on = [True] # Mutable flag for monitor mode
+        self.is_on_state = [True] # Mutable flag for stop button
+        self.temp_digit_widgets = []
+
+        self.init_temperature_panel()
+        self.init_monitor_mode_button()
+        self.init_language_indicator()
+        self.init_settings_panel()
+        self.init_power_button()
+        self.init_status_panel()
+        self.init_help_button()
+
+        self.update_temperature_display()
+
+    # REQUIRES: Image assets exist at correct file paths
+    # MODIFIES: self
+    # EFFECTS: Adds static background panels and temperature graph to screen
+    def init_temperature_panel(self):
+        self.display_panel_img = PhotoImage(file="assets/display/temperature-display-panel.png") # Load image
+        self.display_panel = tk.Label(self, image=self.display_panel_img, bg="#E5EBF6") # Create widget
+        self.display_panel.place(x=320, y=15.62) # Position
 
         self.temperature_display_img = PhotoImage(file="assets/display/temperature-display.png")
         self.temperature_display = tk.Label(self, image=self.temperature_display_img, bg="#F3F6FB")
@@ -29,8 +61,10 @@ class HomeScreen(tk.Frame):
         self.temperatures = tk.Label(self, image=self.temperatures_img, bg="#F3F6FB")
         self.temperatures.place(x=340, y=56)
 
-        self.is_monitor_mode_on = [True]  # State for the monitor mode button
-
+    # REQUIRES: Monitor mode image assets exist
+    # MODIFIES: self
+    # EFFECTS: Initializes monitor mode toggle button with press/release handlers
+    def init_monitor_mode_button(self):
         self.big_monitor_mode_img = PhotoImage(file="assets/display/big-monitor-mode.png")
         self.small_monitor_mode_img = PhotoImage(file="assets/display/small-monitor-mode.png")
 
@@ -45,41 +79,38 @@ class HomeScreen(tk.Frame):
             command=lambda: self.master.show_screen(self.master.monitor_mode_screen)
         )
 
-        monitor_button_center_x = 329 + self.big_monitor_mode_img.width() // 2
-        monitor_button_center_y = 414 + self.big_monitor_mode_img.height() // 2
+        center_x = 329 + self.big_monitor_mode_img.width() // 2
+        center_y = 414 + self.big_monitor_mode_img.height() // 2
 
         self.monitor_mode_button.place(
-            x=monitor_button_center_x - self.big_monitor_mode_img.width() // 2,
-            y=monitor_button_center_y - self.big_monitor_mode_img.height() // 2
+            x=center_x - self.big_monitor_mode_img.width() // 2,
+            y=center_y - self.big_monitor_mode_img.height() // 2
         )
 
         self.monitor_mode_button.bind(
             "<ButtonPress-1>",
-            lambda event: self.master.on_press(  # Use self.master.on_press
-                self.monitor_mode_button,
-                self.small_monitor_mode_img,
-                monitor_button_center_x,
-                monitor_button_center_y
-            )
+            lambda event: self.master.on_press(self.monitor_mode_button, self.small_monitor_mode_img, center_x, center_y)
         )
 
         self.monitor_mode_button.bind(
             "<ButtonRelease-1>",
-            lambda event: self.master.on_release(  # Use self.master.on_release
-                self.monitor_mode_button,
-                self.is_monitor_mode_on,
-                self.big_monitor_mode_img,
-                self.small_monitor_mode_img,
-                monitor_button_center_x,
-                monitor_button_center_y
-            )
+            lambda event: self.master.on_release(self.monitor_mode_button, self.is_monitor_mode_on,
+                                                 self.big_monitor_mode_img, self.small_monitor_mode_img,
+                                                 center_x, center_y)
         )
 
+    # REQUIRES: Language icon image exists
+    # MODIFIES: self
+    # EFFECTS: Displays static language icon
+    def init_language_indicator(self):
         self.language_img = PhotoImage(file="assets/display/language.png")
         self.language = tk.Label(self, image=self.language_img, bg="#FFFFFF")
         self.language.place(x=677, y=429)
 
-        # Temperature Settings and Mattress Temperature 
+    # REQUIRES: Settings panel images exist
+    # MODIFIES: self
+    # EFFECTS: Adds UI components for max/target temp and adjustment
+    def init_settings_panel(self):
         self.settings_panel_img = PhotoImage(file="assets/settings/temperature-settings-and-mattress-temperature-panel.png")
         self.settings_panel = tk.Label(self, image=self.settings_panel_img, bg="#E5EBF6")
         self.settings_panel.place(x=13, y=20.47)
@@ -124,16 +155,17 @@ class HomeScreen(tk.Frame):
         self.mattress_temperature = tk.Label(self, image=self.mattress_temperature_img, bg="#FFFFFF")
         self.mattress_temperature.place(x=23, y=204)
 
+    # REQUIRES: Power button images exist
+    # MODIFIES: self
+    # EFFECTS: Adds and binds stop button (on/off)
+    def init_power_button(self):
         self.big_on_img = PhotoImage(file="assets/settings/big-on.png")
         self.big_off_img = PhotoImage(file="assets/settings/big-off.png")
         self.small_on_img = PhotoImage(file="assets/settings/small-on.png")
         self.small_off_img = PhotoImage(file="assets/settings/small-off.png")
 
-        # Initial state
         self.stop_button_center_x = 228.5
         self.stop_button_center_y = 277
-
-        self.is_on_state = [True]  # Use a list to allow mutability in callbacks
 
         self.stop_button = tk.Button(
             self,
@@ -145,31 +177,28 @@ class HomeScreen(tk.Frame):
             relief="flat"
         )
 
-        self.stop_button.place(x=self.stop_button_center_x - self.big_on_img.width() // 2, 
-                            y=self.stop_button_center_y - self.big_on_img.height() // 2)
+        self.stop_button.place(
+            x=self.stop_button_center_x - self.big_on_img.width() // 2,
+            y=self.stop_button_center_y - self.big_on_img.height() // 2
+        )
 
         self.stop_button.bind(
             "<ButtonPress-1>",
-            lambda event: self.master.on_press(  # Use self.master.on_press
-                self.stop_button,
-                self.small_off_img,
-                self.stop_button_center_x,
-                self.stop_button_center_y
-            )
+            lambda event: self.master.on_press(self.stop_button, self.small_off_img,
+                                               self.stop_button_center_x, self.stop_button_center_y)
         )
 
         self.stop_button.bind(
             "<ButtonRelease-1>",
-            lambda event: self.master.on_release(  # Use self.master.on_release
-                self.stop_button,
-                self.is_on_state,
-                self.big_on_img,
-                self.big_off_img,
-                self.stop_button_center_x,
-                self.stop_button_center_y
-            )
+            lambda event: self.master.on_release(self.stop_button, self.is_on_state,
+                                                 self.big_on_img, self.big_off_img,
+                                                 self.stop_button_center_x, self.stop_button_center_y)
         )
 
+    # REQUIRES: Status panel images exist
+    # MODIFIES: self
+    # EFFECTS: Adds status label to the screen
+    def init_status_panel(self):
         self.status_panel_img = PhotoImage(file="assets/settings/status-panel.png")
         self.status_panel = tk.Label(self, image=self.status_panel_img, bg="#FFFFFF")
         self.status_panel.place(x=20, y=336)
@@ -178,53 +207,75 @@ class HomeScreen(tk.Frame):
         self.status = tk.Label(self, image=self.status_img, bg="#F3F6FB")
         self.status.place(x=30, y=350)
 
+    # REQUIRES: Help button image exists
+    # MODIFIES: self
+    # EFFECTS: Adds help button in top-right
+    def init_help_button(self):
         self.help_button_img = PhotoImage(file="assets/big-help-button.png")
         self.help_button = tk.Label(self, image=self.help_button_img, bg="#F3F6FB")
         self.help_button.place(x=757, y=23)
 
-        self.temp_digit_widgets = []
-        self.update_temperature_display()
-    
+    # REQUIRES: self has been initialized and digit images exist
+    # MODIFIES: self.temp_char_list, self.temp_digit_widgets
+    # EFFECTS: Periodically updates digital temperature display using digit images
     def update_temperature_display(self):
         temp_string = get_temperature()  # Example: "22.3 C"
-        temp_chars = temp_string.replace(" ", "")  # → "22.3C"
+        temp_chars = temp_string.replace(" ", "")  # "22.3C"
+        if not temp_chars:
+            temp_chars = ['-', '-', '.', '-', 'C']
+            # TODO: Add status update (Kyle)
         digits = load_temp_num()
 
         if not hasattr(self, 'temp_char_list'):
-            self.temp_char_list = [''] * len(temp_chars)
-            self.temp_digit_widgets = []
-            x_cursor = 35
-            y = 271.36
-            spacing = 24
-
-            for ch in temp_chars:
-                img = digits.get(ch)
-                label = tk.Label(self, image=img, bg="#FFFFFF")
-                label.image = img
-                self.temp_digit_widgets.append(label)
-
-                if ch == '.':
-                    label.place(x=x_cursor - 5, y=y + 20)
-                    x_cursor += 5
-                elif ch == 'C':
-                    label.place(x=x_cursor + 2, y=y - 10)
-                    x_cursor += 28
-                else:
-                    label.place(x=x_cursor, y=y)
-                    x_cursor += spacing
-
-                self.temp_char_list = list(temp_chars)
+            self._render_temp_chars(temp_chars, digits)
 
         else:
-            # Only update changed digits
-            for i, ch in enumerate(temp_chars):
-                if i >= len(self.temp_char_list):
-                    continue  # New char appeared, skip for now
-                if self.temp_char_list[i] != ch:
-                    img = digits.get(ch)
-                    self.temp_digit_widgets[i].config(image=img)
-                    self.temp_digit_widgets[i].image = img
-                    self.temp_char_list[i] = ch
+            if len(temp_chars) > len(self.temp_char_list):
+                temp_chars = ['-', '-', '.', '-', 'C']
+                self._render_temp_chars(temp_chars, digits)
+                # TODO: Add status update (Kyle)
+
+            else:
+                for i, ch in enumerate(temp_chars):
+                    if self.temp_char_list[i] != ch:
+                        img = digits.get(ch)
+                        self.temp_digit_widgets[i].config(image=img)
+                        self.temp_digit_widgets[i].image = img
+                        self.temp_char_list[i] = ch
 
         if self.is_on_state[0]:
             self.after(1000, self.update_temperature_display)
+
+    # REQUIRES: digits contains mappings for all characters in temp_chars
+    # MODIFIES: self.temp_char_list, self.temp_digit_widgets
+    # EFFECTS: Clears and re-renders digit widgets from temp_chars
+    def _render_temp_chars(self, temp_chars, digits):
+        self.temp_char_list = [''] * len(temp_chars)
+
+        for widget in getattr(self, 'temp_digit_widgets', []):
+            widget.destroy()
+        self.temp_digit_widgets = []
+
+        x_cursor = 35
+        y = 271.36
+        spacing = 24
+
+        for ch in temp_chars:
+            img = digits.get(ch)
+            label = tk.Label(self, image=img, bg="#FFFFFF")
+            label.image = img
+            label.place(
+                x=x_cursor - 5 if ch == '.' else x_cursor + 2 if ch == 'C' else x_cursor,
+                y=y + 20 if ch == '.' else y - 10 if ch == 'C' else y
+            )
+            self.temp_digit_widgets.append(label)
+
+            x_cursor += (
+                5 if ch == '.' else
+                28 if ch == 'C' else
+                spacing
+            )
+
+        self.temp_char_list = list(temp_chars)
+
+
