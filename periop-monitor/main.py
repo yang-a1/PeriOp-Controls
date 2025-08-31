@@ -2,7 +2,7 @@
 
 from app import PeriOpApp
 
-# REQUIRES: This file must be executed directly as a script (e.g., `python3 main.py`)
+# REQUIRES: This file must be executed directly as a script (e.g., "python3 main.py")
 # MODIFIES: None
 # EFFECTS: Launches the PeriOp Monitor GUI by creating an instance of PeriOpApp
 #          and starting the Tkinter event loop with mainloop()
