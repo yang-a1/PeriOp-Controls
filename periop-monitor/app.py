@@ -80,9 +80,3 @@ class PeriOpApp(tk.Tk):
         top_left_x = button_center_x - width // 2
         top_left_y = button_center_y - height // 2
         button.place(x=top_left_x, y=top_left_y)
-    
-    # REQUIRES: None
-    # MODIFIES: self
-    # EFFECTS: Exits the application window
-    def on_close(self):
-        self.destroy()
