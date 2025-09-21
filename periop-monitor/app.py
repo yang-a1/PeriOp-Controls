@@ -35,6 +35,7 @@ class PeriOpApp(tk.Tk):
 
         self.protocol("WM_DELETE_WINDOW", self.destroy) # Closes window when 'X' is pressed
 
+        self.SensorPlot = SensorPlot
         self.home_screen = HomeScreen(self)
         self.monitor_mode_screen = MonitorModeScreen(self)
 
@@ -80,3 +81,35 @@ class PeriOpApp(tk.Tk):
         top_left_x = button_center_x - width // 2
         top_left_y = button_center_y - height // 2
         button.place(x=top_left_x, y=top_left_y)
+
+class SensorPlot:
+    def __init__(self, parent, x=0, y=0, width=500, height=150, max_points=25):
+        self.canvas = tk.Canvas(parent, width=width, height=height,
+                                bg='#BCD4EF', highlightthickness=0, bd=0)
+        self.canvas.place(x=x, y=y)
+        self.width = width
+        self.height = height
+        self.max_points = max_points
+        self.data = []
+        self.line = None
+        self.update_line()
+    def update_line(self):
+        try:
+            new_temp = float(get_temperature())
+        except:
+            return
+        self.data.append(new_temp)
+        if len(self.data) > self.max_points:
+            self.data.pop(0)
+        max_temp = 50
+        min_temp = 0
+        scaled = [self.height - ((t - min_temp) / (max_temp - min_temp)) * self.height for t in self.data]
+        # Clear and redraw the line
+        self.canvas.delete("line")
+        if len(scaled) > 1:
+            coords = []
+            x_spacing = self.width / (self.max_points - 1)
+            for i, y in enumerate(scaled):
+                coords.extend((i * x_spacing, y))
+            self.canvas.create_line(*coords, fill='red', width=2, tags="line", smooth=True)
+        self.canvas.after(2000, self.update_line)

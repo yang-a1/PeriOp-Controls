@@ -3,6 +3,7 @@ from tkinter import PhotoImage
 from temperature_sensor_backend import get_temperature
 from utils.temperature_utils import load_temp_num
 
+
 class HomeScreen(tk.Frame):
     """
     Represents the home screen UI in the PeriOp Monitor app.
@@ -27,6 +28,7 @@ class HomeScreen(tk.Frame):
         self.is_on_state = [True] # Mutable flag for stop button
         self.temp_digit_widgets = []
 
+        self.sensor_plot = self.master.SensorPlot(self,  x=370, y=57.38, width=400, height=335)
         self.init_temperature_panel()
         self.init_monitor_mode_button()
         self.init_language_indicator()
@@ -36,6 +38,7 @@ class HomeScreen(tk.Frame):
         self.init_help_button()
 
         self.update_temperature_display()
+        
 
     # REQUIRES: Image assets exist at correct file paths
     # MODIFIES: self
