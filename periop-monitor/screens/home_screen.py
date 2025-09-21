@@ -247,7 +247,7 @@ class HomeScreen(tk.Frame):
                         self.temp_char_list[i] = ch
 
         if self.is_on_state[0]:
-            self.after(1000, self.update_temperature_display)
+            self.after(2000, self.update_temperature_display)
 
     # REQUIRES: digits contains mappings for all characters in temp_chars
     # MODIFIES: self.temp_char_list, self.temp_digit_widgets
