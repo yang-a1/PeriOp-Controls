@@ -2,7 +2,57 @@ import tkinter as tk
 from tkinter import PhotoImage
 from temperature_sensor_backend import get_temperature
 from utils.temperature_utils import load_temp_num
+import json 
+from pathlib import Path
 
+try:
+    from temperature_sensor_backend import get_temperature as _backend_get_temperature
+except Exception:
+    _backend_get_temperature = None
+def read_current_temperature_text() -> str:
+    """Return '36.7 C' or '--.- C' if no/invalid backend reading."""
+    if _backend_get_temperature is None:
+        return "--.- C"
+    try:
+        val = _backend_get_temperature()
+        if isinstance(val, (int, float)):
+            return f"{float(val):.1f} C"
+        s = str(val).strip()
+        if s.endswith("C") or s.endswith("°C"):
+            return s.replace("°", "")
+        return f"{float(s):.1f} C"
+    except Exception:
+        return "--.- C"
+_CONFIG = Path("config.json")
+_DEFAULTS = {"target_temperature_c": 37.0, "max_temperature_c": 43.0}
+RESET_DEFAULTS_ON_EACH_RUN = True
+def initialize_config():
+    """Create or reset config.json to defaults at app start."""
+    if RESET_DEFAULTS_ON_EACH_RUN or not _CONFIG.exists():
+        _save_config(dict(_DEFAULTS))
+def _load_config():
+    if _CONFIG.exists():
+        try:
+            return json.loads(_CONFIG.read_text())
+        except Exception:
+            pass
+    return dict(_DEFAULTS)
+def _save_config(cfg: dict):
+    _CONFIG.write_text(json.dumps(cfg, indent=2))
+def get_target_temperature_c() -> float:
+    return float(_load_config().get("target_temperature_c", _DEFAULTS["target_temperature_c"]))
+def set_target_temperature_c(val: float):
+    cfg = _load_config()
+    cfg["target_temperature_c"] = float(val)
+    _save_config(cfg)
+def get_max_temperature_c() -> float:
+    return float(_load_config().get("max_temperature_c", _DEFAULTS["max_temperature_c"]))
+def set_max_temperature_c(val: float):
+    cfg = _load_config()
+    cfg["max_temperature_c"] = float(val)
+    _save_config(cfg)
+def clamp30_43(x: float) -> float:
+    return max(30.0, min(43.0, float(x)))
 
 class HomeScreen(tk.Frame):
     """
@@ -39,6 +89,34 @@ class HomeScreen(tk.Frame):
 
         self.update_temperature_display()
         
+        self.temperature_settings = tk.Label(self, image=self.temperature_settings_img, bg="#FFFFFF")
+        self.temperature_settings.place(x=20, y=32)
+        self.maximum_temperature = tk.Label(self, image=self.maximum_temperature_img, bg="#FFFFFF")
+        self.maximum_temperature.place(x=25, y=53)
+        self.maximum_temperature_panel = tk.Label(self, image=self.maximum_temperature_panel_img, bg="#FFFFFF")
+        self.maximum_temperature_panel.place(x=17, y=66)
+        self.maximum_temperature_ex = tk.Label(self, image=self.maximum_temperature_ex_img, bg="#FFFFFF")
+        self.maximum_temperature_ex.place(x=35, y=83.56)
+        self.target_temperature = tk.Label(self, image=self.target_temperature_img, bg="#FFFFFF")
+        self.target_temperature.place(x=26, y=128)
+        self.target_temperature_panel = tk.Label(self, image=self.target_temperature_panel_img, bg="#FFFFFF")
+        self.target_temperature_panel.place(x=14, y=138)
+        self.target_temperature_ex = tk.Label(self, image=self.target_temperature_ex_img, bg="#FFFFFF")
+        self.target_temperature_ex.place(x=35, y=155.56)
+        self.max_overlay = tk.Frame(self, bg="#FFFFFF")
+        self.max_overlay.place(x=32, y=68, width=210, height=64)
+        self.max_overlay.lift()
+        self.target_overlay = tk.Frame(self, bg="#FFFFFF")
+        self.target_overlay.place(x=29, y=140, width=210, height=64)
+        self.target_overlay.lift()
+        self.max_val_var = tk.StringVar(value=f"{clamp30_43(get_max_temperature_c()):.1f}°C")
+        self.target_val_var = tk.StringVar(value=f"{clamp30_43(get_target_temperature_c()):.1f}°C")
+        self.max_val_lbl = tk.Label(self.max_overlay, textvariable=self.max_val_var,
+                                    bg="#FFFFFF", fg="#0B1220", font=("Inter", 28, "bold"))
+        self.max_val_lbl.pack(fill="both", expand=True)
+        self.target_val_lbl = tk.Label(self.target_overlay, textvariable=self.target_val_var,
+                                       bg="#FFFFFF", fg="#0B1220", font=("Inter", 28, "bold"))
+        self.target_val_lbl.pack(fill="both", expand=True)
 
     # REQUIRES: Image assets exist at correct file paths
     # MODIFIES: self
@@ -147,12 +225,22 @@ class HomeScreen(tk.Frame):
         self.target_temperature_ex.place(x=35, y=155.56)
 
         self.adjust_1_img = PhotoImage(file="assets/settings/adjust-button.png")
-        self.adjust_1 = tk.Label(self, image=self.adjust_1_img, bg="#FFFFFF")
-        self.adjust_1.place(x=201, y=76)
-
         self.adjust_2_img = PhotoImage(file="assets/settings/adjust-button.png")
-        self.adjust_2 = tk.Label(self, image=self.adjust_2_img, bg="#FFFFFF")
+
+        self.adjust_1 = tk.Button(
+            self, image=self.adjust_1_img, bg="#FFFFFF", activebackground="#FFFFFF",
+            borderwidth=0, highlightthickness=0, relief="flat",
+            command=lambda: self.open_keypad_popup(which="max")
+        )
+        self.adjust_1.place(x=201, y=76)
+        self.adjust_1.lift()
+        self.adjust_2 = tk.Button(
+            self, image=self.adjust_2_img, bg="#FFFFFF", activebackground="#FFFFFF",
+            borderwidth=0, highlightthickness=0, relief="flat",
+            command=lambda: self.open_keypad_popup(which="target")
+        )
         self.adjust_2.place(x=201, y=143)
+        self.adjust_2.lift()
 
         self.mattress_temperature_img = PhotoImage(file="assets/settings/mattress-temperature.png")
         self.mattress_temperature = tk.Label(self, image=self.mattress_temperature_img, bg="#FFFFFF")
@@ -247,7 +335,7 @@ class HomeScreen(tk.Frame):
                         self.temp_char_list[i] = ch
 
         if self.is_on_state[0]:
-            self.after(2000, self.update_temperature_display)
+            self.after(1000, self.update_temperature_display)
 
     # REQUIRES: digits contains mappings for all characters in temp_chars
     # MODIFIES: self.temp_char_list, self.temp_digit_widgets
@@ -281,4 +369,97 @@ class HomeScreen(tk.Frame):
 
         self.temp_char_list = list(temp_chars)
 
+    def open_keypad_popup(self, which: str):
+        top = tk.Toplevel(self)
+        top.title("Adjust Temperature")
+        top.configure(bg="#E5EBF6")
+        top.transient(self.master)
+        top.grab_set()
+        title = "Set Maximum (°C)" if which == "max" else "Set Target (°C)"
+        tk.Label(top, text=title, bg="#E5EBF6",
+                 fg="#0F172A", font=("Inter", 18, "bold")).pack(pady=(14, 6))
+        buf = tk.StringVar(value="")
+        entry = tk.Entry(top, textvariable=buf, font=("Inter", 28, "bold"),
+                         bd=0, justify="center", readonlybackground="white")
+        entry.configure(state="readonly")
+        entry.pack(padx=16, pady=(0, 8), ipadx=10, ipady=8)
+        def on_submit(val: str):
+            try:
+                v = float(val)
+            except ValueError:
+                tk.Label(top, text="enter a valid number", fg="#DC2626",
+                         bg="#E5EBF6", font=("Inter", 12)).pack()
+                return
+            v = clamp30_43(v)
+            if which == "max":
+                set_max_temperature_c(v)
+                self.max_val_var.set(f"{v:.1f}°C")      # update overlay NOW
+            else:
+                set_target_temperature_c(v)
+                self.target_val_var.set(f"{v:.1f}°C")   # update overlay NOW
+            top.destroy()
+        pad = NumericKeypad(top, value_var=buf, on_submit=on_submit)
+        pad.pack(fill="both", expand=True, padx=16, pady=12)
+    def refresh_overlays(self):
+        self.max_val_var.set(f"{clamp30_43(get_max_temperature_c()):.1f}°C")
+        self.target_val_var.set(f"{clamp30_43(get_target_temperature_c()):.1f}°C")
 
+class NumericKeypad(tk.Frame):
+    """On-screen keypad with big tap targets and Enter/backspace."""
+    def __init__(self, master, value_var: tk.StringVar, on_submit=None, **kwargs):
+        super().__init__(master, bg="#EFF3FB", **kwargs)
+        self.value_var = value_var
+        self.on_submit = on_submit
+        self.after(0, self.lift)
+        self.bind("<Map>", lambda e: self.lift())
+        self.config(padx=12, pady=12)
+        CELL_W, CELL_H = 120, 80
+        for c in range(4):
+            self.grid_columnconfigure(c, minsize=CELL_W, weight=1)
+        for r in range(4):
+            self.grid_rowconfigure(r, minsize=CELL_H, weight=1)
+        btn_kwargs = dict(
+            width=1, height=1, bd=0, relief="flat",
+            font=("Inter", 24), bg="white", activebackground="#E9EEF8",
+            cursor="hand2", highlightthickness=0, state="normal", takefocus=0
+        )
+        keys = [
+            ("1", 0, 0), ("2", 0, 1), ("3", 0, 2),
+            ("4", 1, 0), ("5", 1, 1), ("6", 1, 2),
+            ("7", 2, 0), ("8", 2, 1), ("9", 2, 2),
+            ("0", 3, 0), (".", 3, 1),
+        ]
+        for text, r, c in keys:
+            tk.Button(self, text=text, command=lambda t=text: self._press(t), **btn_kwargs)\
+              .grid(row=r, column=c, padx=10, pady=10, sticky="nsew")
+        self.back_btn = tk.Button(
+            self, text="⌫", command=self._backspace,
+            bg="#DADDE5", activebackground="#C9CDD6",
+            fg="#1E1E1E", font=("Inter", 22), bd=0, relief="flat",
+            cursor="hand2", highlightthickness=0, takefocus=0
+        )
+        self.back_btn.grid(row=1, column=3, padx=(10, 0), pady=10, sticky="nsew")
+        self.enter_btn = tk.Button(
+            self, text="→", command=self._enter,
+            bg="#2E6CF6", activebackground="#2A63DE",
+            fg="white", font=("Inter", 24, "bold"), bd=0, relief="flat",
+            cursor="hand2", highlightthickness=0, takefocus=0
+        )
+        self.enter_btn.grid(row=3, column=3, padx=(10, 0), pady=10, sticky="nsew")
+    def _press(self, ch: str):
+        v = self.value_var.get()
+        if ch == "." and "." in v:
+            return
+        if v == "0" and ch.isdigit():
+            self.value_var.set(ch)
+        else:
+            self.value_var.set(v + ch)
+    def _backspace(self):
+        v = self.value_var.get()
+        if v:
+            self.value_var.set(v[:-1])
+    def _enter(self):
+        if self.on_submit:
+            self.on_submit(self.value_var.get())
+
+    
