@@ -77,5 +77,9 @@ class MonitorModeScreen(tk.Frame):
         self.help_button_img = PhotoImage(file="assets/big-help-button.png")
         self.help_button = tk.Label(self, image=self.help_button_img, bg="#F3F6FB")
         self.help_button.place(x=750, y=22)
+        self.help_button.bind("<ButtonPress-1>", lambda event: self.help_button.config(image=self.help_button_img_pressed))
+        self.help_button.bind("<ButtonRelease-1>", lambda event: self.master.show_screen(self.master.help_manual_screen))
 
         self.sensor_plot = self.master.SensorPlot(self,  x=66, y=62, width=710, height=335)
+
+        
