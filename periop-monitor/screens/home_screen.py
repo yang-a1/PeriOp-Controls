@@ -28,8 +28,8 @@ class HomeScreen(tk.Frame):
         self.is_on_state = [True] # Mutable flag for stop button
         self.temp_digit_widgets = []
 
-        self.sensor_plot = self.master.SensorPlot(self,  x=370, y=57.38, width=400, height=335)
         self.init_temperature_panel()
+        self.sensor_plot = self.master.SensorPlot(self,  x=370, y=57.38, width=400, height=335)
         self.init_monitor_mode_button()
         self.init_language_indicator()
         self.init_settings_panel()
@@ -247,7 +247,7 @@ class HomeScreen(tk.Frame):
                         self.temp_char_list[i] = ch
 
         if self.is_on_state[0]:
-            self.after(1000, self.update_temperature_display)
+            self.after(2000, self.update_temperature_display)
 
     # REQUIRES: digits contains mappings for all characters in temp_chars
     # MODIFIES: self.temp_char_list, self.temp_digit_widgets
