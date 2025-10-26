@@ -15,6 +15,9 @@ A Tkinter-based GUI application for monitoring perioperative temperature data in
 - Python 3.8+
 - `pip` (Python package installer)
 - Linux/macOS/Windows with GUI support
+- Debian/Ubuntu/Raspberry Pi OS:
+- sudo apt-get install python3-tk
+
 
 ## Running the App
 
