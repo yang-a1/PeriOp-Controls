@@ -78,8 +78,8 @@ class HomeScreen(tk.Frame):
         self.is_on_state = [True] # Mutable flag for stop button
         self.temp_digit_widgets = []
 
-        self.sensor_plot = self.master.SensorPlot(self,  x=370, y=57.38, width=400, height=335)
         self.init_temperature_panel()
+        self.sensor_plot = self.master.SensorPlot(self,  x=370, y=57.38, width=400, height=335)
         self.init_monitor_mode_button()
         self.init_language_indicator()
         self.init_settings_panel()
@@ -103,24 +103,33 @@ class HomeScreen(tk.Frame):
         self.target_temperature_panel.place(x=14, y=138)
         self.target_temperature_ex = tk.Label(self, image=self.target_temperature_ex_img, bg="#FFFFFF")
         self.target_temperature_ex.place(x=35, y=155.56)
-        self.max_overlay = tk.Frame(self, bg="#FFFFFF")
-        self.max_overlay.place(x=32, y=68, width=210, height=64)
-        self.max_overlay.lift()
-        self.target_overlay = tk.Frame(self, bg="#FFFFFF")
-        self.target_overlay.place(x=29, y=140, width=210, height=64)
-        self.target_overlay.lift()
-        self.max_val_var = tk.StringVar(value=f"{clamp30_43(get_max_temperature_c()):.1f}°C")
-        self.target_val_var = tk.StringVar(value=f"{clamp30_43(get_target_temperature_c()):.1f}°C")
-        self.max_val_lbl = tk.Label(self.max_overlay, textvariable=self.max_val_var,
-                                    bg="#FFFFFF", fg="#0B1220", font=("Inter", 28, "bold"))
-        self.max_val_lbl.pack(fill="both", expand=True)
-        self.target_val_lbl = tk.Label(self.target_overlay, textvariable=self.target_val_var,
-                                       bg="#FFFFFF", fg="#0B1220", font=("Inter", 28, "bold"))
-        self.target_val_lbl.pack(fill="both", expand=True)
+    
+        self.max_mask = tk.Label(self, bg="#FFFFFF", borderwidth=0, highlightthickness=0)
+        self.max_mask.place(x=22, y=70, width=120, height=50)
 
-    # REQUIRES: Image assets exist at correct file paths
-    # MODIFIES: self
-    # EFFECTS: Adds static background panels and temperature graph to screen
+        self.target_mask = tk.Label(self, bg="#FFFFFF", borderwidth=0, highlightthickness=0)
+        self.target_mask.place(x=22, y=142, width=120, height=50)
+
+        self.max_val_var = tk.StringVar(value=f"{clamp30_43(get_max_temperature_c()):.1f}°C")
+        self.max_val_lbl = tk.Label(
+            self.max_mask,                
+            textvariable=self.max_val_var,
+            bg="#FFFFFF", fg="#0B1220",
+            font=("Inter", 26, "bold"),
+            borderwidth=0, highlightthickness=0
+        )
+        self.max_val_lbl.place(relx=0.5, rely=0.5, anchor="center")
+
+        self.target_val_var = tk.StringVar(value=f"{clamp30_43(get_target_temperature_c()):.1f}°C")
+        self.target_val_lbl = tk.Label(
+            self.target_mask,             
+            textvariable=self.target_val_var,
+            bg="#FFFFFF", fg="#0B1220",
+            font=("Inter", 26, "bold"),
+            borderwidth=0, highlightthickness=0
+        )
+        self.target_val_lbl.place(relx=0.5, rely=0.5, anchor="center")
+
     def init_temperature_panel(self):
         self.display_panel_img = PhotoImage(file="assets/display/temperature-display-panel.png") # Load image
         self.display_panel = tk.Label(self, image=self.display_panel_img, bg="#E5EBF6") # Create widget
@@ -305,6 +314,7 @@ class HomeScreen(tk.Frame):
         self.help_button_img = PhotoImage(file="assets/big-help-button.png")
         self.help_button = tk.Label(self, image=self.help_button_img, bg="#F3F6FB")
         self.help_button.place(x=757, y=23)
+        
 
         self.help_button.bind("<ButtonPress-1>", lambda event: self.help_button.config(image=self.help_button_img_pressed))
         self.help_button.bind("<ButtonRelease-1>", lambda event: self.master.show_screen(self.master.help_manual_screen))
@@ -371,7 +381,7 @@ class HomeScreen(tk.Frame):
             )
 
         self.temp_char_list = list(temp_chars)
-
+    
     def open_keypad_popup(self, which: str):
         top = tk.Toplevel(self)
         top.title("Adjust Temperature")
@@ -393,14 +403,55 @@ class HomeScreen(tk.Frame):
                 tk.Label(top, text="enter a valid number", fg="#DC2626",
                          bg="#E5EBF6", font=("Inter", 12)).pack()
                 return
+
+            '''if v > 43.0:
+                warn = tk.Toplevel(top)
+                warn.title("Warning")
+                warn.configure(bg="#FEE2E2")
+                warn.transient(top)
+                tk.Label(
+                    warn, text="⚠️  Temperature cannot exceed 43°C",
+                    bg="#FEE2E2", fg="#991B1B", font=("Inter", 14, "bold"), padx=18, pady=12
+                ).pack()
+                warn.after(2000, warn.destroy)
+                return'''
+            if v > 43.0:
+                warn = tk.Toplevel(top)
+                warn.title("Invalid temperature")
+                warn.configure(bg="#FEE2E2")
+                warn.transient(top)       # tie to the keypad window
+                warn.grab_set()           # make it modal
+
+                tk.Label(
+                    warn, text="⚠️  Temperature cannot exceed 43°C",
+                    bg="#FEE2E2", fg="#991B1B", font=("Inter", 14, "bold"), padx=18, pady=12
+                ).pack(padx=12, pady=(12, 8))
+
+                ok_btn = tk.Button(
+                warn, text="OK", command=warn.destroy,
+                bg="#3B82F6", fg="white",
+                bd=0, relief="flat", highlightthickness=0,
+                activebackground="#2563EB", activeforeground="white",
+                font=("Inter", 13, "bold"), padx=18, pady=8, cursor="hand2"
+                )
+                ok_btn.pack(pady=(0, 14))
+                ok_btn.update()
+                warn.update_idletasks()
+
+                warn.focus_set()
+                warn.wait_window(warn)    # block until user closes it
+                return
+
             v = clamp30_43(v)
             if which == "max":
                 set_max_temperature_c(v)
-                self.max_val_var.set(f"{v:.1f}°C")      # update overlay NOW
+                self.max_val_var.set(f"{v:.1f}°C")
             else:
                 set_target_temperature_c(v)
-                self.target_val_var.set(f"{v:.1f}°C")   # update overlay NOW
+                self.target_val_var.set(f"{v:.1f}°C")
             top.destroy()
+            
+
         pad = NumericKeypad(top, value_var=buf, on_submit=on_submit)
         pad.pack(fill="both", expand=True, padx=16, pady=12)
     def refresh_overlays(self):
