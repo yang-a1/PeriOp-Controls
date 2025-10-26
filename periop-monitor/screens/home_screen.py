@@ -314,6 +314,7 @@ class HomeScreen(tk.Frame):
         self.help_button_img = PhotoImage(file="assets/big-help-button.png")
         self.help_button = tk.Label(self, image=self.help_button_img, bg="#F3F6FB")
         self.help_button.place(x=757, y=23)
+        
 
     # REQUIRES: self has been initialized and digit images exist
     # MODIFIES: self.temp_char_list, self.temp_digit_widgets
