@@ -38,6 +38,9 @@ class PeriOpApp(tk.Tk):
         self.SensorPlot = SensorPlot
         self.home_screen = HomeScreen(self)
         self.monitor_mode_screen = MonitorModeScreen(self)
+        self.help_manual_screen = HelpManualScreen(self)
+        for screen in (self.home_screen, self.monitor_mode_screen, self.help_manual_screen):
+            screen.place(x=0, y=0, width=800, height=480)
 
         self.show_screen(self.home_screen)
 
@@ -49,6 +52,7 @@ class PeriOpApp(tk.Tk):
         for widget in self.winfo_children():
             widget.pack_forget()
         screen.pack(fill="both", expand=True)
+        screen.lift()
 
     # REQUIRES: button is a tk.Button, small_image is a PhotoImage
     # MODIFIES: button
@@ -113,3 +117,23 @@ class SensorPlot:
                 coords.extend((i * x_spacing, y))
             self.canvas.create_line(*coords, fill='red', width=2, tags="line", smooth=True)
         self.canvas.after(2000, self.update_line)
+
+class HelpManualScreen(tk.Frame):
+    def __init__(self, master):
+        super().__init__(master, bg="#E5EBF6")
+        self.master = master
+
+        self.help_manual_img = PhotoImage(file="assets/help-manual.png")
+        tk.Label(self, image=self.help_manual_img, bg="#E5EBF6").pack(padx=20, pady=20)
+
+        self.back_button_img = PhotoImage(file="assets/exit.png")
+        tk.Button(
+            self,
+            image=self.back_button_img,
+            bg="#E5EBF6",
+            activebackground="#E5EBF6",
+            borderwidth=0,
+            highlightthickness=0,
+            relief="flat",
+            command=lambda: self.master.show_screen(self.master.home_screen),
+        ).place(x=700, y=35)

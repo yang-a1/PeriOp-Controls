@@ -316,6 +316,9 @@ class HomeScreen(tk.Frame):
         self.help_button.place(x=757, y=23)
         
 
+        self.help_button.bind("<ButtonPress-1>", lambda event: self.help_button.config(image=self.help_button_img_pressed))
+        self.help_button.bind("<ButtonRelease-1>", lambda event: self.master.show_screen(self.master.help_manual_screen))
+
     # REQUIRES: self has been initialized and digit images exist
     # MODIFIES: self.temp_char_list, self.temp_digit_widgets
     # EFFECTS: Periodically updates digital temperature display using digit images
