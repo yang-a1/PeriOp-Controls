@@ -49,9 +49,8 @@ class PeriOpApp(tk.Tk):
     # EFFECTS: Clears current widgets and displays the given screen
     def show_screen(self, screen):
         """Switch to the specified screen."""
-        for widget in self.winfo_children():
-            widget.pack_forget()
-        screen.pack(fill="both", expand=True)
+        for s in (self.home_screen, self.monitor_mode_screen, self.help_manual_screen): 
+            s.lower()
         screen.lift()
 
     # REQUIRES: button is a tk.Button, small_image is a PhotoImage
