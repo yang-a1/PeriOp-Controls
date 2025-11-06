@@ -98,10 +98,19 @@ class SensorPlot:
         self.update_line()
     def update_line(self):
         try:
-            new_temp = float(get_temperature())
+            new_temp = get_temperature()
+            print(new_temp)
+            # i want to print what the temp sens is intaking
+            if "--" in new_temp:
+                # Use previous value or None to keep plot moving
+                # this could be bullshit and useless
+                new_temp_value = self.data[-1] if self.data else 0
+            else:
+                #this is good i think. need to be fixed bc for some reason nothing is appending
+                new_temp_value = float(new_temp.replace(" C", "").strip())
         except:
-            return
-        self.data.append(new_temp)
+            new_temp_value = self.data[-1] if self.data else 0
+        self.data.append(new_temp_value)
         if len(self.data) > self.max_points:
             self.data.pop(0)
         max_temp = 50

@@ -23,9 +23,9 @@ class MonitorModeScreen(tk.Frame):
         self.graph_lines = tk.Label(self, image=self.graph_lines_img, bg="#BCD4EF")
         self.graph_lines.place(x=64, y=61.3)
 
-        self.temperatures_img = PhotoImage(file="assets/monitor-mode/temperatures.png")
+        self.temperatures_img = PhotoImage(file="assets/monitor-mode/temp_new.png")
         self.temperatures = tk.Label(self, image=self.temperatures_img, bg="#F3F6FB")
-        self.temperatures.place(x=25.47, y=59.69)
+        self.temperatures.place(x=25.47, y=65)
 
         self.is_home_screen_on = [True]  # State for the home button
 

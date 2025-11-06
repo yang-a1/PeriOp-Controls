@@ -147,9 +147,9 @@ class HomeScreen(tk.Frame):
         self.graph_lines = tk.Label(self, image=self.graph_lines_img, bg="#BCD4EF")
         self.graph_lines.place(x=370, y=57.38)
 
-        self.temperatures_img = PhotoImage(file="assets/display/temperatures.png")
+        self.temperatures_img = PhotoImage(file="assets/display/temp_new.png")
         self.temperatures = tk.Label(self, image=self.temperatures_img, bg="#F3F6FB")
-        self.temperatures.place(x=340, y=56)
+        self.temperatures.place(x=330, y=60)
 
     # REQUIRES: Monitor mode image assets exist
     # MODIFIES: self
