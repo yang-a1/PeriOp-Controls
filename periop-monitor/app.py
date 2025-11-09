@@ -99,14 +99,9 @@ class SensorPlot:
     def update_line(self):
         try:
             new_temp = get_temperature()
-            print(new_temp)
-            # i want to print what the temp sens is intaking
             if "--" in new_temp:
-                # Use previous value or None to keep plot moving
-                # this could be bullshit and useless
                 new_temp_value = self.data[-1] if self.data else 0
             else:
-                #this is good i think. need to be fixed bc for some reason nothing is appending
                 new_temp_value = float(new_temp.replace(" C", "").strip())
         except:
             new_temp_value = self.data[-1] if self.data else 0
