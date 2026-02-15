@@ -48,4 +48,4 @@ while True:
         raise error  # This is the correct way to raise the error
 
     # Wait before the next reading
-    time.sleep(2.0)
+    time.sleep(5.3)
