@@ -1,0 +1,489 @@
+/*
+  ============================================================================
+  PI_tests_4_onward.ino      (bench-test version - NOT a medical device)
+  ============================================================================
+  Same controller as PI_mattress_controller.ino, plus AUTOMATIC TEST RUNNERS
+  for tests 4-11. You type one command; the sketch runs the test, stops
+  itself, and prints results. The safety layer (41 C latch-off, sensor-fault
+  shutoff, runaway check) is still ON, because the mattress is live.
+
+  TEST -> COMMAND MAP  (Serial Monitor, 115200 baud, line ending "Newline")
+    4   Real power        w         30 % duty for 30 s. Read the watt meter
+                                    during it: average W / 0.30 = full power.
+    5   Step test @10 %   s10       Open loop. Auto-stops when temperature has
+                                    settled (<0.1 C change over 10 min, after
+                                    >= 20 min), or at 90 min, or at 39 C.
+                                    Then copy log to step10.csv and run
+                                    fopdt_fit.py. Let it cool 2 h between runs.
+    6   Linearity @20 %   s20       Same, at 20 %. k should be within 30 % of test 5.
+    7   Setpoint step     a         PI holds 34 C until steady (+/-0.2 C for
+                                    10 min), steps to 37 C, runs 60 min, prints
+                                    overshoot, time-to-band, ripple.
+                                    (Enter Kc/Ti first:  k0.05  i600)
+    8   Uniformity        (manual)  K-type probe at 5 spots once steady.
+    9   Disturbance       b         Type "b" at the instant you place the warm
+                                    water bag, and again when you remove it.
+                                    Writes a "# MARK" line into the log.
+    10  Live fault test   (manual)  Unplug the sensor, then USB, while at 37 C.
+    11  Endurance         t37, z    "t37" to hold 37 C, "z" to zero the stats.
+                                    Every 30 min it prints cumulative min/max/
+                                    mean/sd of temperature. Run 6 h.
+
+  OTHER COMMANDS
+    o        heater OFF (also cancels any running test)
+    d10      manual open-loop duty (max 30 %)
+    t37      manual PI at target (30..40 C)
+    k0.05    set Kc        i600   set Ti (s)
+    u25      duty cap in %        m0.5   setpoint ramp, degC/min
+    r        reset latched fault  ?      print settings
+    z        reset temperature stats
+
+  LOG COLUMNS (CSV, one line per ~2 s)
+    ms, mode(0 off/1 step/2 PI), target, sp_eff, temp_raw, temp_filt,
+    duty_pct, I_pct, fault, sensor_hex, auto(0 none/1 power/2 step/3 hold/4 sp-step)
+  Lines starting with # are messages; fopdt_fit.py ignores them.
+
+  FAULT CODES (heater OFF until "r")
+    1 sensor chip wiring fault   2 reading outside 0..50 C
+    3 jump > 1 C in one 2-s window   4 temp >= 41 C
+    5 runaway (at duty cap 20 min, no rise)   6 manual step hit 40 C
+
+  TUNING THE LOG (change ONE thing at a time, ~25 %)
+    endless swings              -> Kc too high or Ti too small
+    slow, never reaches target  -> Kc too low or Ti too large
+    overshoot > 0.5 C           -> raise Ti or lower Kc
+    stuck 0.3-0.5 C low         -> lower Ti
+    duty pinned at cap          -> normal in warm-up; if it never leaves the cap
+                                   with the patient/water bag on, raise 'u'
+
+  WIRING (Arduino Uno)
+    MAX31865: VIN->5V, GND->GND, CLK->D13, SDO->D12, SDI->D11, CS->D10
+    Pt1000 -> RTD+/RTD- (2-wire: tie F+ to RTD+, F- to RTD-; check Adafruit guide)
+    SSR input + -> D7, - -> GND.  Library: "Adafruit MAX31865 library"
+  ============================================================================
+*/
+
+#include <SPI.h>
+#include <Adafruit_MAX31865.h>
+#if defined(__AVR__)
+  #include <avr/wdt.h>
+#endif
+
+// ============================================================================
+// SECTION 1 - SETTINGS YOU WILL EDIT DURING TESTING
+// ============================================================================
+float Kc = 0.03;     // Proportional gain (duty fraction per degC of error).
+                     // Overwrite with fopdt_fit.py output after test 5 ("k..." command).
+float Ti = 600.0;    // Integral time (s). Overwrite after test 5 ("i..." command).
+float U_MAX = 0.25;  // Max duty PI may use (0.25 = 25 %). Raise only if the mattress
+                     // can't reach target (e.g. with the water bag on).
+float RAMP_C_PER_S = 0.5 / 60.0;   // setpoint ramp, 0.5 degC/min ("m" command)
+
+// Test 1 (calibration) skipped -> leave at 1 / 0. Test 8 (K-type probe) will
+// show any offset; if the Pt1000 reads off by X, put -X in CAL_OFFSET.
+const float CAL_GAIN   = 1.000;
+const float CAL_OFFSET = 0.000;
+
+const float FILTER_TAU_S = 5.0;    // sensor smoothing (s). Leave.
+
+// ---- Automatic test settings --------------------------------------------------
+const unsigned long POWER_TEST_S = 30;     // test 4 duration
+const float POWER_TEST_DUTY      = 0.30;
+const unsigned long STEP_MIN_S   = 1200;   // step test: never stop before 20 min
+const unsigned long STEP_MAX_S   = 5400;   // ...always stop by 90 min
+const float STEP_SOFT_STOP_C     = 39.0;   // ...or if surface reaches this (graceful stop)
+const float STEP_SETTLE_C        = 0.1;    // "settled" = < this change over 10 min
+const float A_LOW  = 34.0;                 // test 7: hold here first
+const float A_HIGH = 37.0;                 // test 7: then step to here
+const unsigned long HOLD_TIMEOUT_S = 7200; // test 7: give up if 34 C not reached in 2 h
+
+// ============================================================================
+// SECTION 2 - SAFETY LIMITS (change only deliberately)
+// ============================================================================
+const float SP_MIN        = 30.0;
+const float SP_MAX        = 40.0;   // HARD max target
+const float TRIP_ABS_C    = 41.0;   // any reading >= this -> latch OFF (fault 4)
+const float STEP_ABORT_C  = 40.0;   // manual 'd' step aborts here (fault 6)
+const float STEP_MAX_DUTY = 0.30;
+const float U_MAX_ABS     = 0.50;
+const float SANE_MIN_C    = 0.0;
+const float SANE_MAX_C    = 50.0;
+const float MAX_JUMP_C    = 1.0;
+const unsigned long RUNAWAY_S = 1200;
+const float RUNAWAY_MIN_RISE_C = 0.5;
+
+// Watchdog: only on an Uno R3 / Optiboot board (old Nano bootloaders can reset-loop).
+#define USE_WATCHDOG 0
+
+// ============================================================================
+// SECTION 3 - HARDWARE
+// ============================================================================
+const uint8_t SSR_PIN    = 7;
+const uint8_t MAX_CS_PIN = 10;
+Adafruit_MAX31865 thermo(MAX_CS_PIN);
+const float RNOMINAL = 1000.0;
+const float RREF     = 4300.0;
+const unsigned long WINDOW_MS = 2000;
+
+// ============================================================================
+// SECTION 4 - INTERNAL STATE (don't edit)
+// ============================================================================
+enum Mode : uint8_t { MODE_OFF = 0, MODE_STEP = 1, MODE_PI = 2 };
+Mode mode = MODE_OFF;
+enum Auto : uint8_t { AUTO_NONE = 0, AUTO_POWER = 1, AUTO_STEP = 2, AUTO_SP_HOLD = 3, AUTO_SP_STEP = 4 };
+Auto autoState = AUTO_NONE;
+
+float tempRaw = NAN, tempFilt = NAN, prevRaw = NAN;
+float spTarget = 34.0, spEff = 34.0;
+float stepDuty = 0.0, duty = 0.0, Iterm = 0.0;
+uint8_t faultCode = 0, sensorHex = 0;
+bool faultLatched = false, sensorReady = false;
+uint8_t goodReads = 0;
+
+unsigned long windowStart = 0, lastUpdate = 0;
+unsigned long satSince = 0; float satTemp = 0; bool saturated = false;
+
+// auto-test bookkeeping
+unsigned long autoT0 = 0;            // ms when current phase began
+float ring[11]; unsigned long lastRingMs = 0;   // temp once per min, last 10 min (settle check)
+bool inBand = false; unsigned long inBandStart = 0;
+float maxAfter = 0, timeInBandMin = -1; bool statsStarted = false;
+
+// running temperature statistics (Welford): min, max, mean, sd
+unsigned long stN = 0; float stMin = 0, stMax = 0, stMean = 0, stM2 = 0;
+unsigned long lastStatsPrint = 0;
+
+char cmdBuf[24]; uint8_t cmdLen = 0;
+
+// ============================================================================
+// SETUP / LOOP
+// ============================================================================
+void setup() {
+  pinMode(SSR_PIN, OUTPUT);
+  digitalWrite(SSR_PIN, LOW);                 // heater OFF first
+  Serial.begin(115200);
+  thermo.begin(MAX31865_2WIRE);               // MAX31865_4WIRE if you wire 4-wire
+#if USE_WATCHDOG && defined(__AVR__)
+  wdt_enable(WDTO_4S);
+#endif
+  statsReset();
+  Serial.println(F("# Test runner ready. Heater OFF. Commands: w s10 s20 a b z t37 o r ?"));
+  Serial.println(F("ms,mode,target,sp_eff,temp_raw,temp_filt,duty_pct,I_pct,fault,sensor_hex,auto"));
+  windowStart = lastUpdate = millis();
+}
+
+void loop() {
+#if USE_WATCHDOG && defined(__AVR__)
+  wdt_reset();
+#endif
+  handleSerial();
+  unsigned long now = millis();
+
+  // Once per window: read sensor -> safety -> test logic -> duty -> stats -> log.
+  // Sensor is read at the window boundary (blocks ~70 ms) when the SSR is OFF
+  // anyway, so on-time is not distorted.
+  if (now - windowStart >= WINDOW_MS) {
+    digitalWrite(SSR_PIN, LOW);
+    float dt = (now - lastUpdate) / 1000.0;
+    lastUpdate = now;
+
+    bool ok = readSensor(dt);
+    if (mode != MODE_OFF && !faultLatched) checkFaults(ok);
+    runTests();                                // may change mode / target / autoState
+    updateDuty(dt);
+
+    if (mode == MODE_PI && sensorReady) {      // endurance stats while holding
+      statsAdd(tempFilt);
+      if (millis() - lastStatsPrint >= 1800000UL) { statsPrint(F("30min cumulative")); lastStatsPrint = millis(); }
+    }
+    logLine();
+    windowStart = millis();
+  }
+  driveSSR();
+}
+
+// ============================================================================
+// SENSOR
+// ============================================================================
+bool readSensor(float dt) {
+  float t = thermo.temperature(RNOMINAL, RREF);
+  sensorHex = thermo.readFault();
+  if (sensorHex) thermo.clearFault();
+  if (sensorHex) { goodReads = 0; sensorReady = false; return false; }
+
+  prevRaw = tempRaw;
+  tempRaw = CAL_GAIN * t + CAL_OFFSET;
+  if (isnan(tempFilt)) tempFilt = tempRaw;
+  else tempFilt += (dt / (FILTER_TAU_S + dt)) * (tempRaw - tempFilt);
+
+  if (goodReads < 3) goodReads++;
+  if (goodReads >= 3) sensorReady = true;
+  return true;
+}
+
+// ============================================================================
+// SAFETY
+// ============================================================================
+void tripFault(uint8_t code) {
+  faultCode = code; faultLatched = true;
+  mode = MODE_OFF; duty = 0; Iterm = 0; autoState = AUTO_NONE;
+  digitalWrite(SSR_PIN, LOW);
+  Serial.print(F("# FAULT ")); Serial.print(code);
+  Serial.println(F(" - heater OFF, test cancelled. Fix cause, then 'r'."));
+}
+
+void checkFaults(bool sensorOk) {
+  if (!sensorOk)                                     { tripFault(1); return; }
+  if (tempRaw < SANE_MIN_C || tempRaw > SANE_MAX_C)  { tripFault(2); return; }
+  if (!isnan(prevRaw) && fabs(tempRaw - prevRaw) > MAX_JUMP_C) { tripFault(3); return; }
+  if (tempRaw >= TRIP_ABS_C)                         { tripFault(4); return; }
+  if (mode == MODE_STEP && tempRaw >= STEP_ABORT_C)  { tripFault(6); return; }
+
+  if (mode == MODE_PI) {                             // runaway: pinned at cap, not rising
+    bool atCap = (duty >= U_MAX - 0.001);
+    if (atCap && !saturated) { saturated = true; satSince = millis(); satTemp = tempFilt; }
+    if (!atCap) saturated = false;
+    if (saturated && (millis() - satSince) > RUNAWAY_S * 1000UL) {
+      if (tempFilt - satTemp < RUNAWAY_MIN_RISE_C) { tripFault(5); return; }
+      satSince = millis(); satTemp = tempFilt;
+    }
+  }
+}
+
+// ============================================================================
+// CONTROL
+// ============================================================================
+void updateDuty(float dt) {
+  if (faultLatched || !sensorReady) { duty = 0; return; }
+  switch (mode) {
+    case MODE_OFF:  duty = 0; break;
+    case MODE_STEP: duty = stepDuty; break;
+    case MODE_PI:   duty = piStep(dt); break;
+  }
+}
+
+float piStep(float dt) {
+  // 1) ramp working setpoint toward target
+  float maxMove = RAMP_C_PER_S * dt;
+  spEff += constrain(spTarget - spEff, -maxMove, maxMove);
+  // 2) error (positive = need heat)
+  float e = spEff - tempFilt;
+  // 3) P term, 4) clamp P+I to 0..U_MAX
+  float uUnsat = Kc * e + Iterm;
+  float u = constrain(uUnsat, 0.0, U_MAX);
+  // 5) integral with anti-windup: don't integrate while pinned at a limit
+  //    and the error still pushes further into it
+  bool pushingHigh = (uUnsat > U_MAX) && (e > 0);
+  bool pushingLow  = (uUnsat < 0.0)   && (e < 0);
+  if (!pushingHigh && !pushingLow) Iterm += (Kc / Ti) * e * dt;
+  Iterm = constrain(Iterm, 0.0, U_MAX);
+  return u;
+}
+
+void driveSSR() {
+  if (faultLatched || mode == MODE_OFF || !sensorReady || duty <= 0.0) {
+    digitalWrite(SSR_PIN, LOW); return;
+  }
+  unsigned long onMs = (unsigned long)(duty * WINDOW_MS);
+  digitalWrite(SSR_PIN, (millis() - windowStart) < onMs ? HIGH : LOW);
+}
+
+// ============================================================================
+// HELPERS FOR TESTS
+// ============================================================================
+bool canHeat() {
+  if (faultLatched || !sensorReady) { Serial.println(F("# refused: fault or sensor not ready")); return false; }
+  return true;
+}
+
+void startPI(float target) {
+  spTarget = constrain(target, SP_MIN, SP_MAX);
+  if (mode != MODE_PI) { spEff = tempFilt; Iterm = 0; saturated = false; statsReset(); }
+  mode = MODE_PI;
+}
+
+void endAuto(const __FlashStringHelper* why) {   // finish a test and turn heater OFF
+  mode = MODE_OFF; duty = 0; Iterm = 0; autoState = AUTO_NONE;
+  digitalWrite(SSR_PIN, LOW);
+  Serial.print(F("# AUTO DONE: ")); Serial.print(why);
+  Serial.println(F(". Heater OFF. Let it cool ~2 h before the next open-loop test."));
+}
+
+void statsReset() { stN = 0; stMin = 1e9; stMax = -1e9; stMean = 0; stM2 = 0; lastStatsPrint = millis(); }
+void statsAdd(float x) {
+  stN++; if (x < stMin) stMin = x; if (x > stMax) stMax = x;
+  float d = x - stMean; stMean += d / stN; stM2 += d * (x - stMean);
+}
+void statsPrint(const __FlashStringHelper* tag) {
+  float sd = (stN > 1) ? sqrt(stM2 / (stN - 1)) : 0;
+  Serial.print(F("# STATS ")); Serial.print(tag);
+  Serial.print(F(" n=")); Serial.print(stN);
+  Serial.print(F(" min=")); Serial.print(stMin, 2);
+  Serial.print(F(" max=")); Serial.print(stMax, 2);
+  Serial.print(F(" mean=")); Serial.print(stMean, 2);
+  Serial.print(F(" sd=")); Serial.println(sd, 3);
+}
+
+// ============================================================================
+// AUTOMATIC TEST LOGIC (runs once per window)
+// ============================================================================
+void runTests() {
+  if (autoState == AUTO_NONE || faultLatched || !sensorReady) return;
+  unsigned long now = millis();
+  unsigned long el = now - autoT0;                 // ms since this phase began
+
+  switch (autoState) {
+
+    case AUTO_POWER:                               // TEST 4
+      if (el >= POWER_TEST_S * 1000UL) endAuto(F("power test finished"));
+      break;
+
+    case AUTO_STEP:                                // TESTS 5, 6
+      if (now - lastRingMs >= 60000UL) {           // once a minute, keep last 11 temps
+        lastRingMs = now;
+        for (uint8_t i = 0; i < 10; i++) ring[i] = ring[i + 1];
+        ring[10] = tempFilt;
+      }
+      if (tempFilt >= STEP_SOFT_STOP_C)            endAuto(F("step: soft temperature limit reached"));
+      else if (el >= STEP_MAX_S * 1000UL)          endAuto(F("step: max time reached"));
+      else if (el >= STEP_MIN_S * 1000UL && (ring[10] - ring[0]) < STEP_SETTLE_C)
+                                                   endAuto(F("step: temperature settled"));
+      break;
+
+    case AUTO_SP_HOLD:                             // TEST 7, phase 1: settle at 34 C
+      if (fabs(tempFilt - A_LOW) <= 0.2) {
+        if (!inBand) { inBand = true; inBandStart = now; }
+        if (now - inBandStart >= 600000UL) {       // within +/-0.2 C for 10 min
+          spTarget = A_HIGH; autoState = AUTO_SP_STEP; autoT0 = now;
+          maxAfter = tempFilt; timeInBandMin = -1; statsStarted = false;
+          Serial.println(F("# MARK setpoint step 34 -> 37 (clock starts)"));
+        }
+      } else inBand = false;
+      if (autoState == AUTO_SP_HOLD && el >= HOLD_TIMEOUT_S * 1000UL)
+        endAuto(F("could not settle at 34 C in 2 h: check gains, raise cap 'u', or check sensor"));
+      break;
+
+    case AUTO_SP_STEP:                             // TEST 7, phase 2: step to 37 C, 60 min
+      if (tempFilt > maxAfter) maxAfter = tempFilt;
+      if (timeInBandMin < 0 && fabs(tempFilt - A_HIGH) <= 0.5) timeInBandMin = el / 60000.0;
+      if (!statsStarted && el >= 2400000UL) { statsReset(); statsStarted = true; }  // stats = last 20 min
+      if (el >= 3600000UL) {
+        Serial.print(F("# SETPOINT-STEP RESULT: overshoot_C="));
+        Serial.print(maxAfter > A_HIGH ? maxAfter - A_HIGH : 0.0, 2);
+        Serial.print(F("  minutes_to_within_0.5C="));
+        if (timeInBandMin < 0) Serial.print(F("never")); else Serial.print(timeInBandMin, 1);
+        Serial.println(F("  (pass: overshoot<0.5, ripple within +/-0.3)"));
+        statsPrint(F("last 20 min (ripple = (max-min)/2)"));
+        autoState = AUTO_NONE;                     // stays in PI at 37 C
+        Serial.println(F("# test 7 done; still holding 37 C ('o' to stop)"));
+      }
+      break;
+
+    default: break;
+  }
+}
+
+// ============================================================================
+// LOGGING
+// ============================================================================
+void logLine() {
+  Serial.print(millis());              Serial.print(',');
+  Serial.print((int)mode);             Serial.print(',');
+  Serial.print(spTarget, 2);           Serial.print(',');
+  Serial.print(spEff, 2);              Serial.print(',');
+  Serial.print(tempRaw, 2);            Serial.print(',');
+  Serial.print(tempFilt, 2);           Serial.print(',');
+  Serial.print(duty * 100.0, 1);       Serial.print(',');
+  Serial.print(Iterm * 100.0, 1);      Serial.print(',');
+  Serial.print(faultLatched ? faultCode : 0); Serial.print(',');
+  if (sensorHex < 16) Serial.print('0');
+  Serial.print(sensorHex, HEX);        Serial.print(',');
+  Serial.println((int)autoState);
+}
+
+void printSettings() {
+  Serial.print(F("# mode="));    Serial.print((int)mode);
+  Serial.print(F(" auto="));     Serial.print((int)autoState);
+  Serial.print(F(" target="));   Serial.print(spTarget, 1);
+  Serial.print(F(" Kc="));       Serial.print(Kc, 4);
+  Serial.print(F(" Ti="));       Serial.print(Ti, 0);
+  Serial.print(F(" cap%="));     Serial.print(U_MAX * 100, 0);
+  Serial.print(F(" ramp/min=")); Serial.print(RAMP_C_PER_S * 60.0, 2);
+  Serial.print(F(" fault="));    Serial.println(faultLatched ? faultCode : 0);
+}
+
+// ============================================================================
+// SERIAL COMMANDS
+// ============================================================================
+void handleSerial() {
+  while (Serial.available()) {
+    char c = Serial.read();
+    if (c == '\n' || c == '\r') {
+      if (cmdLen > 0) { cmdBuf[cmdLen] = 0; runCommand(cmdBuf); cmdLen = 0; }
+    } else if (cmdLen < sizeof(cmdBuf) - 1) cmdBuf[cmdLen++] = c;
+  }
+}
+
+void runCommand(char* s) {
+  char cmd = s[0];
+  float v = atof(s + 1);
+
+  switch (cmd) {
+    case 'o':
+      mode = MODE_OFF; duty = 0; Iterm = 0; autoState = AUTO_NONE;
+      Serial.println(F("# OFF (any running test cancelled)")); break;
+
+    case 'w':                                       // TEST 4
+      if (!canHeat()) break;
+      stepDuty = POWER_TEST_DUTY; mode = MODE_STEP;
+      autoState = AUTO_POWER; autoT0 = millis();
+      Serial.println(F("# POWER TEST 30 s @30 %: read the watt meter now. Full power = avg W / 0.30"));
+      break;
+
+    case 's':                                       // TESTS 5, 6   e.g. s10
+      if (!canHeat()) break;
+      if (v <= 0) v = 10;
+      stepDuty = constrain(v / 100.0, 0.02, STEP_MAX_DUTY); mode = MODE_STEP;
+      for (uint8_t i = 0; i < 11; i++) ring[i] = tempFilt;
+      lastRingMs = millis(); autoState = AUTO_STEP; autoT0 = millis();
+      Serial.print(F("# STEP TEST started, duty %=")); Serial.print(stepDuty * 100.0, 1);
+      Serial.println(F("  (auto-stops when settled; keep sensor/probes in place)")); break;
+
+    case 'a':                                       // TEST 7
+      if (!canHeat()) break;
+      startPI(A_LOW); autoState = AUTO_SP_HOLD; autoT0 = millis(); inBand = false;
+      Serial.println(F("# SETPOINT-STEP TEST: holding 34 C until steady, then 37 C")); break;
+
+    case 'b':                                       // TEST 9 marker
+      Serial.print(F("# MARK ")); Serial.println(millis()); break;
+
+    case 'z': statsReset(); Serial.println(F("# stats reset")); break;
+
+    case 'd':                                       // manual open-loop
+      if (!canHeat()) break;
+      autoState = AUTO_NONE;
+      stepDuty = constrain(v / 100.0, 0.0, STEP_MAX_DUTY); mode = MODE_STEP;
+      Serial.print(F("# STEP duty %=")); Serial.println(stepDuty * 100.0, 1); break;
+
+    case 't':                                       // manual PI / TEST 11
+      if (!canHeat()) break;
+      autoState = AUTO_NONE; startPI(v);
+      Serial.print(F("# PI target=")); Serial.println(spTarget, 1); break;
+
+    case 'k': Kc = constrain(v, 0.0, 2.0);       printSettings(); break;
+    case 'i': Ti = constrain(v, 30.0, 36000.0);  printSettings(); break;
+    case 'u': U_MAX = constrain(v / 100.0, 0.02, U_MAX_ABS); printSettings(); break;
+    case 'm': RAMP_C_PER_S = constrain(v, 0.05, 5.0) / 60.0; printSettings(); break;
+
+    case 'r':
+      if (sensorHex == 0 && !isnan(tempRaw) && tempRaw < TRIP_ABS_C - 2.0) {
+        faultLatched = false; faultCode = 0; mode = MODE_OFF;
+        goodReads = 0; sensorReady = false;
+        Serial.println(F("# fault cleared; heater OFF"));
+      } else Serial.println(F("# cannot reset: sensor fault or still too hot"));
+      break;
+
+    case '?': printSettings(); break;
+    default:  Serial.println(F("# unknown command ('?' for help)"));
+  }
+}
